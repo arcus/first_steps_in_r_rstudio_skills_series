@@ -1,0 +1,1470 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.57">
+
+  <title>session_1</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+  <link href="site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+  <script src="site_libs/countdown-0.4.0/countdown.js"></script>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="welcome" class="slide level2 smaller">
+<h2>Welcome</h2>
+<p>These slides available at: <a href="https://arcus.github.io/demystifying_r_rstudio_skills_series/session_1.html" class="uri">https://arcus.github.io/demystifying_r_rstudio_skills_series/session_1.html</a></p>
+<ul>
+<li>Use keyboard arrow keys to
+<ul>
+<li>advance ( → ) and</li>
+<li>go back ( ← )</li>
+</ul></li>
+<li>Type “s” to see speaker notes</li>
+<li>Type “?” to see other keyboard shortcuts</li>
+</ul>
+<aside class="notes">
+<p>As we prepare to get started, I’d like to encourage you to open these slides on your own browser, so you will have them available to refer to later. There are also a number of links you may want to click on. I’ll copy paste that URL, where the slide deck is located, into chat, so everyone has it.</p>
+<p>This first slide is just to help you navigate this slide deck if you look at these slides on your own! And yes, there are ample speaker notes, so if you missed something I said, chances are it’s going to be in the speaker notes of the slide.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="about-arcus-your-presenter" class="slide level2 smaller">
+<h2>About Arcus / Your Presenter</h2>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:60%;">
+<p>Arcus is an initiative by the Research Institute aimed at promoting data discovery and reuse and increasing research reproducibility.</p>
+<ul>
+<li>Arcus app: <a href="https://arcus.chop.edu" class="uri">https://arcus.chop.edu</a></li>
+<li>Arcus Sharepoint site: <a href="https://chop365.sharepoint.com/sites/Arcus" class="uri">https://chop365.sharepoint.com/sites/Arcus</a></li>
+</ul>
+<p>Among the many teams in Arcus, I represent Arcus Education!</p>
+<p><img data-src="media/arcus_website.png" class="two-thirds bordered"></p>
+</div><div class="column small-text" style="width:40%;">
+<p><img data-src="media/arcus_research_data_lifecycle.png"></p>
+</div></div>
+<aside class="notes">
+<p>Thanks again for joining us, and welcome to our session today! I’d like to begin by briefly introducing myself and introducing Arcus, for those of you who may not be familiar with us. My name is ______ [add pronouns here if you want], and I’ll be leading today’s session.</p>
+<p>Arcus is an initiative by the Research Institute aimed at promoting data discovery and reuse and increasing research reproducibility throughout the research lifecycle, as you can see in the graphic on the right. [Pause, give folks a few secs to peruse the image].</p>
+<p>Changing the paradigm of research is a big undertaking, and it requires a broad approach.</p>
+<p>We aim to improve data reuse and research reproducibility at CHOP through technology, including Arcus labs and applied data science, through the use of data archiving and cataloging, and by way of education.</p>
+<p>You can find out more by checking out the Arcus application website (please note, there are some pre-requisites to using the app, such as human subjects protection training and signing our terms of use). I’ve added just a very small screenshot of part of what the Arcus application website looks like on the slide on the left side. [Pause].</p>
+<p>You can also, without any prerequisites, look at our Arcus Sharepoint site, which has a calendar of events and lots more information about Arcus.</p>
+<p>And finally, a little more about me: I work in Arcus Education. Our role is to support CHOP scientists by helping researchers acquire data science skills. That’s why we have Skills Series like this one!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="arcus-education" class="slide level2">
+<h2>Arcus Education</h2>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:50%;">
+<p><img data-src="media/arcus_education_page.png" class="bordered"></p>
+</div><div class="column small-text" style="width:50%;">
+<p>Arcus education provides data science training to researchers …</p>
+<p>(and often this is useful to non-researchers too!).</p>
+<p><a href="https://arcus.chop.edu/i-want-to/arcus-education" class="uri">https://arcus.chop.edu/i-want-to/arcus-education</a></p>
+<p>Email us! <a href="mailto:arcus-education@chop.edu" class="email">arcus-education@chop.edu</a></p>
+</div></div>
+<aside class="notes">
+<p>The Arcus Education team does lots of different kinds of education. We work one on one with researchers in office hours, we write how-to guides to help people understand how to use Arcus tools, we create asynchronous modules that people can use to acquire skills in their own time, and we do synchronous events like this one.</p>
+<p>Sometimes we focus on Arcus customers, on researchers at CHOP who are doing research within the Arcus data sharing paradigm, and sometimes we broaden our reach to larger audiences, because we know that helping everyone acquire data science skills will help improve the conduct of science at CHOP and help build a data-driven workforce.</p>
+<p>Please check out that education page and find out more about some of our services. You can see I’ve added a screenshot of that page to the slide here on the left side. You can also email us at arcus dash education at chop dot edu.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="first-steps-in-r-and-rstudio" class="slide level2 smaller">
+<h2>First Steps in R and RStudio</h2>
+<p>Arcus Education provides “Skills Series” for the entire CHOP community.</p>
+<p>This Skills Series is a 5-session series aimed at helping you take your first steps in R and RStudio!</p>
+<ul>
+<li>Session 1: Review and Setup</li>
+<li>Session 2: Projects and File Ingestion</li>
+<li>Session 3: Exploring Data Visually, Using ggplot2</li>
+<li>Session 4: Selecting Data Using dplyr</li>
+<li>Session 5: Putting it All Together: Communicating</li>
+</ul>
+<aside class="notes">
+<p>One of our methods in Education is the Skills Series, and that’s what you’re in today.</p>
+<p>In this series, we’re going to take five sessions to help you make your first steps in R and RStudio. If you’ve never coded in R or used the RStudio software, and you want some support to get started, this is a great workshop series for you.</p>
+<p>After you finish these five sessions, you’ll have a little experience with R and RStudio, and you’ll have done things like ingest data, made data visualizations, and subset specific data you want to study more closely.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="session-1-itinerary" class="slide level2 smaller">
+<h2>Session 1 Itinerary</h2>
+<p>Review and Setup</p>
+<ul>
+<li>Quick review of R, RStudio, and “literate statistical programming”</li>
+<li>Posit.cloud: our environment for this course</li>
+<li>Git and GitHub: Out of scope but very useful!</li>
+<li>Your first Quarto Document</li>
+<li>Getting R and RStudio at CHOP</li>
+</ul>
+<p>Goals:</p>
+<ul>
+<li>Use Source and Visual views in RStudio to experiment with how markdown gets rendered into attractive and descriptive text</li>
+<li>Create a new code chunk in a Quarto document</li>
+<li>Run a code chunk in a Quarto document</li>
+</ul>
+<aside class="notes">
+<p>So let’s get started with this first session. In this session we’re going to very rapidly review the basics about what R and RStudio are, along with some basics about literate statistical programming, Quarto, and Posit.cloud. Those were all the subjects of two previous webinars, so if today feels too fast, you can always go back and review those.</p>
+<p>We’ll also quickly describe what Git and GitHub provide, and give you some tips for getting R and RStudio at CHOP.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="r-vs-rstudio" class="slide level2">
+<h2>R Vs RStudio</h2>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:50%;">
+<p><img data-src="media/r_logo.png" class="two-thirds"></p>
+</div><div class="column small-text" style="width:50%;">
+<p><img data-src="media/rstudio_logo.png" class="half"></p>
+</div></div>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:50%;">
+<p><strong>R</strong> Programming language for data analysis</p>
+</div><div class="column small-text" style="width:50%;">
+<p><strong>RStudio</strong> Integrated development environment (IDE)</p>
+</div></div>
+<aside class="notes">
+<p>Let’s distinguish between R and RStudio.</p>
+<p>The first logo you see here is for <strong>R</strong>. R is a statistical programming language that’s great for doing data analysis. There are several features that make R attractive for people who work with data.</p>
+<ul>
+<li>R was built specifically for statistical data analysis, so it’s got a friendly and focused user community and lots of great online resources for learning.</li>
+<li>R is <strong>open source</strong>, which means that it is “free” in two ways – in the meaning of having <strong>no cost</strong> and also in terms of using it freely, that is, without intellectual property concerns or licensing restrictions.</li>
+<li>R makes it possible to work with data and build scripts that do lots of things, from ingesting data to building data visualizations.</li>
+</ul>
+<p>So that’s R, it’s a language with a lot of benefits.</p>
+<p>Then, there’s <strong>RStudio</strong>. RStudio was the original name of a company as well as the name of a piece of software the company makes. A couple of years ago, the company changed its name from RStudio to Posit, but they kept the old name on at least some of their software.</p>
+<p>You can think of RStudio (the software) as a fancy text editor for writing R code. The technical term for a fancy text editor for writing code is “Integrated Development Environment”, or I-D-E.</p>
+<p>You don’t <strong>have</strong> to use RStudio to write R, but it makes it a lot easier. We like to give the example of typing a manuscript in Microsoft Word. If you didn’t have Microsoft Word, you could write down your thoughts in the Notes app on your phone. But Microsoft Word has lots of add-ons, like spell-check and word count that make it much more pleasant to write a paper there, rather than in the notes app on your phone!</p>
+<p>One of the things you can do in RStudio really well is write code in a particular paradigm called literate statistical programming, and that’s what we’re going to talk about next.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="lsp-example-quarto" class="slide level2 smaller">
+<h2>LSP Example (Quarto)</h2>
+<div class="columns v-center-container">
+<div class="column" style="width:50%;">
+<p><img data-src="media/visual_view_lsp.png" class="bordered"></p>
+</div><div class="column" style="width:50%;">
+<p>In Literate Statistical Programming, we not only use <strong>code</strong>, but also describe what we do in <strong>human language</strong>, with things like headers, bullet points, and other formatting to make it easier for humans to make sense of the code.</p>
+</div></div>
+<aside class="notes">
+<p>Literate statistical programming is computer code (that’s what makes it programming) that analyzes data (that’s what makes it statistical), and does so interlaced with detailed human language that describes what’s happening in the code (that’s what makes it literate). Here’s an example.</p>
+<p>Here is a snippet of a script my team wrote, and you can see that it has some description of what the code is doing, to help humans. We put in a header, to separate a section that has to do more with bringing the data in and cleaning it. Then we write a paragraph describing what we’re going to do, followed by a chunk of code.</p>
+<p>After that code executes, we’ll have some data. So we have some additional instructions, this time in the form of a bulleted list. I’m not showing you all of the code that makes that bulleted list happen, because it’s kind of long, but the code chunk with the grey background below that bulleted list does all the things in that bulleted list.</p>
+<p>Hopefully, what this does is make it a lot easier for anyone on my team to pick up this code and work with it, even if they’re not the person who wrote the code. This is what literate statistical programming looks like, and working in R and RStudio is a great way to get started working this way. This kind of document, by the way, is called a Quarto document. It includes R language but also includes text that has special formatting called “markdown”. You may have also heard the term “R Markdown”, which is practically the same thing. It’s an older term that preceded the word “Quarto”.</p>
+<p>I want to get you creating Quarto documents as soon as possible, so let’s transition to talking about how to get you started working with R and RStudio right away!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="posit.cloud-for-learning-only" class="slide level2 smaller">
+<h2>Posit.Cloud (for learning only!)</h2>
+<p>You can use R and RStudio using online services like <a href="https://posit.cloud">https://posit.cloud</a>.</p>
+<p>Posit.cloud is a great place for learning or practice with public datasets, BUT is not a safe or compliant place to put your regulated data.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_47e8ffbc" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>When we teach R and RStudio, it can be next to impossible to deal with everyone’s different kinds of installation issues while they’re trying to get set up and deal with IS, get issues ironed out with their computers and their access permissions, etc.</p>
+<p>That’s why we have our students use Posit.cloud to learn R and RStudio. Posit.cloud is an online, cloud based service provided by Posit, the company that makes the RStudio software. It’s really good and reliable and it has a very generous free tier! It means that as teachers we can concentrate on our learners really acquiring the skills around R and RStudio, without being bogged down by the fact that some people have Macs, some have PCs, some have admin rights, some don’t, some have R installed, some don’t, some have a very old version of R and they can’t update it, and so on. Using Posit.cloud makes things a lot easier for teachers and learners. Even if you already have R and RStudio installed locally, I’m going to request that you use Posit.cloud for this Skills Series, because we do not have the time in a webinar with this many students to help you with your particular setup.</p>
+<p>HOWEVER, we want to make one thing very clear! Posit.cloud is absolutely NOT an appropriate place for regulated health care data. It’s for <strong>practicing</strong> and <strong>learning</strong> using <strong>public datasets</strong>. If you’re going to use R for CHOP data, you should start the process of getting R and RStudio installed on your CHOP device so that you can transfer those skills to real-life work right away. We’ll talk about resources for accomplishing that at the end of today’s session.</p>
+<p>For now, please, if you already have a Posit account, please log in to it. If you don’t have a Posit account, please go to https://posit.cloud and create a free account. When you have your Posit account created, please give us a thumbs up on the comment in the chat, so I can measure progress. I’ll give you three minutes to start and we’ll see where we stand. [Click the timer, and copy/paste the comment “I have a Posit.cloud account and I’m logged in there!” into chat].</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="git-and-github-out-of-scope" class="slide level2 smaller">
+<h2>Git and GitHub: Out of scope</h2>
+<p>… but very useful version control software.</p>
+<p>Version control allows you to track, for text-based files:</p>
+<ul>
+<li>What changed (the file name, the line numbers, the actual text)</li>
+<li>When (date and time)</li>
+<li>By whom (username / ID)</li>
+<li>Why (the person changing will add a message)</li>
+</ul>
+<p>(And that means no more <code>analysis_final.R</code>, <code>analysis_final_with_changes.R</code>, <code>analysis_final_final_final_please_why.R</code>)</p>
+<aside class="notes">
+<p>Git and GitHub are complex and very useful software. We could do a skills series, or in fact several skills series, just on these! If anyone uses them for work and wants to let us know how often they use it or what they use it for, drop a message in chat. I’m curious to see how other people use version control at CHOP!</p>
+<p>Version control software allows you to record changes to text-based files, including what changed in the file or files, when the change was made, who made the change, and why. Much like the relationship between R and RStudio, Git is the original software and GitHub was built to make using Git easier, and helpful but not necessary.</p>
+<p>We won’t go into all the details about how to use these software packages, but we use them daily in my team including for managing the files for these workshops. When we start hands-on coding, you’ll be hearing me mention GitHub. You’ll get the exercise files from there to work with. If there’s one thing I hope you remember about Git and GitHub, it’s that they are very useful, and if you find them a real pain in the neck at first, hang in there, because they really truly are worth the effort to learn.</p>
+<p>And the reason I’m bringing this up will become evident in the next couple of slides. I’m going to recommend that if you get R and RStudio installed that you also get Git and GitHub Desktop installed on your CHOP computer as well. Let’s briefly talk about getting things installed at CHOP.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="creating-a-project-in-posit" class="slide level2 smaller">
+<h2>Creating a Project in Posit</h2>
+<ul>
+<li>Go to <a href="http://posit.cloud" class="uri">http://posit.cloud</a> (you already have a free account, right?)</li>
+<li>Create a new project from a Git repository</li>
+<li>URL to enter is <a href="https://github.com/arcus/first_steps_r_rstudio_exercises" class="uri">https://github.com/arcus/first_steps_r_rstudio_exercises</a> (Click OK)</li>
+<li>Look around your RStudio environment!</li>
+</ul>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:40%;">
+<p><img data-src="media/posit_new_from_git_repo.png"></p>
+</div><div class="column small-text" style="width:40%;">
+<p><img data-src="media/new_project_with_github_url.png"></p>
+</div></div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_947dbed7" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>OK, we’re going to start a new project in Posit.cloud. This is your first hands-on work in this workshop, so get ready!</p>
+<p>You’re going to find the “New Project” button in the upper right. It’s big and dark blue and it stands out a lot. It’s not quite so visible when you have RStudio on your own computer, just as a heads-up.</p>
+<p>You’ll see there are a few options for a new Project. You want to choose “New Project from Git Repository.”</p>
+<p>What that means is that you’re going to copy some files from an existing location that my team uses to store the exercise files, also known as a repository. In the future, if we change anything to those files in the repository, you can update your copy, too, to stay up to date.</p>
+<p>It will ask you for the URL of the repository. That’s where you want to type the URL shown in the slide: https://github.com/arcus/first_steps_r_rstudio_exercises. I’ll copy and paste that into the chat so you have it.</p>
+<p>Later on, you can create other kinds of Projects in your Posit.cloud account using the other options that show up when you click New Project, so that you get a feel for how the other project types work. But I’ll let you do that in your own time.</p>
+<p>For now, I want to give you a couple of minutes to do these steps. Please do this now! When you’re done creating that new project, give me a nice thumbs up in the chat. [Add “I’ve created my new project from the Git repository” comment to chat]</p>
+<p>So I’ll share my Posit.cloud window with you now [Do this] and I’ll do the same thing, in case anyone is stuck. I’m going to log in to my Posit.cloud account, and click the New Project button [NOTE: before the session, make sure you have space to make a new project!]. I’ll choose the “from a Git Repo” option.</p>
+<p>Now I’ll copy and paste in the URL of the repository my team maintains, like this.</p>
+<p>And then it will think for a couple of minutes and then create a new project and include some files for me that were in the repo. And that’s that!</p>
+<p>Let’s take a look around at the panes here.</p>
+<p>In the lower right, you have a file browser, that shows all the files included in this project. It looks like we have a data directory, an exercises directory, a solutions directory, and a few other things that may seem unfamiliar, like a README and a couple of special files.</p>
+<p>On the left, we see the R console, and that tells us about the version of R we’re running. In the upper right, we have a bit of information about the project, but there’s nothing there yet, really, because we haven’t started working.</p>
+<p>There’s a really helpful menu across the top, and I want to draw your attention to the Help item, which is the last menu option in the toolbar. If I click there, and go to Cheat Sheets, there are lots of useful one-page cheat sheets to help me remember how to do stuff in R and RStudio.</p>
+<p>OK, so that’s it for cloning our project. You now have your own copy of our exercises, and you’re ready to start working on them! So let’s go back to the slide deck.</p>
+<p>[Go back to sharing the slide deck]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="create-your-first-r-code" class="slide level2 smaller">
+<h2>Create Your First R Code!</h2>
+<p>This is what we’re going to do:</p>
+<ul>
+<li>Create a new Quarto Document</li>
+<li>Add a bit of description describing what you’re planning to do</li>
+<li>Add a “Code Chunk” doing the thing (in our case, installing <code>tidyverse</code> and <code>rmarkdown</code>)</li>
+<li>Run that code chunk to make sure it works</li>
+<li>Save that Quarto document as <code>setup.qmd</code> in your Exercises folder.</li>
+</ul>
+<aside class="notes">
+<p>The best way to get started is to just jump in, so that’s what we’re going to do, step by step together. This is what we’re going to do.</p>
+<p>We’re going to create a new Quarto document, and we’re going to start right away using a literate style. So we’re going to describe what we’re doing, then do the thing, make sure it works, then save our file.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-1-create-a-new-quarto-document" class="slide level2 smaller">
+<h2>Step 1: Create a New Quarto Document</h2>
+<ul>
+<li>Go to File, New File, Quarto Document.</li>
+<li>Give it the title “Setup” and click “Create”.</li>
+<li>Try clicking on “Visual” and “Source” and scrolling up and down!</li>
+<li>You might get a “Visual mode” pop up box – give it a read.</li>
+</ul>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:40%;">
+<p><img data-src="media/new_quarto_document.png"></p>
+</div><div class="column small-text" style="width:40%;">
+<p><img data-src="media/create_quarto_document.png"></p>
+</div></div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_08d788e3" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>OK, so with each step, I’ll give you about a minute to do this, and then I’ll show you what it looks like and demo it live. First, please use the File, New File menu option to create a new Quarto document. You’ll be asked to provide a title. Make that title “Setup”. You can put your name in as Author if you want, but don’t change anything else. Then click the “Create” button at the bottom right. When your new file creates, please don’t click anything else, even if you see a yellow banner that is prompting you to install a program. I want you to wait, please.</p>
+<p>I’ll give you a minute, and then I’ll share my screen and do the same thing as you.</p>
+<p>[Click countdown timer].</p>
+<p>OK, so let me switch my screen over to my own Posit.cloud account, where I’ve got the project open. I’m going to click on File, then New File, and then Quarto Document. I’ll add the word “Setup” to the Title, and click “Create”. Simple as that.</p>
+<p>Now, I want to point out that there’s a banner there that is offering you a shortcut. I do NOT want you to take this shortcut. If you did already, that’s okay, but I want to show you the manual way to install packages, so please don’t click in that yellow banner. It’s a useful message, however, because it’s telling you, hey, for me to be fully effective, you need to install a package, specifically the <code>rmarkdown</code> package. So we’ll use this data in just a sec.&nbsp;</p>
+<p>Now, I’m going to click on these two buttons, Visual and Source, to see two different ways this sample file looks. I’ll get an informational pop up telling me “oh hey, you’re about to enter into Visual mode, here’s some info about that.” If you want to read that later, you can, but just uncheck that box so you can make it pop up again!</p>
+<p>You can see that the RStudio software has given me some sample code to help guide me. This sample code is something you might hear people call “boilerplate” code. We don’t need this code, but it helps give us a guide to follow. I’m going to scroll up and down, and look at it in both Visual mode and Source mode. This will help you understand how markdown works. You can see the raw markdown by clicking on the Source button, and see things like triangle brackets and double asterisks and hash marks, and then click on Visual to see how that markdown gets rendered into html to have the formatting we want.</p>
+<p>Does it matter what you use? Source or Visual? Well, for this course we’re going to have you use Source, just so we’re all doing the same thing. But for your future work, it doesn’t really matter. Use what you prefer! Or go back and forth between Source and Visual, to try things out and see what they look like. So for now, click on Source so we’re all seeing the same thing.</p>
+<p>OK, let’s go back to the slides for our next step.</p>
+<p>[Go back to slides.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-2-add-a-bit-of-description" class="slide level2 smaller">
+<h2>Step 2: Add a bit of description</h2>
+<ul>
+<li>Remove the existing markdown and code</li>
+<li>Start a new header (“Installing Packages”) with two hash marks (#)</li>
+<li>Enter a blank line</li>
+<li>Then type a description of installing packages</li>
+</ul>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:70%;">
+<p><img data-src="media/writing_first_markdown.png"></p>
+</div></div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_215e372d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Again, I’ll give you about a minute to do this. Delete all the stuff from the line with the header “quarto” (that’s line 7 if you’re looking in the Source view). Then add a new header and description. I’ll start the timer to give you a chance to do it, then I’ll demo this for you.</p>
+<p>[Click countdown timer].</p>
+<p>OK, so let me switch my screen over to my own Posit.cloud account, where I’ve got the project open.</p>
+<p>I’m going to make sure I’m in “Source” view, and I’m going to put my cursor at the start of line 7. I’ll highlight everything here from line 7 and below, and just hit backspace or delete to remove it.</p>
+<p>Now I’ll put in two hashmarks, which, if you’re an HTML person, will make an H2 header, and put a space after the hashmarks. And I’ll put the text of the header, which can be whatever you want, but I want this to say “Installing Packages.”</p>
+<p>I’ll hit enter two times after this, so that there’s a blank line after my header, and then I’ll just start typing. Maybe I’ll say something like “We need to install some packages.” Now, I’ll explain in session 2 about installing packages and when you need to do that, so don’t worry if you’re not sure what this is actually doing.</p>
+<p>If I want to see what this kind of formatting looks like when it is rendered into HTML, I can click on the Visual button at the top to see what it looks like. Yep, a header, and some explanatory text below that. Perfect! I’ll go back to Source view for now, and then we can go back to the slides.</p>
+<p>[Go back to slides.]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-3-add-a-code-chunk" class="slide level2 smaller">
+<h2>Step 3: Add a Code Chunk</h2>
+<ul>
+<li>Position your cursor after your explanatory text</li>
+<li>Hit enter to make sure there’s a blank line</li>
+<li>Then use the green “+C” button to add a code chunk</li>
+<li>Inside that code chunk, type this, exactly: <code>install.packages(c("rmarkdown", "tidyverse"))</code></li>
+</ul>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:40%;">
+<p><img data-src="media/about_to_click_new_chunk.png"></p>
+</div><div class="column small-text" style="width:40%;">
+<p><img data-src="media/new_code_chunk.png"></p>
+</div></div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_97867bbd" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>As usual, I’ll give you a minute to do this. You’re going to add a code chunk. Now, you can certainly do this by finding the backtick symbol on your keyboard, which is usually close to the tilde, and putting in three of those, followed by the letter “r” in curly braces, and then another line with three backticks, BUT it’s much easier if you find the “Add a Code Chunk” button, which is a green button with the letter C, and click that.</p>
+<p>Once you have an empty code chunk, I want you to copy the code there exactly as written, and I’ll explain it in a bit. Go ahead and try it! After a minute I’ll do it, too.</p>
+<p>[Click countdown timer].</p>
+<p>OK, so let me switch my screen over. I’m going to hit enter and move my cursor so that my code chunk is placed after my descriptive text, and after a bit of white space, too. I’ll click on the add a code chunk button, and an empty code chunk appears. Let’s look at the anatomy of this code chunk.</p>
+<p>First, it starts with three backticks (this symbol is NOT the same as a single quote!). Then, there’s the designation of what programming language is going to appear in this code chunk. We’re using the R language, so we’re going to leave this be, with the letter “r” in curly braces.</p>
+<p>There’s a space to add code, and then the code chunk ends with three more back ticks.</p>
+<p>And you can see that visually, it’s grey, to give a little bit of help so we can distinguish between where the code is and where the description is.</p>
+<p>Now, I’m going to type in this code. First, I’ll start by typing install dot packages. As I type, predictive text might appear, and I can just hit enter to accept the suggestion.</p>
+<p>So I have install.packages and a set of parentheses. Now, inside those parentheses, I want to put in a list. In r, we commonly use what’s called a concatenation to designate a list. And that’s just the letter c, followed by a set of parentheses. So I’ll put c, open parenthesis, closed parenthesis. [ Note: you should have <code>install.packages(c())</code>].</p>
+<p>And inside that concatenation, I want to put a comma delimited list of package names, with quotes. There are two packages I know I need. From the banner above, I know I need “rmarkdown”. I also know that later in our work together we’re going to use a lot of functionality from the tidyverse set of packages, so I’ll add “tidyverse”. So all told, this is what I have:</p>
+<ul>
+<li>install dot packages,</li>
+<li>open parenthesis,</li>
+<li>the letter c for concatenation,</li>
+<li>open parenthesis,</li>
+<li>the namd rmarkdown in quotes,</li>
+<li>a comma,</li>
+<li>the word tidyverse in quotes,</li>
+<li>the closing parenthesis for my concatenation</li>
+<li>the closing parenthesis for my install.packages</li>
+</ul>
+<p>Take a look and make sure your code chunk looks like mine.</p>
+<p>OK, let’s go back to the slides! [go back to slides]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-4-run-that-code-chunk" class="slide level2 smaller">
+<h2>Step 4: Run that Code Chunk</h2>
+<ul>
+<li>Use the green triangle (“Play” button) on the chunk to run the chunk</li>
+<li>Look in the “Console” for output. It will be verbose, and take a while.</li>
+<li>You’ll know it’s finished when the prompt &gt; appears in the Console and the Stop sign disappears!</li>
+</ul>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:40%;">
+<p><img data-src="media/run_code_chunk.png"></p>
+</div><div class="column small-text" style="width:40%;">
+<p><img data-src="media/install_in_progress.png"></p>
+</div></div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_bf01180e" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Again, you’ll do this first, then I’ll demo. You’re going to run this code by clicking on the “play” button in the code chunk, and these libraries will install. It’ll take a while! And if you mistyped something, you might get an error message. If that happens, don’t panic. Read the error message and see if you can figure out what it’s trying to communicate. I’ll give you a minute to do this, then I’ll demonstrate this step.</p>
+<p>[Click countdown timer].</p>
+<p>OK, so let me switch my screen over. Let me move my mouse over to the top of my code chunk at the top right corner, and find that green “play” button. I’ll click there, and in the console, I can watch a lot happen.</p>
+<p>[Do the thing]</p>
+<p>OK, so while this is going on I’ll explain that if there are any libraries that are dependencies, things that are required to be installed before the libraries we want to install can be successfully installed, those will come along for free. So you’re going to see not just rmarkdown and tidyverse get installed, but lots of other underlying packages, too. When the install is still running, you’ll see a stop sign in the Console, which you can click if you need the process to stop.</p>
+<p>Once things finish, there will be a prompt in the Console, ready for the next command.</p>
+<p>Now, this is a moment where sometimes people have error messages, so let’s pause here in case there are issues, before we go on.</p>
+<p>…</p>
+<p>OK, so let’s go back to the slides.</p>
+<p>[Go back to slides]</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-5-save-that-quarto-document" class="slide level2 smaller">
+<h2>Step 5: Save that Quarto Document</h2>
+<ul>
+<li>Click on File, Save</li>
+<li>Name your file “setup” (you don’t have to add “.qmd”, but you can!)</li>
+<li>Save it inside the “exercises” folder</li>
+</ul>
+
+<img data-src="media/save_file.png" class="r-stretch"><div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_8fc186d9" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>OK, last step! I’m going to ask you to save this file. You shouldn’t ever have to run this code again for this project, but it might be handy to hang on to it anyway. Please use the menu to save this file. Give it the name setup and save it in “exercises”.</p>
+<p>You do it, then I’ll do it.</p>
+<p>[Click countdown timer].</p>
+<p>OK, that’s time. I’ll share my Posit.cloud window now, and I want you to notice that my file name here is red and has an asterisk, which is telling me there are unsaved changes. So let’s go into File, then Save. I’m going to type “setup” in the file name, choose “exercises” for the file location, and then “Save”.</p>
+<p>When I do that, my file name is no longer red, it’s black, and that is a good visual indicator that I’m caught up, that there are no unsaved changes.</p>
+<p>Let’s go back to the slides.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="summary-of-today" class="slide level2 smaller">
+<h2>Summary of Today</h2>
+<p>Today, you:</p>
+<ul>
+<li>Learned about R and RStudio (and how to get them at CHOP)</li>
+<li>Learned about Literate Statistical Programming</li>
+<li>Signed up for (or logged into) Posit.cloud</li>
+<li>Cloned (copied) our exercise files from GitHub into a new Project</li>
+<li>Installed the tidyverse package into that Project</li>
+</ul>
+<p>That’s a lot! Give yourselves a round of applause.</p>
+<aside class="notes">
+<p>OK, so that’s session 1. Today, we talked about R and RStudio and how to acquire R and RStudio, along with Git and GitHub, using CHOP’s software installation request form. We also presented the idea of literate statistical programming, which is a way to write code that is interlaced with rich, descriptive human language that describes and contextualizes the code. And you did a lot of work, too!</p>
+<p>You either signed up for Posit.cloud for the first time, or you logged in. You created a new project, basing it on a GitHub repository. The technical word for copying a GitHub project is cloning. And you did a package installation as well, using the R console in your Project. Good work!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="working-with-r-at-chop" class="slide level2 smaller">
+<h2>Working with R at CHOP</h2>
+<ul>
+<li>We work with regulated data</li>
+<li>IRB protocols and other regulations might override what I say here!</li>
+<li>You can work with R and RStudio on a CHOP device
+<ul>
+<li>You will <strong>probably</strong> have to request an install via a <a href="https://chop.service-now.com/esc?id=sc_cat_item&amp;sys_id=fbf31958db4efe00de9e782bbf96192c">service ticket</a></li>
+<li>You’ll need a cost center / grant / project number (even though there’s no cost)</li>
+<li>Yes, this software has been used at CHOP before</li>
+<li>You’ll need to give a reason (“I need to analyze data for my job…”)</li>
+<li>You’ll need to <a href="https://kb.netgear.com/1005/How-do-I-find-my-device-s-MAC-address">provide the MAC address</a> of your computer</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>First, a few caveats to keep in mind. At CHOP, we work with sensitive data, whether that’s health care data, research data, or trade secrets about our enterprise. We want to be careful. You will almost certainly need to put in a ticket to get the right software installed on your CHOP device. At this point, if you’re not already following along in the slides, I’m going to really encourage you to grab this slide link because this slide and the next will have important information that will be useful for you when you decide to work with R and RStudio. I will also point out that I do not work for DTS and I cannot approve or install software for you… you have to go through the formal channels here and I don’t have any shortcuts!</p>
+<p>Even though all of these software are free, you’ll need a Cost Center (or grant fund) to add to your request. Get that from your manager, administrative staff, or other leadership within your area. There will be no charge, but DTS uses this information for tracking resource utilization. You’ll be asked if this is software that’s already in use at CHOP – it certainly is. You’ll be asked to provide a justification, and that’s usually that you need this to do data analysis for your job. And finally, you’ll have to provide information about your workstation, including the MAC address of your computer.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-chop-kit-optional" class="slide level2 smaller">
+<h2>Your CHOP Kit (Optional)</h2>
+<p>What you might want to install / <a href="https://chop.service-now.com/esc?id=sc_cat_item&amp;sys_id=fbf31958db4efe00de9e782bbf96192c">get installed</a> on your own CHOP device:</p>
+<ul>
+<li><a href="https://lib.stat.cmu.edu/R/CRAN/">R</a> – the language we use to clean, analyze, and visualize data</li>
+<li><a href="https://posit.co/download/rstudio-desktop/">RStudio Desktop</a> – an IDE for writing R</li>
+<li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a> – version control software that will allow you to easily get the latest version of our course materials and will also be helpful for tracking changes in your own projects</li>
+<li><a href="https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop">GitHub Desktop</a> – a helper, or “client” software that makes working with Git easier</li>
+</ul>
+<aside class="notes">
+<p>I said I’d talk about what to do if you wanted to work on your own CHOP device with R and RStudio installed locally, to work safely with CHOP data for work. In addition to R and RStudio, I also highly recommend getting Git and GitHub Desktop installed as well. They work really well with RStudio, and even if you’re not ready to work with version control software now, you might want to work with these programs in the future, so it can be helpful to have everything installed all at once. Each of these links can take you to more information about installing these programs, which can be helpful for talking to DTS or your boss.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="researchers-only-at-chop" class="slide level2 smaller">
+<h2>Researchers ONLY at CHOP</h2>
+<p>(You’ll need a <strong>research</strong> cost center to refer to for most of these)</p>
+<ul>
+<li>If you work with the <a href="https://www.research.chop.edu/services/respublica-access-request">High Performance Compute cluster</a> (HPC or Respublica), you can request an RStudio session by logging in to <a href="https://respublica-web2.research.chop.edu/pun/sys/dashboard/batch_connect/sessions">Interactive Apps</a> and choosing RStudio.</li>
+<li>You can <a href="https://www.research.chop.edu/services/beyondchopedu-access">request a VDI</a> that includes RStudio.</li>
+<li>You can <a href="https://support.arcus.chop.edu/servicedesk/customer/portal/6/create/307">request an Arcus lab</a> for a well-defined research project you’re planning. The Arcus lab includes RStudio.</li>
+</ul>
+<aside class="notes">
+<p>If you’re a researcher at CHOP, there are additional places you might want to use R and RStudio. I won’t go into these in detail, but each of these are links that take you to more information. As a researcher, you can request access to the HPC, also known as Respublica, you can request a VDI, or you can request an Arcus lab. All of these can be ways you can get access to R and RStudio without having to install them on your local computer. And especially if you work with very big data, or you do complex, high-memory data modeling, you might <strong>have</strong> to use some of these resources, if your computer just doesn’t have enough RAM to do the job. But as always, please make sure that wherever you work with your data, you are in compliance with your IRB protocol and any other regulation.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qa-was-this-effective" class="slide level2 smaller">
+<h2>Q&amp;A / Was This Effective?</h2>
+<p>We like to measure our effectiveness (and analyze it in R!)</p>
+<p>Goals:</p>
+<ul>
+<li>Use Source and Visual views in RStudio to experiment with how markdown gets rendered into attractive and descriptive text</li>
+<li>Create a new code chunk in a Quarto document</li>
+<li>Run a code chunk in a Quarto document</li>
+</ul>
+<aside class="notes">
+<p>Now, this is not the final slide, but we’re a group that likes to measure our effectiveness and make changes based on what we learn. So before we do questions and answers, we like to make sure to give our learners a poll to see if we made a good use of your time. We’re going to ask if we were effective in reaching our goals today, and those goals are on the screen in order to help you answer that question. Once you answer that poll, feel free to type a question into chat or come off mute and ask to clarify anything I can explain a bit better. I’ll stop our session of Q&amp;A with about 5 minutes to spare because I do have just a couple of finishing slides I want to show.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="next-session" class="slide level2">
+<h2>Next Session</h2>
+<p>Session 2:</p>
+
+<div class="quarto-auto-generated-content">
+<p><img src="media/chop_arcus_initiative_logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Arcus Education, Children’s Hospital of Philadelphia</p>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

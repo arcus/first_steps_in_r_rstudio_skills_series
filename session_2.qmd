@@ -1,0 +1,433 @@
+---
+format: 
+  revealjs:
+    theme: [serif, custom.scss]
+    scrollable: true
+    logo: media/chop_arcus_initiative_logo.png
+    footer: Arcus Education, Children's Hospital of Philadelphia 
+    css: styles.css
+---
+## Welcome {.smaller}
+
+These slides available at: <https://arcus.github.io/demystifying_r_rstudio_skills_series/session_2.html>
+
+-   Use keyboard arrow keys to
+    -   advance ( → ) and
+    -   go back ( ← )
+-   Type "s" to see speaker notes
+-   Type "?" to see other keyboard shortcuts
+
+```{r echo = FALSE}
+library(countdown)
+```
+
+
+::: notes
+As we prepare to get started, I'd like to encourage you to open these slides on your own browser, so you will have them available to refer to later. There are also a number of links you may want to click on. I'll copy paste that URL, where the slide deck is located, into chat, so everyone has it.
+
+This first slide is just to help you navigate this slide deck if you look at these slides on your own! And yes, there are ample speaker notes, so if you missed something I said, chances are it's going to be in the speaker notes of the slide.
+:::
+
+## About Arcus / Your Presenter {.smaller}
+
+::::: {.columns .v-center-container}
+::: {.column .small-text width="60%"}
+Arcus is an initiative by the Research Institute aimed at promoting data discovery and reuse and increasing research reproducibility.
+
+-   Arcus app: <https://arcus.chop.edu>
+-   Arcus Sharepoint site: <https://chop365.sharepoint.com/sites/Arcus>
+
+Among the many teams in Arcus, I represent Arcus Education!
+
+![](media/arcus_website.png){.two-thirds .bordered}
+:::
+
+::: {.column .small-text width="40%"}
+![](media/arcus_research_data_lifecycle.png)
+:::
+:::::
+
+::: notes
+
+Thanks again for joining us, and welcome to our session today!  I'd like to begin by briefly introducing myself and introducing Arcus, for those of you who may not be familiar with us.  My name is ______ [add pronouns here if you want], and I'll be leading today's session.
+
+I've already talked a bit about Arcus in the first session of this Skills Series, so I'll just skip most of that this time and simply say that Arcus is an initiative by the Research Institute aimed at promoting data discovery and reuse and increasing research reproducibility.
+
+You can find out more by checking out these links.
+
+And finally, a little more about me: I work in Arcus Education.  Our role is to support CHOP scientists by helping researchers acquire data science skills.  That's why we have Skills Series like this one!
+
+:::
+## Arcus Education
+
+::::: {.columns .v-center-container}
+::: {.column .small-text width="50%"}
+![](media/arcus_education_page.png){.bordered}
+:::
+
+::: {.column .small-text width="50%"}
+Arcus education provides data science training to researchers ...
+
+(and often this is useful to non-researchers too!).
+
+<https://arcus.chop.edu/i-want-to/arcus-education>
+
+Email us! [arcus-education\@chop.edu](mailto:arcus-education@chop.edu){.email}
+:::
+:::::
+
+::: notes
+The Arcus Education team does lots of different kinds of education. Again, we talked about this in our first session, so I'm going to skip most of this.
+
+Please check out that education page that is linked here to find out more about some of our services. You can also email us at arcus dash education at chop dot edu.
+:::
+
+
+## First Steps in R and RStudio {.smaller}
+
+Arcus Education provides "Skills Series" for the entire CHOP community.
+
+This Skills Series is a 5-session series aimed at helping you take your first steps in R and RStudio!
+
+-   Session 1: Review and Setup
+-   Session 2: Projects and File Ingestion
+-   Session 3: Exploring Data Visually, Using ggplot2
+-   Session 4: Selecting Data Using dplyr
+-   Session 5: Putting it All Together: Communicating
+
+::: notes
+Just a reminder about what you're in today.
+
+In this series, we're going to take five sessions to help you make your first steps in R and RStudio. If you've never coded in R or used the RStudio software, and you want some support to get started, this is a great workshop series for you.
+
+After you finish these five sessions, you'll have a little experience with R and RStudio.  The goal is to help you feel more confident and have enough experience to be able to keep learning specialized skills titrated to your needs.  If we were to compare learning R to learning to drive, this series is the equivalent of having you drive around a parking lot, under supervision, in a controlled situation.
+:::
+
+## Session 2 Itinerary {.smaller}
+
+Projects and File Ingestion
+
+  * File systems can be challenging to navigate
+  * Projects in RStudio
+  * Installing and loading packages
+  * Tabular data ingestion from .csv files
+
+Goals:
+
+- Create project and install package (unless you did Session 1)
+- Be able to explain when to use `install.packages()` and when to use `library()`
+- Ingest data from a .csv and look at it
+
+::: notes
+So let's get started with this second session. In this session we're going to hit the ground running.  You need to already have a Posit.cloud account, so if you don't have that, it is absolutely critical that you pay attention in the next slide.
+
+We're going to have you go into your Posit account and start a new project.  We'll explain why projects are so useful, and we'll get you working with your first few lines of actual R code!
+:::
+
+
+## Posit.Cloud (for learning) {.smaller}
+
+[https://posit.cloud](https://posit.cloud) is a great place for learning or practice with public (NOT CHOP!) datasets.
+
+Please open your First Steps in R and RStudio Exercises project in Posit.cloud now.
+
+If you did not already set up a Posit.cloud account with the exercise files in the first session of this Series, please do the following, now:
+
+* Make sure you have a free account at [https://posit.cloud](https://posit.cloud)
+* [Create a new project that uses our exercise files](link.to.slide)
+
+```{r echo=FALSE}
+countdown(minutes = 3, seconds = 0)
+```
+
+
+::: notes
+Posit.cloud is an online, cloud based service provided by Posit, the company that makes the RStudio software.  It's easy reliable for learners.  As teachers, we can concentrate on our learners really acquiring the skills around R and RStudio, without being bogged down by weird individual installation differences from computer to computer.
+
+Using Posit.cloud is pretty much necessary for your continued participation in this workshop, because we can't help you troubleshoot details of your particular computer and its installation details.  Even if you have R and RStudio installed on your local computer, I really hope you'll try out Posit dot cloud, because  things will be smoother for you and for us this way.  If you set things up in the first session of the Series, please log in to Posit.cloud and open the project with the Skills Series exercise files.  If you didn't set things up yet, please do that now.  I'll copy and paste those two bullet points into chat so you have those. [Do it].
+
+Let's take just a few minutes to make sure we're all set up.  I'll give folks a few minutes to do that!
+:::
+
+
+## Where are your files? {.smaller}
+
+- Knowing where your files are can be tricky
+- RStudio / Posit.cloud "Projects" can help
+- Projects are directories that hold analysis scripts, data, and project info close together
+
+::: notes
+OK, before we get started working with our exercise files, let's talk about some common struggles. One of the dirty little secrets of learning data analysis is that one of the biggest challenges some people have, especially if they've never worked in the command line, is finding their own files. They know they downloaded it, or they double clicked on a .csv file attachment in Outlook and they're not sure where that file lives. 
+
+Working in Projects is a great way to help keep your data really close to your analysis scripts, so it's a lot easier to find your data.  Projects are directories that RStudio creates in which your data and your analysis, as well as some information about your project, are all stored together in a single folder.  And you can have 2, or three, or a dozen different Projects, all kept separate from each other, to keep from mixing up your files. 
+
+In Posit.cloud, Projects are the way you have to organize your work, so it's really easy to use Projects there.  On your own computer, you're not forced to use Projects, but you should use them.  If you're working in your own computer, you have to have the discipline to not just make new R scripts right away, but rather, first make a new Project to hold related files together, and then within that project make your analysis scripts.
+
+:::
+
+
+
+## Advantages to using Projects {.smaller}
+
+-   Keeping track of your files gets easier
+-   Projects allow you to keep your various efforts separated
+-   Multiple sessions of RStudio open on your computer that don't interfere with each other.
+
+::: notes
+Let's sum up the major advantages of using Projects.
+
+If you're like me, you might work on several different analysis projects at a time. And if you just have one RStudio window open, which means one R session, you can accidentally trip over yourself. Let's say you have two different R scripts, each of which creates the object `my_data`, or `cleaned_data`, or a similar kind of generic name.  Maybe you're doing work for two different research projects.  What happens when you go back and forth between these files? You end up clobbering yourself and saving the audiology data in the nephrology project or something like that.
+
+It's much cleaner and safer to work using Projects, in which all the related analysis and data files for a given effort are stored in the same directory. RStudio can also dedicate a session per project if you want to have several projects open at a time.  For example, on my computer, I might have two or three copies of RStudio open at a time, each one in a separate Project, and each one is completely isolated from the other.  I can go back and forth and I can have a nephrology dataset I call "my_data" and an audiology dataset I call "my_data", and RStudio will keep them totally separate, because they're in different Projects.
+:::
+
+## Importing Data {.smaller}
+
+* Importing / Ingesting data is the first step to analyzing it!
+* You can use "base R" (the factory settings) to ingest data
+* But we suggest using an add-on package called `tidyverse` instead.
+
+::: notes
+Great, so you have a Project in Posit.cloud.  And in the exercise files in that project, we've supplied you with some data, some real research data that's publicly available, to get you started.  The first step in the data analysis pipeline is to bring in, import, or ingest the data into your R session. 
+
+One very important thing to note is that you will need to install R packages into your copy of this project. At first we really wanted to have all your packages pre-loaded, but now we see the wisdom of teaching you how to install and load packages right away. It may take a few more minutes of our time today, but this is a crucial skill that you definitely need to develop. We'll make sure to slow down and ensure that you get the packages installed that you need in order to do this work!
+:::
+
+## CSV {.smaller}
+
+
+::: columns
+::: {.column width="35%"}
+We're supplying you with .csv data.
+::: 
+
+::: {.column width="65%"}
+![](media/csv.png)
+::: 
+::: 
+
+::: notes
+We're giving you some CSV data.  CSV stands for **comma-separated values**. 
+
+A .csv file is a plain text file, which means you can open it in a text editor and look at it. Now, this isn't how we normally open CSVs.  Usually we open them not in a text editor, but rather in  Microsoft Excel or another spreadsheet program. In case you've never seen the plain text version of a CSV, here is an example of what raw csv data looks like when we open it in a text editor.  See how it's literally made up of values, separated by commas?  That's why it's a comma separated values file!
+
+Here we have a .csv file with human subject IDs, information about the intervention they received, and some clinical information about them.
+
+This data structure is called **rectangular** or **"tabular"** because it falls into rows and columns, often called a table, where each row has the same number of columns, and each columns has the same number of rows.
+
+Also note that this particular .csv file has a **header** row that instead of data, has a name for each column. .csv files often have such a header row and unless we specify otherwise, when we import this data, R assumes the first line is a header row. Not all .csv files have headers, however, so be aware that you might run across these at some point.
+:::
+
+## Tidyverse {.smaller}
+
+::: columns
+::: {.column width="70%"}
+-   A consistent way to organize data
+-   Human readable, concise, consistent code
+-   Build pipelines from atomic data analysis steps
+:::
+
+::: {.column width="30%"}
+![](media/tidyverse_logo.png)
+:::
+:::::
+
+::: notes
+To import our CSV data, we need some additional data analysis tools. In this course, we will be leveraging the Tidyverse.
+
+The Tidyverse is a set of tools that a lot of people use for working with rectangular, or tabular data, the kind of data that comes with rows and columns. Many people, myself included, think that using the tidyverse is the best way to work with tabular data.
+
+We won't explain what tidy data is right now, but the idea of working in a tidy way with tidy data is obviously very central to this group of tools!
+:::
+
+## Installing a Package {.smaller}
+
+* Look in "Files" tab.  
+* Go into the "solutions" folder 
+* Click on "setup.qmd".  
+* Run the only code chunk there (green triangle "play" button)
+
+
+```{r echo=FALSE}
+countdown(minutes = 1, seconds = 0)
+```
+
+::: notes
+If you were in our first session, you may have already done this.  You're welcome to do it again if you like! 
+
+In the lower right pane of your project, you should see a "Files" tab.  Go into the "solutions" folder there and click on "setup.qmd".  That will open up **our** version of the setup document.  Yours will look a little different, and that's okay.
+
+You will get a lot of output in your console window if you're installing this for the first time, and that's usually just fine. I'll give you a minute to do this, then I'll do the same thing.
+
+[Start timer]
+
+OK, let me go to my Posit.cloud account, open up my project here, and look in my file explorer.  I'll open up the solutions folder and click on setup.qmd.  
+
+Then I'll just glance over this bit of explanatory text, and if I want, I can go back and forth between Visual and Source to understand how the markdown here in Source gets formatted nicely in the Visual view.  Whether in Visual or in Source, I can run this code chunk with the green button.
+
+[Go back to slides]
+:::
+
+## Installing and Loading Packages
+
+::::: columns
+::: {.column .small-text width="50%"}
+![](media/package.png){.half}
+:::
+
+::: {.column .small-text width="50%"}
+`install.packages("tidyverse")` downloads the package (do once)
+
+`library(tidyverse)` loads the package (do once per script or session)
+:::
+:::::
+
+::: notes
+The **tidyverse** is package (a collection of functions, data, and help documentation) that we can use to extend the innate functionality of R, which is often referred to as "base R". In fact, tidyverse is special because it a package of packages -- it's a group of packages that work together to do a number of tasks related to importing, reshaping, visualizing, and analyzing data.
+
+You can download and **install** a package with the command `install.packages`. For example, to install the tidyverse package, you would use `install.packages("tidyverse")`. Each package you want to use needs to be installed only once on each computer for any given version of that package.
+
+Make sure you **include the quotes** when you use `install.packages`. When to use quotes is a tricky topic, but for now, keep in mind that you will *always* need to put quotes around the name of a package whenever using `install.packages()`.
+
+After you've installed the package, in order to use the functions that it provides, you also need to **load** the package into the computer's memory. This is done with the command `library`. And you want to use `library` every single time you start a new analysis that will use that functionality.  
+:::
+
+## read_csv()
+
+![](media/function_0.png){.two-thirds fig-align="center"}
+
+![](media/csv_import.png){.half fig-align="center"}
+
+::: notes
+We can import CSV files using the `read_csv()` function.
+
+Let's go over how you use the `read_csv` function to read a CSV file into a data frame object. A data frame is a type of object in R that holds tabular data: data with rows and columns.
+:::
+
+## Functions
+
+![](media/function_1.png){.two-thirds fig-align="center"}
+
+::: notes
+This code construct is exceedingly common in R, and it's a good moment to explain **functions**.
+
+`read_csv()` is a **function**. Functions are defined in packages. We loaded the tidyverse package to be able to use the `read_csv` function.
+
+You may be familiar with functions from math class or perhaps also from formulas in Excel. A function takes an input, say an 'x' value, and returns an output, say a 'y' value. Functions in computer programming also take inputs and return outputs. 
+
+For the `read_csv` function, the input is the file name of a CSV file; and the output is a data frame, a new object created in your R environment, which contains the contents of that .csv file.
+:::
+
+## Functions
+
+![](media/function_2.png){.two-thirds fig-align="center"}
+
+::: notes
+In the snippet of code that reads in a csv to create a data frame, we have a **function** with an **argument** that creates an **object**.
+
+The input that goes into a function is called an **argument**. The argument to a function gets put in parentheses.
+
+A function can have zero, one, or many arguments. If there is more than one argument, we use commas to separate them.
+:::
+
+## Functions
+
+![](media/function_3.png){.two-thirds fig-align="center"}
+
+::: notes
+The output of the `read_csv` function is a data frame object. You want to store that data inside of a named object so you can use it in R later for other things. For example, after you read in your csv, you might want to summarize or visualize your data.
+:::
+
+## Functions
+
+![](media/function_4.png){.two-thirds fig-align="center"}
+
+::: notes
+To put the output of the `read_csv` function into a named object, we use the **assignment operator**.
+
+The assignment operator is a less than symbol followed by a dash and resembles an arrow pointing left. 
+:::
+
+## read_csv()
+
+
+![](media/csv_import.png){.half fig-align="center"}
+
+::: notes
+Let's put these pieces together to load our covid data set.
+
+Consider this line of code. We could speak aloud the line of code above saying "covid underscore testing gets read underscore csv of covid underscore testing dot csv", or we could gloss over the underscores and just say "covid testing" and "read csv". When we talk with others about R, this is often what we do, so just be aware that you sometimes have to intuit underscores when someone is reading aloud or talking through a code issue.
+
+You might notice that one of our "covid testing" objects is put in quotes and the other one isn't.
+
+To be honest, quotes in R can be super confusing. A couple of rules are:
+
+-   Names of objects such as data frames don't get quotes.
+-   Literal file names are always put in quotes.
+-   When you're referring to a string value, like "abc123" or "jones", you have to use quotes.
+-   Names of packages, when you're installing especially, use quotes
+-   But in `library`, putting the package name in quotes is optional!
+
+Sometimes, either quoting or not quoting works. This is one of the things where you will get a good sense but not until after some trial and error. If a line of code you're working on doesn't seem to be working as you expect, sometimes adding or removing quotes can be a good place to start when trying to figure it out.
+:::
+
+## Bonus Content: File Paths -- the "where" {.smaller}
+
+-   A few tips:
+    -   `/` means "go into a child directory" (`\` in Windows)
+    -   `/` as the first symbol means "start at the root"
+    -   `.` means "this directory"
+    -   `..` means "the parent directory of this directory"
+    -   `~` means "my home directory"
+-   Relative path -- "directions from here"
+-   Absolute path -- "directions from anywhere"
+-   Working directory -- R's "starting place"
+
+[Great module on Directories and File Paths](https://liascript.github.io/course/?https://raw.githubusercontent.com/arcus/education_modules/main/directories_and_file_paths/directories_and_file_paths.md#1)
+
+::: notes
+
+This is bonus content, that I have sort if in my back pocket in case we have time to cover it.
+
+Option 1: I won't go over this slide, but if understanding file paths is interesting to you, there's a great link there for you to learn more.
+
+Option 2: Read below.
+
+If you have already worked in the command line, you might not have any problem finding files on your computer, but some of you might find it tricky.  
+
+We're going to offer a brief handful of tips for understanding file paths, and this is true for all files, not just related to R or data analysis. 
+
+First off, Windows is a weird operating system and is unlike the rest of the world's major operating systems, like Unix, Linux, and MacOS, in how it does file paths. Most file paths use forward slashes, not backward slashes.  A slash means you're going into a new subdirectory or subfolder.
+
+And a few other special symbols are useful to know. A single dot means "this directory", two dots means "go into the directory that holds the one I'm in now", and a tilde means "my home directory", which will differ from user to user on a shared system like a server. 
+
+In your analysis scripts, you'll often have to decide if you want to use what's called a "relative path" or an "absolute path" to tell R where a file is. There are advantages and disadvantages to both, but if we're using Projects, we can usually use relative paths more easily.
+
+A relative path assumes that we're starting in the same place and have common knowledge. So if I was at home, describing where my keyboard is, I'd say "go upstairs to the second floor, and then on the street side of the house, there's my office. Then go inside and you'll find the keyboard on my desk."  That makes sense if you're also inside my house.
+
+But if you're NOT in my house, you're in your house, which doesn't have a second floor, you would say, "hey, your directions to go to the second floor don't make sense.  Path not found." A relative path doesn't work when we're not starting in the same place. 
+
+And that brings us to the idea of a working directory. Any time you are working in R, it's running with a starting point, its working directory. The great thing about RStudio is that it does a good job of guessing what you want the working directory to be, based on the file you're working on.  Everyone has the same starting point, so to speak.
+
+An absolute path is a path that includes enough detail so that the location is clear from anywhere in the computer. For example, in the physical world, an absolute path would be if I said, "go to 123 Main Street, Philadelphia, go inside, go to the second floor, go to the street side, open the door, go inside, and look on the desk. The keyboard is there."  Now, the benefit is that it's very precise.  But the downside is that it's lengthy and annoying to construct sometimes, and if you move the whole folder of your project, you've changed addresses, essentially, and messed things up.
+
+If you want to learn more, we've created a module all about file paths that you might find useful, so check that out if you're interested!
+:::
+
+
+## Q&A / Was This Effective? {.smaller}
+
+In our team, we like to measure our effectiveness.
+
+Goals:
+
+- Be able to describe the difference between R and RStudio
+- Have a Posit.cloud account ready to go
+- Have some next steps in mind for your CHOP device
+
+
+::: notes
+
+Now, this is not the final slide, but we're a group that likes to measure our effectiveness and make changes based on what we learn.  So before we do questions and answers, we like to make sure to give our learners a poll to see if we made a good use of your time.  We're going to ask if we were effective in reaching our goals today, and those goals are on the screen in order to help you answer that question.  Once you answer that poll, feel free to type a question into chat or come off mute and ask to clarify anything I can explain a bit better.  I'll stop our session of Q&A with about 5 minutes to spare because I do have just a couple of finishing slides I want to show.
+:::
+
