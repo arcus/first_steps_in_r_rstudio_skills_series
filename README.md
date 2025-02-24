@@ -6,7 +6,7 @@ Welcome to First Steps in R and RStudio!
 
 This series is intended to be a gentle introduction to using R and RStudio for people who interact with data and want to work in the R statistical programming language. This course is geared towards beginners who are comfortable doing basic tasks with data that comes in rows and columns (for example, organizing data in Excel) but have no programming background.
  
-The workshop will cover how to get started using the R statistical programming language in your work. We'll talk about how to import data, transform data, and create data visualizations in R.  To keep this workshop series short, our scope is limited, and we won't go into details that are specific to the conduct of research, like modeling and statistical tests. For that, we are planning a future Skills Series we're going to call Next Steps in R for Research. For this workshop series, we assume you know what R and RStudio are and have some ideas about why they're useful.  If you don't know what R or RStudio are, we suggest you view the slides and recordings from Demystifying R and RStudio, or attend the next time that two-session workshop series is offered.
+The workshop will cover how to get started using the R statistical programming language in your work. We'll talk about how to import data, transform data, and create data visualizations in R.  To keep this workshop series short, our scope is limited, and we won't go into details that are specific to the conduct of research, like modeling and statistical tests. For that, we are planning a future Skills Series we're going to call Next Steps in R for Research. For this workshop series, we assume you know what R and RStudio are and have some ideas about why they're useful.  If you don't know what R or RStudio are, we suggest you view the slides and recordings from [Demystifying R and RStudio](https://github.com/arcus/demystifying_r_rstudio_skills_series), or attend the next time that two-session workshop series is offered.
 
 ## Pre-requisites: What you should **know**:
 
@@ -23,7 +23,7 @@ Before attending this series, you should be able to perform **most or all the fo
 
 **Before attending a workshop session**, we suggest that you do the following.  It will make your experience of the workshop series smoother.  If you don't get a chance to do this before attending a workshop, you will have time to do it during the session, but we won't necessarily be able to stop our presentation to help you if you get stuck.
 
-* Create a free [Posit.cloud](https://posit.cloud) account.  We will use this as our training environment and you will have continued access to your code and materials after the workshop, through your account at Posit.cloud.  Don't use this for any patient or other CHOP data, though!
+* Create a free [Posit.cloud](https://posit.cloud) account.  We will use this as our **training environment** and you will have continued access to your code and materials after the workshop, through your account at Posit.cloud.  **Don't** use this for any patient or other CHOP data, though!
 * If you haven't already, please consider [joining CHOP's R User Group](http://bit.ly/chopRusers).  It's not necessary for the workshops but you might find it useful or even fun.
 
 We suggest [requesting these programs be installed](https://chop.service-now.com/esc?id=sc_cat_item&sys_id=fbf31958db4efe00de9e782bbf96192c) on your CHOP device(s):

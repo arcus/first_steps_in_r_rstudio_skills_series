@@ -9,7 +9,7 @@ format:
 ---
 ## Welcome {.smaller}
 
-These slides available at: <https://arcus.github.io/demystifying_r_rstudio_skills_series/session_2.html>
+These slides available at: <https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html>
 
 -   Use keyboard arrow keys to
     -   advance ( → ) and

@@ -113,7 +113,7 @@ After you finish these five sessions, you'll have a little experience with R and
 
 ## Session 1 Itinerary {.smaller}
 
-Review and Setup
+Review and Setup (see also: [Demystifying R and RStudio](https://github.com/arcus/demystifying_r_rstudio_skills_series/blob/main/README.md))
 
 -   Quick review of R, RStudio, and "literate statistical programming"
 -   Posit.cloud: our environment for this course
@@ -128,9 +128,13 @@ Goals:
 -  Run a code chunk in a Quarto document
 
 ::: notes
-So let's get started with this first session. In this session we're going to very rapidly review the basics about what R and RStudio are, along with some basics about literate statistical programming, Quarto, and Posit.cloud. Those were all the subjects of two previous webinars, so if today feels too fast, you can always go back and review those.
+So let's get started with this first session. In this session we're going to very rapidly review the basics about what R and RStudio are, along with some basics about literate statistical programming, Quarto, and Posit.cloud. Those were all the subjects of a previous Skills Series entitled "Demystifying R and RStudio", so if today feels too fast, you can always go back and review that material.
 
 We'll also quickly describe what Git and GitHub provide, and give you some tips for getting R and RStudio at CHOP.
+
+Our goals for today are three-fold.  
+
+By the end of the session I want you to use source and visual mode in RStudio to work with markdown, I want you to create a new code chunk in Quarto, and I want you to run a code chunk in Quarto.  And don't worry if you don't know what any of that means!  We'll get there together.
 :::
 
 ## R Vs RStudio
@@ -156,13 +160,13 @@ We'll also quickly describe what Git and GitHub provide, and give you some tips 
 :::::
 
 ::: notes
-Let's distinguish between R and RStudio.
+Let's begin by distinguishing between R and RStudio.
 
 The first logo you see here is for **R**. R is a statistical programming language that's great for doing data analysis. There are several features that make R attractive for people who work with data.
 
 -   R was built specifically for statistical data analysis, so it's got a friendly and focused user community and lots of great online resources for learning.
 -   R is **open source**, which means that it is "free" in two ways -- in the meaning of having **no cost** and also in terms of using it freely, that is, without intellectual property concerns or licensing restrictions.
--   R makes it possible to work with data and build scripts that do lots of things, from ingesting data to building data visualizations.
+-   R makes it possible to work with data and build scripts that do lots of things, from ingesting data to building data visualizations and lots of other things along the way.
 
 So that's R, it's a language with a lot of benefits.
 
@@ -192,22 +196,22 @@ Literate statistical programming is computer code (that's what makes it programm
 
 Here is a snippet of a script my team wrote, and you can see that it has some description of what the code is doing, to help humans. We put in a header, to separate a section that has to do more with bringing the data in and cleaning it. Then we write a paragraph describing what we're going to do, followed by a chunk of code.
 
-After that code executes, we'll have some data. So we have some additional instructions, this time in the form of a bulleted list. I'm not showing you all of the code that makes that bulleted list happen, because it's kind of long, but the code chunk with the grey background below that bulleted list does all the things in that bulleted list.
+After that code executes, we'll have some data. So we have some additional description of what we want to do, this time in the form of a bulleted list. I'm not showing you all of the code that makes that bulleted list happen, because it's kind of long, but the code chunk with the grey background below that bulleted list is code we wrote that does all the things in that bulleted list.
 
-Hopefully, what this does is make it a lot easier for anyone on my team to pick up this code and work with it, even if they're not the person who wrote the code. This is what literate statistical programming looks like, and working in R and RStudio is a great way to get started working this way. This kind of document, by the way, is called a Quarto document. It includes R language but also includes text that has special formatting called "markdown". You may have also heard the term "R Markdown", which is practically the same thing. It's an older term that preceded the word "Quarto".
+This is what literate statistical programming looks like, and working in R and RStudio is a great way to get started working this way. This kind of document, by the way, is called a Quarto document. It includes R language but also includes text that has special formatting called "markdown". You may have also heard the term "R Markdown", which is practically the same thing. It's an older term that preceded the word "Quarto".
 
 I want to get you creating Quarto documents as soon as possible, so let's transition to talking about how to get you started working with R and RStudio right away!
 :::
 
 ## Posit.Cloud (for learning only!) {.smaller}
 
-You can use R and RStudio using online services like [https://posit.cloud](https://posit.cloud).  
+You can use R and RStudio using online services like [https://posit.cloud](https://posit.cloud).  Sign up for your free account, it's what we'll use for this series.
 
 Posit.cloud is a great place for learning or practice with public datasets, BUT is not a safe or compliant place to put your regulated data.
 
 
 ```{r echo=FALSE}
-countdown(minutes = 3, seconds = 0)
+countdown(minutes = 2, seconds = 0)
 ```
 
 
@@ -215,12 +219,11 @@ countdown(minutes = 3, seconds = 0)
 
 When we teach R and RStudio, it can be next to impossible to deal with everyone's different kinds of installation issues while they're trying to get set up and deal with IS, get issues ironed out with their computers and their access permissions, etc. 
 
-That's why we have our students use Posit.cloud to learn R and RStudio.  Posit.cloud is an online, cloud based service provided by Posit, the company that makes the RStudio software.  It's really good and reliable and it has a very generous free tier!  It means that as teachers we can concentrate on our learners really acquiring the skills around R and RStudio, without being bogged down by the fact that some people have Macs, some have PCs, some have admin rights, some don't, some have R installed, some don't, some have a very old version of R and they can't update it, and so on.  Using Posit.cloud makes things a lot easier for teachers and learners.  Even if you already have R and RStudio installed locally, I'm going to request that you use Posit.cloud for this Skills Series, because we do not have the time in a webinar with this many students to help you with your particular setup.
+That's why we have our students use Posit.cloud to learn R and RStudio.  Posit.cloud is an online, cloud based service provided by Posit, the company that makes the RStudio software.  It's really good and reliable and it has a very generous free tier!  It means that as teachers we can concentrate on our learners really acquiring the skills around R and RStudio, without being bogged down by the fact that some people have Macs, some have PCs, some have admin rights, some don't, and so on.  Using Posit.cloud makes things a lot easier for teachers and learners.  Even if you already have R and RStudio installed locally, I'm going to request that you use Posit.cloud for this Skills Series, because we do not have the time in a webinar with this many students to help you with your particular setup.
 
-HOWEVER, we want to make one thing very clear!  Posit.cloud is absolutely NOT an appropriate place for regulated health care data.  It's for **practicing** and **learning** using **public datasets**.  If you're going to use R for CHOP data, you should start the process of getting R and RStudio installed on your CHOP device so that you can transfer those skills to real-life work right away.  We'll talk about resources for accomplishing that at the end of today's session.
+HOWEVER, we want to make one thing very clear!  Posit.cloud is absolutely NOT an appropriate place for regulated health care data.  It's for **practicing** and **learning** using **public datasets**.  If you're going to use R for CHOP data, you should start the process of getting R and RStudio installed on your CHOP device so that you can transfer those skills to real-life work right away.  If you want to learn more about that, there are slides about that in the Demystifying R and RStudio Skills Series that will help you.
 
 For now, please, if you already have a Posit account, please log in to it.  If you don't have a Posit account, please go to https://posit.cloud and create a free account.  When you have your Posit account created, please give us a thumbs up on the comment in the chat, so I can measure progress.  I'll give you three minutes to start and we'll see where we stand.  [Click the timer, and copy/paste the comment "I have a Posit.cloud account and I'm logged in there!" into chat].
-
 
 :::
 
@@ -254,7 +257,7 @@ And the reason I'm bringing this up will become evident in the next couple of sl
 
 * Go to <http://posit.cloud> (you already have a free account, right?)
 * Create a new project from a Git repository 
-* URL to enter is <https://github.com/arcus/first_steps_r_rstudio_exercises> (Click OK)
+* URL to enter is <https://github.com/arcus/first_steps_in_r_rstudio_exercises> (Click OK)
 * Look around your RStudio environment!
 
 ::: {.columns .v-center-container}
@@ -297,9 +300,9 @@ Let's take a look around at the panes here.
 
 In the lower right, you have a file browser, that shows all the files included in this project.  It looks like we have a data directory, an exercises directory, a solutions directory, and a few other things that may seem unfamiliar, like a README and a couple of special files.
 
-On the left, we see the R console, and that tells us about the version of R we're running.  In the upper right, we have a bit of information about the project, but there's nothing there yet, really, because we haven't started working.
+On the left, we see the R console, and that tells us about the version of R we're running.  In the upper right, we have a pane that shares a information about the environment of our project right now, but there's nothing there yet, really, because we haven't started working.
 
-There's a really helpful menu across the top, and I want to draw your attention to the Help item, which is the last menu option in the toolbar.  If I click there, and go to Cheat Sheets, there are lots of useful one-page cheat sheets to help me remember how to do stuff in R and RStudio.
+There's a really helpful menu across the top, and I want to draw your attention to the Help item, which is the last menu option in the toolbar.  If I click there, and go to Cheat Sheets, there are lots of useful one-page cheat sheets to help me remember how to do stuff in R and RStudio.  Now, in my bottom right, you can see that my files disappeared, because the "Help" tab is now selected.  I can just click on "Files" to bring that file viewer back. 
 
 OK, so that's it for cloning our project.  You now have your own copy of our exercises, and you're ready to start working on them!  So let's go back to the slide deck.
 
@@ -322,6 +325,8 @@ This is what we're going to do:
 The best way to get started is to just jump in, so that's what we're going to do, step by step together.  This is what we're going to do.
 
 We're going to create a new Quarto document, and we're going to start right away using a literate style.  So we're going to describe what we're doing, then do the thing, make sure it works, then save our file.
+
+So, take just a minute to look at those bullet points, and then I'll show you some screenshots to guide you on the next few slides.  So don't worry if these instructions are too vague.  You'll get more guidance in just a sec.
 
 :::
 
@@ -389,7 +394,7 @@ countdown(minutes = 1, seconds = 0)
 ```
 
 ::: notes
-Again, I'll give you about a minute to do this.  Delete all the stuff from the line with the header "quarto" (that's line 7 if you're looking in the Source view).  Then add a new header and description.  I'll start the timer to give you a chance to do it, then I'll demo this for you.
+Again, I'll give you about a minute to do this.  Delete all the stuff from the line with the header "quarto" (that's line 7 or 8 if you're looking in the Source view).  Then add a new header and description.  I'll start the timer to give you a chance to do it, then I'll demo this for you.
 
 
 [Click countdown timer].
@@ -429,7 +434,7 @@ countdown(minutes = 1, seconds = 0)
 
 ::: notes
 
-As usual, I'll give you a minute to do this.  You're going to add a code chunk.  Now, you can certainly do this by finding the backtick symbol on your keyboard, which is usually close to the tilde, and putting in three of those, followed by the letter "r" in curly braces, and then another line with three backticks, BUT it's much easier if you find the "Add a Code Chunk" button, which is a green button with the letter C, and click that.
+As usual, I'll give you a minute to do this.  You're going to add a code chunk.  Now, you can certainly do this by typing in all the symbols for a code chunk manually, BUT it's much easier if you find the "Add a Code Chunk" button, which is a green button with the letter C, and click that.
 
 Once you have an empty code chunk, I want you to copy the code there exactly as written, and I'll explain it in a bit.  Go ahead and try it!  After a minute I'll do it, too.
 
@@ -445,7 +450,7 @@ And you can see that visually, it's grey, to give a little bit of help so we can
 
 Now, I'm going to type in this code.  First, I'll start by typing install dot packages.  As I type, predictive text might appear, and I can just hit enter to accept the suggestion.  
 
-So I have install.packages and a set of parentheses.  Now, inside those parentheses, I want to put in a list.  In r, we commonly use what's called a concatenation to designate a list.  And that's just the letter c, followed by a set of parentheses.  So I'll put c, open parenthesis, closed parenthesis.  [ Note: you should have `install.packages(c())`].
+So I have install.packages and a set of parentheses.  Now, inside those parentheses, I want to put in a list.  In r, we commonly use what's called a concatenation to designate a list.  And that's just the letter c, followed by a set of parentheses.  So I'll put c, open parenthesis, and look, the closed parenthesis appears for free.  [ Note: you should have `install.packages(c())`].
 
 And inside that concatenation, I want to put a comma delimited list of package names, with quotes.  There are two packages I know I need.  From the banner above, I know I need "rmarkdown".  I also know that later in our work together we're going to use a lot of functionality from the tidyverse set of packages, so I'll add "tidyverse".  So all told, this is what I have: 
 
@@ -470,7 +475,7 @@ OK, let's go back to the slides!
 
 * Use the green triangle ("Play" button) on the chunk to run the chunk
 * Look in the "Console" for output.  It will be verbose, and take a while.
-* You'll know it's finished when the prompt > appears in the Console and the Stop sign disappears!
+* You'll know it's finished when the prompt `>` appears in the Console and the Stop sign disappears!
 
 ::: {.columns .v-center-container}
 ::: {.column .small-text width="40%"}
@@ -482,7 +487,7 @@ OK, let's go back to the slides!
 :::
 
 ```{r echo=FALSE}
-countdown(minutes = 1, seconds = 0)
+countdown(minutes = 0, seconds = 30)
 ```
 
 ::: notes
@@ -519,11 +524,11 @@ OK, so let's go back to the slides.
 ![](media/save_file.png)
 
 ```{r echo=FALSE}
-countdown(minutes = 1, seconds = 0)
+countdown(minutes = 0, seconds = 30)
 ```
 
 ::: notes
-OK, last step!  I'm going to ask you to save this file.  You shouldn't ever have to run this code again for this project, but it might be handy to hang on to it anyway.  Please use the menu to save this file.  Give it the name setup and save it in "exercises".
+OK, last step!  I'm going to ask you to save this file.  You shouldn't ever have to run this code again for this project, but it might be handy to hang on to it anyway.  Please use the File menu to save this file.  Give it the name setup and save it in "exercises".
 
 You do it, then I'll do it.
 
@@ -543,7 +548,7 @@ Let's go back to the slides.
 
 Today, you:
 
-* Learned about R and RStudio (and how to get them at CHOP)
+* Learned about R and RStudio 
 * Learned about Literate Statistical Programming
 * Signed up for (or logged into) Posit.cloud
 * Cloned (copied) our exercise files from GitHub into a new Project
@@ -560,56 +565,6 @@ You created a new project, basing it on a GitHub repository.  The technical word
 :::
 
 
-
-## Working with R at CHOP {.smaller}
-
-* We work with regulated data
-* IRB protocols and other regulations might override what I say here!
-* You can work with R and RStudio on a CHOP device
-  - You will **probably** have to request an install via a [service ticket](https://chop.service-now.com/esc?id=sc_cat_item&sys_id=fbf31958db4efe00de9e782bbf96192c)
-  - You'll need a cost center / grant / project number (even though there's no cost)
-  - Yes, this software has been used at CHOP before
-  - You'll need to give a reason ("I need to analyze data for my job...")
-  - You'll need to [provide the MAC address](https://kb.netgear.com/1005/How-do-I-find-my-device-s-MAC-address) of your computer
-  
-::: notes
-
-First, a few caveats to keep in mind.  At CHOP, we work with sensitive data, whether that's health care data, research data, or trade secrets about our enterprise.  We want to be careful.  You will almost certainly need to put in a ticket to get the right software installed on your CHOP device.  At this point, if you're not already following along in the slides, I'm going to really encourage you to grab this slide link because this slide and the next will have important information that will be useful for you when you decide to work with R and RStudio.  I will also point out that I do not work for DTS and I cannot approve or install software for you... you have to go through the formal channels here and I don't have any shortcuts!
-
-Even though all of these software are free, you'll need a Cost Center (or grant fund) to add to your request.  Get that from your manager, administrative staff, or other leadership within your area.  There will be no charge, but DTS uses this information for tracking resource utilization.  You'll be asked if this is software that's already in use at CHOP -- it certainly is.  You'll be asked to provide a justification, and that's usually that you need this to do data analysis for your job.  And finally, you'll have to provide information about your workstation, including the MAC address of your computer.
-:::
-  
-
-## Your CHOP Kit (Optional) {.smaller}
-
-What you might want to install / [get installed](https://chop.service-now.com/esc?id=sc_cat_item&sys_id=fbf31958db4efe00de9e782bbf96192c) on your own CHOP device:
-
-* [R](https://lib.stat.cmu.edu/R/CRAN/) -- the language we use to clean, analyze, and visualize data 
-* [RStudio Desktop](https://posit.co/download/rstudio-desktop/) -- an IDE for writing R 
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) -- version control software that will allow you to easily get the latest version of our course materials and will also be helpful for tracking changes in your own projects
-* [GitHub Desktop](https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop) -- a helper, or "client" software that makes working with Git easier
-
-
-::: notes
-I said I'd talk about what to do if you wanted to work on your own CHOP device with R and RStudio installed locally, to work safely with CHOP data for work.  In addition to R and RStudio, I also highly recommend getting Git and GitHub Desktop installed as well.  They work really well with RStudio, and even if you're not ready to work with version control software now, you might want to work with these programs in the future, so it can be helpful to have everything installed all at once.  Each of these links can take you to more information about installing these programs, which can be helpful for talking to DTS or your boss.
-:::
-
-
-## Researchers ONLY at CHOP {.smaller}
-
-(You'll need a **research** cost center to refer to for most of these)
-  
-* If you work with the [High Performance Compute cluster](https://www.research.chop.edu/services/respublica-access-request) (HPC or Respublica), you can request an RStudio session by logging in to [Interactive Apps](https://respublica-web2.research.chop.edu/pun/sys/dashboard/batch_connect/sessions) and choosing RStudio.
-* You can [request a VDI](https://www.research.chop.edu/services/beyondchopedu-access) that includes RStudio.
-* You can [request an Arcus lab](https://support.arcus.chop.edu/servicedesk/customer/portal/6/create/307) for a well-defined research project you're planning.  The Arcus lab includes RStudio.
-
-::: notes
-If you're a researcher at CHOP, there are additional places you might want to use R and RStudio.  I won't go into these in detail, but each of these are links that take you to more information.  As a researcher, you can request access to the HPC, also known as Respublica, you can request a VDI, or you can request an Arcus lab. All of these can be ways you can get access to R and RStudio without having to install them on your local computer.  And especially if you work with very big data, or you do complex, high-memory data modeling, you might **have** to use some of these resources, if your computer just doesn't have enough RAM to do the job.  But as always, please make sure that wherever you work with your data, you are in compliance with your IRB protocol and any other regulation.
-
-:::
-
-
-
 ## Q&A / Was This Effective? {.smaller}
 
 We like to measure our effectiveness (and analyze it in R!)
@@ -623,12 +578,25 @@ Goals:
 
 ::: notes
 
-Now, this is not the final slide, but we're a group that likes to measure our effectiveness and make changes based on what we learn.  So before we do questions and answers, we like to make sure to give our learners a poll to see if we made a good use of your time.  We're going to ask if we were effective in reaching our goals today, and those goals are on the screen in order to help you answer that question.  Once you answer that poll, feel free to type a question into chat or come off mute and ask to clarify anything I can explain a bit better.  I'll stop our session of Q&A with about 5 minutes to spare because I do have just a couple of finishing slides I want to show.
+The Arcus education team is a group that likes to measure our effectiveness and make changes based on what we learn.  So before we do questions and answers and our final slides, we like to make sure to give our learners a poll to see if we made a good use of your time.  We're going to ask if we were effective in reaching our goals today, and those goals are on the screen in order to help you answer that question.  Once you answer that poll, feel free to type a question into chat or come off mute and ask to clarify anything I can explain a bit better.  
 
 :::
 
+
+
 ## Next Session
 
-Session 2:
+Projects and File Ingestion
 
+  * File systems can be challenging to navigate
+  * Projects in RStudio
+  * Installing and loading packages
+  * Tabular data ingestion from .csv files
+  * Functions in R
+
+
+::: notes
+
+In our next session, we're going to talk about projects, ingesting data, and functions in R.  You'll get to work with real clinical data from the University of California, Irvine Machine Learning Data Repository, so next session is when things start to get fun.  Thanks so much for your time, and I look forward to seeing you next time!
+:::
 
