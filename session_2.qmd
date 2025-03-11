@@ -111,6 +111,7 @@ Projects and File Ingestion
   * Projects in RStudio
   * Installing and loading packages
   * Tabular data ingestion from .csv files
+  * Functions in R
 
 Goals:
 
@@ -121,7 +122,9 @@ Goals:
 ::: notes
 So let's get started with this second session. In this session we're going to hit the ground running.  You need to already have a Posit.cloud account, so if you don't have that, it is absolutely critical that you pay attention in the next slide.
 
-We're going to have you go into your Posit account and start a new project.  We'll explain why projects are so useful, and we'll get you working with your first few lines of actual R code!
+We're going to have you go into your Posit account and start a new project.  We'll explain why projects are so useful, and go over installing and loading packages, ingesting data, and functions in R.
+
+Here are our goals.  By the end of today I want you to be able to create a project and install a package (which may already be something you did last time).  I want you to be able to explain when you'll use install dot packages and when you'll use library, and I want you to be able to ingest data from a .csv file and examine that data in RStudio.
 :::
 
 
@@ -188,7 +191,7 @@ It's much cleaner and safer to work using Projects, in which all the related ana
 * But we suggest using an add-on package called `tidyverse` instead.
 
 ::: notes
-Great, so you have a Project in Posit.cloud.  And in the exercise files in that project, we've supplied you with some data, some real research data that's publicly available, to get you started.  The first step in the data analysis pipeline is to bring in, import, or ingest the data into your R session. 
+Great, so you have a Project in Posit.cloud.  And among the files in that project, we've supplied you with some data, some real research data that's publicly available, to get you started.  The first step in the data analysis pipeline is to bring in, import, or ingest the data into your R session. 
 
 One very important thing to note is that you will need to install R packages into your copy of this project. At first we really wanted to have all your packages pre-loaded, but now we see the wisdom of teaching you how to install and load packages right away. It may take a few more minutes of our time today, but this is a crucial skill that you definitely need to develop. We'll make sure to slow down and ensure that you get the packages installed that you need in order to do this work!
 :::
@@ -253,7 +256,7 @@ countdown(minutes = 1, seconds = 0)
 ```
 
 ::: notes
-If you were in our first session, you may have already done this.  You're welcome to do it again if you like! 
+If you were in our first session, you probably already installed tidyverse.  You're welcome to do it again if you like! 
 
 In the lower right pane of your project, you should see a "Files" tab.  Go into the "solutions" folder there and click on "setup.qmd".  That will open up **our** version of the setup document.  Yours will look a little different, and that's okay.
 
@@ -261,9 +264,9 @@ You will get a lot of output in your console window if you're installing this fo
 
 [Start timer]
 
-OK, let me go to my Posit.cloud account, open up my project here, and look in my file explorer.  I'll open up the solutions folder and click on setup.qmd.  
+OK, let me go to my Posit.cloud account, open up my project here, and look in my file explorer.  I'll open up the solutions folder and click on setup.qmd.  That will open the file.
 
-Then I'll just glance over this bit of explanatory text, and if I want, I can go back and forth between Visual and Source to understand how the markdown here in Source gets formatted nicely in the Visual view.  Whether in Visual or in Source, I can run this code chunk with the green button.
+Then I'll just glance over this bit of explanatory text, and then run this code chunk with the green "play" button.
 
 [Go back to slides]
 :::
@@ -283,18 +286,18 @@ Then I'll just glance over this bit of explanatory text, and if I want, I can go
 :::::
 
 ::: notes
-The **tidyverse** is package (a collection of functions, data, and help documentation) that we can use to extend the innate functionality of R, which is often referred to as "base R". In fact, tidyverse is special because it a package of packages -- it's a group of packages that work together to do a number of tasks related to importing, reshaping, visualizing, and analyzing data.
+The **tidyverse** is package.  A package is a collection of functions, sometimes some data, and often some really useful help documentation that we can use to extend the basic R language, also known as "base R". Tidyverse is a package that in fact contains multiple other packages that work together to do a number of tasks related to importing, reshaping, visualizing, and analyzing data.
 
-You can download and **install** a package with the command `install.packages`. For example, to install the tidyverse package, you would use `install.packages("tidyverse")`. Each package you want to use needs to be installed only once on each computer for any given version of that package.
+You can download and **install** a package with the command `install.packages`. For example, to install the tidyverse package, you would use `install.packages("tidyverse")`. Each package you want to use needs to be installed only once on each computer or each Posit.cloud project for any given version of that package.
 
-Make sure you **include the quotes** when you use `install.packages`. When to use quotes is a tricky topic, but for now, keep in mind that you will *always* need to put quotes around the name of a package whenever using `install.packages()`.
+Make sure you **include the quotes** around package names when you use `install.packages`. Learning when to use quotes is kind of a trial and error thing in R, but you should use it here.
 
-After you've installed the package, in order to use the functions that it provides, you also need to **load** the package into the computer's memory. This is done with the command `library`. And you want to use `library` every single time you start a new analysis that will use that functionality.  
+After you've installed the package, in order to use the functions that it provides, you also need to tell R to **load** the package into memory. This is done with the command `library`. And you want to use `library` every single time you start a new analysis that will use that functionality.  
 :::
 
 ## read_csv()
 
-![](media/function_0.png){.two-thirds fig-align="center"}
+`data_frame <- read_csv(file_name)`
 
 ![](media/csv_import.png){.half fig-align="center"}
 
@@ -304,9 +307,11 @@ We can import CSV files using the `read_csv()` function.
 Let's go over how you use the `read_csv` function to read a CSV file into a data frame object. A data frame is a type of object in R that holds tabular data: data with rows and columns.
 :::
 
-## Functions
+## Functions {.smaller}
 
-![](media/function_1.png){.two-thirds fig-align="center"}
+`data_frame <- read_csv(file_name)`
+
+* `read_csv` is the **function** name
 
 ::: notes
 This code construct is exceedingly common in R, and it's a good moment to explain **functions**.
@@ -318,9 +323,12 @@ You may be familiar with functions from math class or perhaps also from formulas
 For the `read_csv` function, the input is the file name of a CSV file; and the output is a data frame, a new object created in your R environment, which contains the contents of that .csv file.
 :::
 
-## Functions
+## Functions {.smaller}
 
-![](media/function_2.png){.two-thirds fig-align="center"}
+`data_frame <- read_csv(file_name)`
+
+* `read_csv` is the **function** name
+* `file_name` is an **argument** passed to the function.
 
 ::: notes
 In the snippet of code that reads in a csv to create a data frame, we have a **function** with an **argument** that creates an **object**.
@@ -330,17 +338,26 @@ The input that goes into a function is called an **argument**. The argument to a
 A function can have zero, one, or many arguments. If there is more than one argument, we use commas to separate them.
 :::
 
-## Functions
+## Functions {.smaller}
 
-![](media/function_3.png){.two-thirds fig-align="center"}
+`data_frame <- read_csv(file_name)`
+
+* `read_csv` is the **function** name
+* `file_name` is an **argument** passed to the function.
+* `data_frame` is a named **object** that will receive the **output** of the function.
 
 ::: notes
 The output of the `read_csv` function is a data frame object. You want to store that data inside of a named object so you can use it in R later for other things. For example, after you read in your csv, you might want to summarize or visualize your data.
 :::
 
-## Functions
+## Functions {.smaller}
 
-![](media/function_4.png){.two-thirds fig-align="center"}
+`data_frame <- read_csv(file_name)`
+
+* `read_csv` is the **function** name
+* `file_name` is an **argument** passed to the function.
+* `data_frame` is a named **object** that will receive the **output** of the function.
+* `<-` is the **assignment operator** that makes what's on the right be assigned to the named object on the right
 
 ::: notes
 To put the output of the `read_csv` function into a named object, we use the **assignment operator**.
@@ -362,7 +379,7 @@ You might notice that one of our "covid testing" objects is put in quotes and th
 
 To be honest, quotes in R can be super confusing. A couple of rules are:
 
--   Names of objects such as data frames don't get quotes.
+-   Names of objects in R's environment don't get quotes.
 -   Literal file names are always put in quotes.
 -   When you're referring to a string value, like "abc123" or "jones", you have to use quotes.
 -   Names of packages, when you're installing especially, use quotes
@@ -370,6 +387,16 @@ To be honest, quotes in R can be super confusing. A couple of rules are:
 
 Sometimes, either quoting or not quoting works. This is one of the things where you will get a good sense but not until after some trial and error. If a line of code you're working on doesn't seem to be working as you expect, sometimes adding or removing quotes can be a good place to start when trying to figure it out.
 :::
+
+## Hands-on {.smaller}
+
+* Go into your First Steps in R and RStudio Exercises project in Posit.cloud
+* Go into the File tab in the lower right pane
+* Find the "Exercises" folder
+* Click on "session_2.qmd".
+* Read through that file and complete the exercises!
+* We'll give you a few minutes to complete this.
+
 
 ## Bonus Content: File Paths -- the "where" {.smaller}
 

@@ -1,0 +1,116 @@
+---
+format: 
+  revealjs:
+    theme: [serif, custom.scss]
+    scrollable: true
+    logo: media/chop_arcus_initiative_logo.png
+    footer: Arcus Education, Children's Hospital of Philadelphia 
+    css: styles.css
+---
+
+
+## Welcome {.smaller}
+
+These slides available at: <https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html>
+
+-   Use keyboard arrow keys to
+    -   advance ( → ) and
+    -   go back ( ← )
+-   Type "s" to see speaker notes
+-   Type "?" to see other keyboard shortcuts
+
+
+
+```{r echo = FALSE}
+library(countdown)
+```
+
+
+
+
+::: notes
+As always, I'd like to encourage you to open these slides on your own browser, and this first slide helps with tips for you to use the slide deck.
+:::
+
+## About Arcus / Your Presenter {.smaller}
+
+::::: {.columns .v-center-container}
+::: {.column .small-text width="60%"}
+Arcus is an initiative by the Research Institute aimed at promoting data discovery and reuse and increasing research reproducibility.
+
+-   Arcus app: <https://arcus.chop.edu>
+-   Arcus Sharepoint site: <https://chop365.sharepoint.com/sites/Arcus>
+
+Among the many teams in Arcus, I represent Arcus Education!
+
+![](media/arcus_website.png){.two-thirds .bordered}
+:::
+
+::: {.column .small-text width="40%"}
+![](media/arcus_research_data_lifecycle.png)
+:::
+:::::
+
+::: notes
+
+Thanks again for joining us, and welcome to our session today!   My name is ______ [add pronouns here if you want], and I'll be leading today's session.
+
+I've already talked a bit about Arcus in the first session of this Skills Series, so I'll just say that Arcus is an initiative by the Research Institute aimed at promoting data discovery and reuse and increasing research reproducibility.
+:::
+
+## Arcus Education
+
+::::: {.columns .v-center-container}
+::: {.column .small-text width="50%"}
+![](media/arcus_education_page.png){.bordered}
+:::
+
+::: {.column .small-text width="50%"}
+Arcus education provides data science training to researchers ...
+
+(and often this is useful to non-researchers too!).
+
+<https://arcus.chop.edu/i-want-to/arcus-education>
+
+Email us! [arcus-education\@chop.edu](mailto:arcus-education@chop.edu){.email}
+:::
+:::::
+
+::: notes
+The Arcus Education team does lots of different kinds of education, and we've already discussed this previously in other workshop sessions.  You can always email us at arcus dash education at chop dot edu to ask about how we can help you!
+:::
+
+
+## First Steps in R and RStudio {.smaller}
+
+Arcus Education provides "Skills Series" for the entire CHOP community.
+
+This Skills Series is a 5-session series aimed at helping you take your first steps in R and RStudio!
+
+-   Session 1: Review and Setup
+-   Session 2: Projects and File Ingestion
+-   Session 3: Exploring Data Visually, Using ggplot2
+-   Session 4: Selecting Data Using dplyr
+-   Session 5: Putting it All Together: Communicating
+
+::: notes
+Just a reminder about what you're in today.
+
+This is a five-session series, and our goal is to help you get started taking your first steps.  Today, we're in session three, right smack dab in the middle of our work together.
+:::
+
+## Session 3 Itinerary {.smaller}
+
+Exploring Data Visually, Using ggplot2
+
+  * ggplot2 syntax
+  * Mapping Aesthetics 
+  * Setting Visuals
+  * Color Palettes
+
+Goals:
+
+- 
+-
+-
+

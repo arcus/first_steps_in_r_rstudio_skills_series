@@ -6,7 +6,9 @@ Welcome to First Steps in R and RStudio!
 
 This series is intended to be a gentle introduction to using R and RStudio for people who interact with data and want to work in the R statistical programming language. This course is geared towards beginners who are comfortable doing basic tasks with data that comes in rows and columns (for example, organizing data in Excel) but have no programming background.
  
-The workshop will cover how to get started using the R statistical programming language in your work. We'll talk about how to import data, transform data, and create data visualizations in R.  To keep this workshop series short, our scope is limited, and we won't go into details that are specific to the conduct of research, like modeling and statistical tests. For that, we are planning a future Skills Series we're going to call Next Steps in R for Research. For this workshop series, we assume you know what R and RStudio are and have some ideas about why they're useful.  If you don't know what R or RStudio are, we suggest you view the slides and recordings from [Demystifying R and RStudio](https://github.com/arcus/demystifying_r_rstudio_skills_series), or attend the next time that two-session workshop series is offered.
+The workshop will cover how to get started using the R statistical programming language in your work. We'll talk about how to import data, transform data, and create data visualizations in R.  To keep this workshop series short, our scope is limited, and we won't go into details that are specific to the conduct of research, like accessing the REDCap API, using modeling and machine learning, and applying statistical tests. For that, we are planning a future Skills Series we're going to call Next Steps in R for Research. For this workshop series, we assume you know what R and RStudio are and have some ideas about why they're useful.  If you don't know what R or RStudio are, we suggest you view the slides and recordings from [Demystifying R and RStudio](https://github.com/arcus/demystifying_r_rstudio_skills_series), or attend the next time that two-session workshop series is offered.
+
+Besides the skills you'll acquire in writing R code and using the RStudio IDE, you'll also develop vocabulary useful for describing what you want to accomplish, and that will help you search for resources online or describe your problem to an LLM like CHOP GPT for help creating R code.
 
 ## Pre-requisites: What you should **know**:
 
@@ -58,6 +60,12 @@ Material in later sessions does build on work done in earlier sessions, but don'
   * Posit.cloud: our environment for this course
   * Git and GitHub: Out of scope but very useful!
   * Getting R and RStudio at CHOP
+  
+Goals:
+
+-  Use Source and Visual views in RStudio to learn about markdown
+-  Create a new code chunk in a Quarto document
+-  Run a code chunk in a Quarto document
 
 - **Session 2: Projects and File Ingestion**
 
@@ -66,6 +74,12 @@ Material in later sessions does build on work done in earlier sessions, but don'
   * Installing and loading packages
   * Tabular data ingestion from .csv files
 
+Goals:
+
+- Be able to explain when to use `install.packages()` and when to use `library()`
+- Ingest data from a .csv into a data frame and examine it
+- Render a quarto document to an output format (html)
+
 - **Session 3: Exploring Data Visually, Using ggplot2**
 
   * ggplot2 syntax
@@ -73,13 +87,37 @@ Material in later sessions does build on work done in earlier sessions, but don'
   * Setting Visuals
   * Color Palettes
   
+Goals:
+
+- Describe what an "aesthetic mapping" is in ggplot2
+- Create a simple ggplot2 data visualization
+- Add a label (like a title or an x-axis label) to a plot in ggplot2
+  
 - **Session 4: Selecting Data Using dplyr**
 
   * Selecting columns
   * Filtering rows
   * Creating new columns
+  
+Goals:
+
+- Describe what a "factor" variable is in R and why it's important to use it 
+- Use "select" and "filter" to subset data
+- Use "group by" and "summarize" to get group-level statistics
 
 - **Session 5: Putting it All Together: Communicating**
+
+  * Create a new document
+  * Explore a question
+  * Create a visualization
+  * Next steps for using R/RStudio
+  
+Goals:
+
+- Use text and markdown to describe analysis tasks in an organized, attractive document
+- Find useful examples from previous code and apply them to current work
+- Work with error messages and help files successfully
+
 
 
 
