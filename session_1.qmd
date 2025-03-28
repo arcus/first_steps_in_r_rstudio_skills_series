@@ -84,7 +84,7 @@ Email us! [arcus-education\@chop.edu](mailto:arcus-education@chop.edu){.email}
 :::::
 
 ::: notes
-The Arcus Education team does lots of different kinds of education. We work one on one with researchers in office hours, we write how-to guides to help people understand how to use Arcus tools, we create asynchronous modules that people can use to acquire skills in their own time, and we do synchronous events like this one.
+The Arcus Education team does lots of different kinds of education. We've been around since 2017, and we work one on one with researchers in office hours, we write how-to guides to help people understand how to use Arcus tools, we create asynchronous modules that people can use to acquire skills in their own time, and we do synchronous events like this one.
 
 Sometimes we focus on Arcus customers, on researchers at CHOP who are doing research within the Arcus data sharing paradigm, and sometimes we broaden our reach to larger audiences, because we know that helping everyone acquire data science skills will help improve the conduct of science at CHOP and help build a data-driven workforce.
 
@@ -223,11 +223,11 @@ That's why we have our students use Posit.cloud to learn R and RStudio.  Posit.c
 
 HOWEVER, we want to make one thing very clear!  Posit.cloud is absolutely NOT an appropriate place for regulated health care data.  It's for **practicing** and **learning** using **public datasets**.  If you're going to use R for CHOP data, you should start the process of getting R and RStudio installed on your CHOP device so that you can transfer those skills to real-life work right away.  If you want to learn more about that, there are slides about that in the Demystifying R and RStudio Skills Series that will help you.
 
-For now, please, if you already have a Posit account, please log in to it.  If you don't have a Posit account, please go to https://posit.cloud and create a free account.  When you have your Posit account created, please give us a thumbs up on the comment in the chat, so I can measure progress.  I'll give you three minutes to start and we'll see where we stand.  [Click the timer, and copy/paste the comment "I have a Posit.cloud account and I'm logged in there!" into chat].
+For now, please, if you already have a Posit account, please log in to it.  If you don't have a Posit account, please go to https://posit.cloud and create a free account.  When you have your Posit account created, please give us a thumbs up on the comment in the chat, so I can measure progress.  I'll give you two minutes to start and we'll see where we stand.  [Click the timer, and copy/paste the comment "I have a Posit.cloud account and I'm logged in there!" into chat].
 
 :::
 
-## Git and GitHub: Out of scope {.smaller}
+## Git and GitHub Desktop: Out of scope {.smaller}
 
 ... but very useful version control software.
 
@@ -242,13 +242,13 @@ Version control allows you to track, for text-based files:
 
 ::: notes
 
-Git and GitHub are complex and very useful software.  We could do a skills series, or in fact several skills series, just on these!  If anyone uses them for work and wants to let us know how often they use it or what they use it for, drop a message in chat.  I'm curious to see how other people use version control at CHOP!
+Git and GitHub Desktop are complex and very useful software.  We could do a skills series, or in fact several skills series, just on these!  If anyone uses them for work and wants to let us know how often they use it or what they use it for, drop a message in chat.  I'm curious to see how other people use version control at CHOP!
 
-Version control software allows you to record changes to text-based files, including what changed in the file or files, when the change was made, who made the change, and why.  Much like the relationship between R and RStudio, Git is the original software and GitHub was built to make using Git easier, and helpful but not necessary.
+Version control software allows you to record changes to text-based files, including what changed in the file or files, when the change was made, who made the change, and why.  Much like the relationship between R and RStudio, Git is the original software and GitHub, including GitHub Desktop, was built to make using Git easier, and it's helpful but not necessary.
 
 We won't go into all the details about how to use these software packages, but we use them daily in my team including for managing the files for these workshops.  When we start hands-on coding, you'll be hearing me mention GitHub.  You'll get the exercise files from there to work with.  If there's one thing I hope you remember about Git and GitHub, it's that they are very useful, and if you find them a real pain in the neck at first, hang in there, because they really truly are worth the effort to learn.  
 
-And the reason I'm bringing this up will become evident in the next couple of slides.  I'm going to recommend that if you get R and RStudio installed that you also get Git and GitHub Desktop installed on your CHOP computer as well.  Let's briefly talk about getting things installed at CHOP.
+And the reason I'm bringing this up will become evident in the next couple of slides, because you're going to install the exercise files from a Git repository.
 
 :::
 
@@ -274,13 +274,13 @@ countdown(minutes = 3, seconds = 0)
 ```
 
 ::: notes
-OK, we're going to start a new project in Posit.cloud.  This is your first hands-on work in this workshop, so get ready!  
+OK, we're going to start a new project in Posit.cloud.  This is the work that lays the foundation for everything else you're going to do in this workshop, so get ready!  
 
-You're going to find the "New Project" button in the upper right.  It's big and dark blue and it stands out a lot.  It's not quite so visible when you have RStudio on your own computer, just as a heads-up. 
+When you log in to Posit.cloud, you're going to find the "New Project" button in the upper right.  It's big and dark blue and it stands out a lot.  It's not quite so visible when you use RStudio Desktop on your own computer, just as a heads-up -- you have to find "New Project" in the menu system, it's not a big button like it is in Posit.cloud.
 
 You'll see there are a few options for a new Project.  You want to choose "New Project from Git Repository."
 
-What that means is that you're going to copy some files from an existing location that my team uses to store the exercise files, also known as a repository.  In the future, if we change anything to those files in the repository, you can update your copy, too, to stay up to date.
+What that means is that you're going to copy some files from an existing location that my team uses to store the exercise files.  This location is known as a repository.  In the future, if we change anything to those files in the repository, you can update your copy, too, to stay up to date.
 
 It will ask you for the URL of the repository.  That's where you want to type the URL shown in the slide:  https://github.com/arcus/first_steps_r_rstudio_exercises.  I'll copy and paste that into the chat so you have it.
 
@@ -310,7 +310,7 @@ OK, so that's it for cloning our project.  You now have your own copy of our exe
 
 :::
 
-## Create Your First R Code! {.smaller}
+## Create Your First Literate R Code! {.smaller}
 
 This is what we're going to do:
 
