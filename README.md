@@ -67,6 +67,8 @@ Goals:
 -  Create a new code chunk in a Quarto document
 -  Run a code chunk in a Quarto document
 
+Slides: https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_1.html
+
 **Session 2: Projects and File Ingestion**
 
   * File systems can be challenging to navigate
@@ -80,6 +82,8 @@ Goals:
 - Ingest data from a .csv into a data frame and examine it
 - Render a quarto document to an output format (html)
 
+Slides: https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html
+
 **Session 3: Exploring Data Visually, Using ggplot2**
 
   * ggplot2 syntax
@@ -92,6 +96,8 @@ Goals:
 - Describe what an "aesthetic mapping" is in ggplot2
 - Create a simple ggplot2 data visualization
 - Add a label (like a title or an x-axis label) to a plot in ggplot2
+
+Slides: https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_3.html
   
 **Session 4: Selecting Data Using dplyr**
 
