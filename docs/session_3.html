@@ -1,0 +1,2328 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-html/tabby.min.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.5.57">
+
+  <title>session_3</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="styles.css">
+  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+
+<section id="welcome" class="slide level2 smaller">
+<h2>Welcome</h2>
+<p>These slides available at: <a href="https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html" class="uri">https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html</a></p>
+<ul>
+<li>Use keyboard arrow keys to
+<ul>
+<li>advance ( → ) and</li>
+<li>go back ( ← )</li>
+</ul></li>
+<li>Type “s” to see speaker notes</li>
+<li>Type “?” to see other keyboard shortcuts</li>
+</ul>
+<aside class="notes">
+<p>As always, I’d like to encourage you to open these slides on your own browser, and this first slide helps with tips for you to use the slide deck.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="about-arcus-your-presenter" class="slide level2 smaller">
+<h2>About Arcus / Your Presenter</h2>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:60%;">
+<p>Arcus is an initiative by the Research Institute aimed at promoting data discovery and reuse and increasing research reproducibility.</p>
+<ul>
+<li>Arcus app: <a href="https://arcus.chop.edu" class="uri">https://arcus.chop.edu</a></li>
+<li>Arcus Sharepoint site: <a href="https://chop365.sharepoint.com/sites/Arcus" class="uri">https://chop365.sharepoint.com/sites/Arcus</a></li>
+</ul>
+<p>Among the many teams in Arcus, I represent Arcus Education!</p>
+<p><img data-src="media/arcus_website.png" class="two-thirds bordered"></p>
+</div><div class="column small-text" style="width:40%;">
+<p><img data-src="media/arcus_research_data_lifecycle.png"></p>
+</div></div>
+<aside class="notes">
+<p>Thanks again for joining us, and welcome to our session today! My name is ______ [add pronouns here if you want], and I’ll be leading today’s session.</p>
+<p>I’ve already talked a bit about Arcus in the first session of this Skills Series, but I’m including the slide here so that you have those links available in case you want to learn more about Arcus.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="arcus-education" class="slide level2">
+<h2>Arcus Education</h2>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:50%;">
+<p><img data-src="media/arcus_education_page.png" class="bordered"></p>
+</div><div class="column small-text" style="width:50%;">
+<p>Arcus education provides data science training to researchers …</p>
+<p>(and often this is useful to non-researchers too!).</p>
+<p><a href="https://arcus.chop.edu/i-want-to/arcus-education" class="uri">https://arcus.chop.edu/i-want-to/arcus-education</a></p>
+<p>Email us! <a href="mailto:arcus-education@chop.edu" class="email">arcus-education@chop.edu</a></p>
+</div></div>
+<aside class="notes">
+<p>The Arcus Education team does lots of different kinds of education, and we’ve already discussed this previously in other workshop sessions. You can always email us at arcus dash education at chop dot edu to ask about how we can help you!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="first-steps-in-r-and-rstudio" class="slide level2 smaller">
+<h2>First Steps in R and RStudio</h2>
+<p>Arcus Education provides “Skills Series” for the entire CHOP community.</p>
+<p>This Skills Series is a 5-session series aimed at helping you take your first steps in R and RStudio!</p>
+<ul>
+<li>Session 1: Review and Setup</li>
+<li>Session 2: Projects and File Ingestion</li>
+<li>Session 3: Exploring Data Visually, Using ggplot2</li>
+<li>Session 4: Selecting Data Using dplyr</li>
+<li>Session 5: Putting it All Together: Communicating</li>
+</ul>
+<aside class="notes">
+<p>Just a reminder about what you’re in today.</p>
+<p>This is a five-session series, and our goal is to help you get started taking your first steps. Today, we’re in session three, right smack dab in the middle of our work together.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="session-3-itinerary" class="slide level2 smaller">
+<h2>Session 3 Itinerary</h2>
+<p>Exploring Data Visually, Using ggplot2</p>
+<ul>
+<li>ggplot2 syntax</li>
+<li>Mapping Aesthetics</li>
+<li>Setting Visuals</li>
+<li>Color Palettes</li>
+</ul>
+<p>Goals:</p>
+<ul>
+<li>Describe what an “aesthetic mapping” is in ggplot2</li>
+<li>Create a simple ggplot2 data visualization</li>
+<li>Add a label (like a title or an x-axis label) to a plot in ggplot2</li>
+</ul>
+<aside class="notes">
+<p>Today, our topic is exploring data visually, using the ggplot2 package. We’ll go over how to use ggplot2, including some specific topics like mapping and setting visual elements and the use of color palettes.</p>
+<p>My goals for you today include the following. I’d like for you to be able to explain what an aesthetic mapping is in ggplot2, because this is an area where a lot of people tend to stumble. I hope you’ll have been able to create a simple ggplot2 visualization by the end of our session, and I think you’ll be able to add a label to a plot by the end of today. Let’s start by explaining what ggplot2 is!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ggplot2" class="slide level2">
+<h2>ggplot2</h2>
+
+<img data-src="media/ggplot2_hex.png" class="half quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>We’ll be using the <code>ggplot2</code> package for creating graphics. <code>ggplot2</code> is a package that forms part of the tidyverse, so it will get loaded when you load the tidyverse package.</p>
+<p><code>ggplot2</code> (and its main function, plain old <code>ggplot</code> without the 2) provides a “<strong>grammar of graphics</strong>” for data visualization. That’s what the “GG” is in ggplot: grammar of graphics. The idea of having a “grammar” for something is actually pretty common in R. Essentially, there should be a consistent way to build any type of “thing” in R, in this case, any type of graph. A common grammar that is easy to repeat every time.</p>
+<p>The idea of the grammar of graphics is that you should be able to specify any type of graph by specifying the data that goes into it, the type of graph that you want to make, and a mapping that describes how the data should be represented as visual marks on that graph.</p>
+<p>Having a consistent grammar means that once you learn how to make, say, a histogram, that knowledge can be applied to make a scatter plot or a box plot or a violin plot with little extra effort. This makes it easy to generate lots of different graphs quickly which helps you understand your data more quickly.</p>
+<p>Also, <code>ggplot2</code> graphs look great and the package can be used to generate publication-quality plots.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-grammar-of-ggplot" class="slide level2">
+<h2>The “grammar” of ggplot</h2>
+<div class="columns v-center-container">
+<div class="column smaller-text" style="width:35%;">
+<ul>
+<li>Step 1: Pick a tidy data frame to pass to <code>ggplot</code> as an argument</li>
+</ul>
+</div><div class="column smaller-text" style="width:40%;">
+<p><code>ggplot(data = cirrhosis_study)</code></p>
+</div><div class="column smaller-text" style="width:35%;">
+<ul>
+<li>Step 2: Pick a “geom” function</li>
+</ul>
+</div><div class="column smaller-text" style="width:40%;">
+
+</div><div class="column smaller-text" style="width:35%;">
+<ul>
+<li>Step 3: Write aesthetic mappings</li>
+</ul>
+</div><div class="column smaller-text" style="width:40%;">
+
+</div></div>
+<aside class="notes">
+<p>We’ll go over each of these steps in detail, but here is the overall grammar we’re going to talk about. There are also optional enrichment steps that you can add that will really make your data visualizations shine, but these are the absolutely required steps for the bare minimum kinds of plots.</p>
+<p>You first need to choose a tidy data frame. We’ll describe what a tidy data frame is in just a moment.<br>
+Then you will choose a geom, or a kind of visualization, a geometric representation. A geom might be a bar graph, or a line graph, for example. Finally, you’ll tell ggplot how to map the data to the visual parts of the geom you chose. What columns should be shown on which axes, for example?</p>
+<p>Let’s take a closer look at each step.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-1-tidy-data" class="slide level2">
+<h2>Step 1: Tidy Data</h2>
+<ul>
+<li>Columns measure <strong>just one variable</strong> and don’t have any merging or combining</li>
+<li>Rows each represent <strong>just one observation</strong> and don’t include variables</li>
+<li>There’s no merging of cells that make names or values shared</li>
+</ul>
+<aside class="notes">
+<p>A data set can take on a lot of different shapes with different styles of organizing data. The one method or shape that is best suited for data analysis is known as “tidy”.</p>
+<p>We won’t cover “tidy” data in detail in this workshop. It’s sufficient at this point to know that tidy data is in a rectangular shape with rows and columns, and:</p>
+<ul>
+<li>Columns each measure just one variable (so, no “doubling up” with first and last name in the same column, or race and gender in the same column) and</li>
+<li>Rows each constitute a single observation (like a patient, or a vial, or a city block) at a point in time</li>
+<li>Each value is in its own cell (with no merging or splitting of cells)</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-untidy-vs-tidy" class="slide level2">
+<h2>Example: Untidy vs Tidy</h2>
+<div class="columns v-center-container">
+<div class="column smaller-text" style="width:45%;">
+<p><strong>Untidy</strong></p>
+<span style="left: initial; text-decoration: inherit;"></span><table style="border: 1px black; font-size:50%; cellpadding:0.5em; cellspacing:0">
+<tbody><tr><td style="padding: 0.5em;
+border: 0px;">
+</td>
+<td colspan="2" style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 1</p>
+</td>
+<td colspan="2" style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 2</p>
+</td>
+<td colspan="2" style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 3</p>
+</td>
+<td colspan="2" style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 4</p>
+</td></tr>
+<tr><td style="padding: 0.5em;">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>pre</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>post</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>pre</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>post</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>pre</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>post</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>pre</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>post</p>
+</td>        </tr><tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 1</p>
+<p>(n=6m, 14f)</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>        </tr><tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 2</p>
+<p>(n=12m,8f)</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important"></td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+
+</td>        </tr><tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 3</p>
+<p>(n=10m, 10f)</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+</tr><tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 4</p>
+<p>(n=5m, 15f)</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td></tr></tbody></table>
+</div><div class="column smaller-text" style="width:55%;">
+
+</div></div>
+<aside class="notes">
+<p>OK, let’s say you study group performance. So you have several different groups that you bring into the lab. You’re doing an experiment where you form a team of 20 strangers, and you’re measuring their ability to perform four tasks as a team. You measure their performance before and after having them watch a full season of Dora the Explorer, to see if that improves their creativity and enthusiasm for adventure.</p>
+<p>On the left is the kind of table you might see published in a journal. It’s compact, but it is not tidy. You can see that the sex makeup of the teams, which varies from team to team, is listed in the rows. But that varies, which means it’s a variable, and variables should go in columns, not rows. And we also have header cells that merge across two columns. This is a perfectly adequate table for publication, but it’s not tidy and not ready for use in the tidyverse.</p>
+<p>We could make it tidy, and I’m going to show you how in the next slide.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-untidy-vs-tidy-1" class="slide level2">
+<h2>Example: Untidy vs Tidy</h2>
+<div class="columns v-center-container">
+<div class="column smaller-text" style="width:45%;">
+<p><strong>Untidy</strong></p>
+<span style="left: initial; text-decoration: inherit;"></span><table style="border: 1px black; font-size:50%; cellpadding:0.5em; cellspacing:0">
+<tbody><tr><td style="padding: 0.5em;
+border: 0px;">
+</td>
+<td colspan="2" style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 1</p>
+</td>
+<td colspan="2" style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 2</p>
+</td>
+<td colspan="2" style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 3</p>
+</td>
+<td colspan="2" style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 4</p>
+</td></tr>
+<tr><td style="padding: 0.5em;">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>pre</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>post</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>pre</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>post</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>pre</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>post</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>pre</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>post</p>
+</td>        </tr><tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 1</p>
+<p>(n=6m, 14f)</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>        </tr><tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 2</p>
+<p>(n=12m,8f)</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important"></td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+
+</td>        </tr><tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 3</p>
+<p>(n=10m, 10f)</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+</tr><tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 4</p>
+<p>(n=5m, 15f)</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td></tr></tbody></table>
+</div><div class="column smaller-text" style="width:55%;">
+<p><strong>Tidy</strong></p>
+<span style="left: initial; text-decoration: inherit;"></span><table style="border: 1px black; font-size:50%; cellpadding:0.5em; cellspacing:0">
+<tbody>
+<tr><td style="padding: 0.5em;">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>Intervention Stage</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>N Males</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>N Females</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 1</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 2</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 3</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>Measure 4</p>
+</td>
+</tr>
+<tr>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 1</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+Pre
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+6
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+14
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+</tr>
+<tr>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 1</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+Post
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+6
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+14
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+</tr>
+<tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 2</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+Pre
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+12
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+8
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td></tr>
+<tr>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 2</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+Post
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+12
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+8
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+</tr>
+<tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 3</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+Pre
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+10
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+10
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td></tr>
+<tr>
+<td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 3</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+Post
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+10
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+10
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+</tr>
+<tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 4</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+Pre
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+5
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+15
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td></tr>
+<tr><td style="padding: 0.5em; border: 1px solid black !important">
+<p>Team 4</p>
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+Post
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+5
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+15
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td>
+<td style="padding: 0.5em; border: 1px solid black !important">
+</td></tr>
+</tbody></table>
+</div></div>
+<aside class="notes">
+<p>On the left is our not tidy data, and on the right, I’ve made it tidy.</p>
+<p>Let’s think about what columns are and what rows are. Rows are observations, and the fact is that we observe each team twice, so we’re going to have two rows for each team.</p>
+<p>And columns are variables. What can be different from observation to observation? Well, pre versus post is one variable that we think and hope will change the outcome. The number of males and females can differ from group to group, too. These first three columns are just kind of re-arranged a little bit from the information we already had.</p>
+<p>Can everyone see that this is another way to capture the same data? It might not be as compact as what you would put in a print journal, but this is tidy data, which is what will make working in R possible! All the variables are in columns, all the observations are in rows, there’s no doubling up of values.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tidy-or-not-tidy" class="slide level2">
+<h2>Tidy, or Not Tidy?</h2>
+<div class="tiny-text">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">ID_Arm</th>
+<th style="text-align: left;">N_Days</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Age</th>
+<th style="text-align: left;">Sex</th>
+<th style="text-align: left;">AHS Status</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1_D</td>
+<td style="text-align: left;">400</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">21464</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">Y/Y/Y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2_D</td>
+<td style="text-align: left;">4500</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">20617</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/Y/Y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3_D</td>
+<td style="text-align: left;">1012</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">25594</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">N/N/N</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4_D</td>
+<td style="text-align: left;">1925</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">19994</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/Y/Y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5_P</td>
+<td style="text-align: left;">1504</td>
+<td style="text-align: left;">CL</td>
+<td style="text-align: left;">13918</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/Y/Y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6_P</td>
+<td style="text-align: left;">2503</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">24201</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/Y/N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7_P</td>
+<td style="text-align: left;">1832</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">20284</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/Y/N</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8_P</td>
+<td style="text-align: left;">2466</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">19379</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/N/N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9_D</td>
+<td style="text-align: left;">2400</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">15526</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/N/Y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10_P</td>
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">25772</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">Y/N/Y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11_P</td>
+<td style="text-align: left;">3762</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">19619</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/Y/Y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12_P</td>
+<td style="text-align: left;">304</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">21600</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/N/Y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13_P</td>
+<td style="text-align: left;">3577</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">16688</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/N/N</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">14_P</td>
+<td style="text-align: left;">1217</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">20535</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">Y/Y/N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15_D</td>
+<td style="text-align: left;">3584</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">23612</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/N/N</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16_P</td>
+<td style="text-align: left;">3672</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">14772</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/N/N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">17_P</td>
+<td style="text-align: left;">769</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">19060</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/Y/N</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">18_D</td>
+<td style="text-align: left;">131</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">19698</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N/Y/Y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="notes">
+<p>OK, so now I’d like to ask you – is this tidy data? Is there any data out of place, cells that are merged, rows that should be columns, columns that should be rows? The first column is the ID, which has the ID and the arm, which is either drug or placebo. The next column is the length of time the subject remained in the study. The third column is the final disposition of the subject, whether they left the study due to death, organ transplantation, or the end of the study. Then the age of the patient at the time they left the study, the sex of the patient, and their status with regard to ascites, hePATomegaly, and spider angiomas.</p>
+<p>What do you think? I’ll invite you to give your reasoning in chat.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="tidy-or-not-tidy-1" class="slide level2">
+<h2>Tidy, or Not Tidy?</h2>
+<div class="tiny-text">
+<table class="caption-top">
+<colgroup>
+<col style="width: 4%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 23%">
+<col style="width: 7%">
+<col style="width: 4%">
+<col style="width: 10%">
+<col style="width: 18%">
+<col style="width: 10%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">ID</th>
+<th style="text-align: left;">N_Days</th>
+<th style="text-align: left;">Status</th>
+<th style="text-align: left;">Drug</th>
+<th style="text-align: left;">Age</th>
+<th style="text-align: left;">Sex</th>
+<th style="text-align: left;">Ascites</th>
+<th style="text-align: left;">Hepatomegaly</th>
+<th style="text-align: left;">Spiders</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">400</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">D-penicillamine</td>
+<td style="text-align: left;">21464</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">Y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">4500</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">D-penicillamine</td>
+<td style="text-align: left;">20617</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">Y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3</td>
+<td style="text-align: left;">1012</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">D-penicillamine</td>
+<td style="text-align: left;">25594</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">1925</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">D-penicillamine</td>
+<td style="text-align: left;">19994</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">Y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">5</td>
+<td style="text-align: left;">1504</td>
+<td style="text-align: left;">CL</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">13918</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">Y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">6</td>
+<td style="text-align: left;">2503</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">24201</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">1832</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">20284</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">N</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">2466</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">19379</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">2400</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">D-penicillamine</td>
+<td style="text-align: left;">15526</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">10</td>
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">25772</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">11</td>
+<td style="text-align: left;">3762</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">19619</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">Y</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">304</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">21600</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Y</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">13</td>
+<td style="text-align: left;">3577</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">16688</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">14</td>
+<td style="text-align: left;">1217</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">20535</td>
+<td style="text-align: left;">M</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">3584</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">D-penicillamine</td>
+<td style="text-align: left;">23612</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">16</td>
+<td style="text-align: left;">3672</td>
+<td style="text-align: left;">C</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">14772</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">N</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">17</td>
+<td style="text-align: left;">769</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">Placebo</td>
+<td style="text-align: left;">19060</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">N</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">18</td>
+<td style="text-align: left;">131</td>
+<td style="text-align: left;">D</td>
+<td style="text-align: left;">D-penicillamine</td>
+<td style="text-align: left;">19698</td>
+<td style="text-align: left;">F</td>
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">Y</td>
+</tr>
+</tbody>
+</table>
+</div>
+<aside class="notes">
+<p>OK, and is this data in a tidy format? This, by the way, is a snippet of the actual data you’re working with in this series.</p>
+<p>Let me know what you think in chat. Yes, indeed, this is tidy data!</p>
+<p>Importantly, for these five workshop sessions, we’re giving you data that’s already in a tidy data format. We’re not going to go over how to make your data tidy, because that work is boring and I want you to have fun doing the exciting stuff that will get you enthusiastic about R. I’m giving you some data that’s artificially beautiful. Real research data is messy, and real clinical data is even messier.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-grammar-of-ggplot-1" class="slide level2">
+<h2>The “grammar” of ggplot</h2>
+<div class="columns v-center-container">
+<div class="column smaller-text" style="width:25%;">
+<ul>
+<li>Step 1: Pick a tidy data frame to pass to <code>ggplot</code> as an argument</li>
+</ul>
+</div><div class="column smaller-text" style="width:70%;">
+<p><code>ggplot(data = cirrhosis_study)</code></p>
+</div><div class="column smaller-text" style="width:25%;">
+<ul>
+<li>Step 2: Pick a “geom” function</li>
+</ul>
+</div><div class="column smaller-text" style="width:70%;">
+
+</div><div class="column smaller-text" style="width:25%;">
+<ul>
+<li>Step 3: Write aesthetic mappings</li>
+</ul>
+</div><div class="column smaller-text" style="width:70%;">
+
+</div></div>
+<aside class="notes">
+<p>So that was step 1. This is what it looks like in code. This is a very simple example, where we’re just passing the most important piece of information, the name of the tidy data frame, as the first argument to ggplot2.</p>
+<p>Let’s go on to Step 2.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-2-pick-a-geom-function" class="slide level2">
+<h2>Step 2: Pick a “geom” function</h2>
+<p>There are lots of ways to depict data geometrically:</p>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><img data-src="media/geom_histogram_mini.png"></p>
+</div><div class="column" style="width:40%;">
+<p><code>geom_histogram()</code></p>
+</div><div class="column" style="width:10%;">
+<p><img data-src="media/geom_dotplot_mini.png"></p>
+</div><div class="column" style="width:40%;">
+<p><code>geom_dotplot()</code></p>
+</div></div>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><img data-src="media/geom_bar_mini.png"></p>
+</div><div class="column" style="width:40%;">
+<p><code>geom_bar()</code></p>
+</div><div class="column" style="width:10%;">
+<p><img data-src="media/geom_boxplot_mini.png"></p>
+</div><div class="column" style="width:40%;">
+<p><code>geom_boxplot()</code></p>
+</div></div>
+<div class="columns">
+<div class="column" style="width:10%;">
+<p><img data-src="media/geom_point_mini.png"></p>
+</div><div class="column" style="width:40%;">
+<p><code>geom_point()</code></p>
+</div><div class="column" style="width:10%;">
+<p><img data-src="media/geom_line_mini.png"></p>
+</div><div class="column" style="width:40%;">
+<p><code>geom_line()</code></p>
+</div></div>
+<aside class="notes">
+<p>Here are a few useful geom functions for visualizing data, but there are many more. With these six you can make histograms, bar plots, scatter plots, dot plots, boxplots, and line graphs. Your data is probably very rich, and with the same data, you could show group distributions using a box plot or violin plot, or show time series data using a line plot, or show how two variables interact using a point plot, or show the frequency of various values using a histogram, or show correlation strength using a heatmap, or lots of other things, all with the same tidy data frame. So you have to think about what specific kind of data visualization you want!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-grammar-of-ggplot-2" class="slide level2">
+<h2>The “grammar” of ggplot</h2>
+<div class="columns v-center-container">
+<div class="column smaller-text" style="width:25%;">
+<ul>
+<li>Step 1: Pick a tidy data frame to pass to <code>ggplot</code> as an argument</li>
+</ul>
+</div><div class="column smaller-text" style="width:70%;">
+<p><code>ggplot(data = cirrhosis_study) +</code></p>
+</div><div class="column smaller-text" style="width:25%;">
+<ul>
+<li>Step 2: Pick a “geom” function</li>
+</ul>
+</div><div class="column smaller-text" style="width:70%;">
+<p><code>geom_histogram()</code></p>
+</div><div class="column smaller-text" style="width:25%;">
+<ul>
+<li>Step 3: Write aesthetic mappings</li>
+</ul>
+</div><div class="column smaller-text" style="width:70%;">
+
+</div></div>
+<aside class="notes">
+<p>So now we’ve added a bit to our code. We’ve put a plus sign after the first line of code, which is a way to tell ggplot that we’re going to add a new layer to our data visualization. ggplot2 works by allowing you to add layer upon layer of geometric visualizations, labels, themes, and adjustments to your graph, so that you build it up a little at a time. That plus sign says, “I’m not done yet, please keep reading!”.</p>
+<p>The second line of code says “I’d like this specific shape, please: a histogram.” ggplot knows what a histogram is. So you’re one step closer to that visualization. But you’re not done yet. ggplot knows that it needs one variable to be able to make a histogram. It doesn’t need two, as in the case of, say, a scatter plot of points, where it would need an X and a Y axis value. No, it just needs one value, because it’s going to plot the frequency of various values of this variable. But you haven’t told it which variable you want to use!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="step-3-aesthetic-mappings" class="slide level2">
+<h2>Step 3: Aesthetic Mappings</h2>
+
+<img data-src="media/aesthetics.png" class="half quarto-figure quarto-figure-center r-stretch"><p>Aesthetic mappings connect <strong>columns</strong> to visible <strong>attributes</strong>.</p>
+<aside class="notes">
+<p>OK, so aesthetic mappings can be tricky. So if you’re multi-tasking, I need you to stop writing that email, because this is where a lot of people trip up and make mistakes, including me, and I’ve been coding in R for a decade.</p>
+<ul>
+<li>An <strong>aesthetic mapping</strong> is a rule that tells ggplot how to visualize the data, for example, using color or position, according to the value of a <strong>specific column of the data</strong>. These are elements that would result in a different looking visualization if you were to change the data being provided. For example, the height of a bar changes depending on the data. Maybe you might show female patients as dots of one color and male patients as dots of another color, so if you correct a patient’s sex in the data, their dot will change color. You’re <strong>mapping</strong> patient sex to a visible characteristic, color. It’s really important to remember that mapping aesthetics will always come down to <strong>selecting a specific column</strong> from your data frame.</li>
+</ul>
+<p>Of course, there are other visual elements of a data visualization that <strong>wouldn’t</strong> automatically change if you change the data you provide. For instance, maybe we just like green and we want ALL the points on our graph to be green. We’re not changing the color based on data, we’re not connecting the color to just one column of data, so it’s not considered a mapping. When we’re setting a fixed aesthetic that isn’t affected by data, we don’t put these assignments inside the aes parentheses. We don’t MAP those within aesthetics, we SET those outside.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="aesthetic-mappings" class="slide level2">
+<h2>Aesthetic Mappings</h2>
+<div class="columns v-center-container">
+<div class="column" style="width:45%;">
+<div class="smaller-text">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Spiders</th>
+<th style="text-align: left;">Cholesterol</th>
+<th style="text-align: left;">Albumin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">261</td>
+<td style="text-align: left;">2.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">302</td>
+<td style="text-align: left;">4.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">176</td>
+<td style="text-align: left;">3.48</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">244</td>
+<td style="text-align: left;">2.54</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">279</td>
+<td style="text-align: left;">3.53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">248</td>
+<td style="text-align: left;">3.98</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">322</td>
+<td style="text-align: left;">4.09</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="column" style="width:55%;">
+<p>Spiders: <span style="color:blue">•</span><span style="color:red">•</span> (Color)</p>
+<p>Cholesterol: ↔︎ (X axis)</p>
+<p>Albumin: ↕ (Y axis)</p>
+</div></div>
+</section>
+<section id="aesthetic-mappings-1" class="slide level2">
+<h2>Aesthetic Mappings</h2>
+<div class="columns v-center-container">
+<div class="column" style="width:45%;">
+<div class="smaller-text">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Spiders</th>
+<th style="text-align: left;">Cholesterol</th>
+<th style="text-align: left;">Albumin</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">261</td>
+<td style="text-align: left;">2.6</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">302</td>
+<td style="text-align: left;">4.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">176</td>
+<td style="text-align: left;">3.48</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">244</td>
+<td style="text-align: left;">2.54</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Y</td>
+<td style="text-align: left;">279</td>
+<td style="text-align: left;">3.53</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">248</td>
+<td style="text-align: left;">3.98</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">N</td>
+<td style="text-align: left;">322</td>
+<td style="text-align: left;">4.09</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div><div class="column" style="width:55%;">
+<p>Spiders: <span style="color:blue">•</span><span style="color:red">•</span> (Color)</p>
+<p>Cholesterol: ↔︎ (X axis)</p>
+<p>Albumin: ↕ (Y axis)</p>
+<pre><code>
+
+mapping = aes(x = Cholesterol,
+              y = Albumin,
+              color = Spiders)
+              
+              </code></pre>
+</div></div>
+<aside class="notes">
+<p>Don’t worry if mapping aesthetics versus setting fixed aesthetics seems a bit fuzzy at first – it can be tricky to grapple with, and will become clearer over time as you gain more experience manipulating visualizations in R. Even advanced coders sometimes mess this up.</p>
+<p>Let’s consider an example in our cirrhosis data frame.</p>
+<p>We can imagine mapping the values in the “Cholesterol” column, which is numerical, to the x axis. With the “Albumin” column, also numerical, we can map those values to the y axis. And for the column called “Spiders”, which has categorical data with “Y” and “N” values, we can imagine mapping that to colors.</p>
+<p>Can you envision what that graph might look like? It would probably be a scatter plot that would have points of two different colors, at least that’s what I’m picturing in my mind.</p>
+<p>The mapping in ggplot would be within the aes parentheses, as you see on your screen.</p>
+<p>Note that R automatically figures out reasonable axis limits and a color scale, but you can fine tune this manually.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="participation-time" class="slide level2 smaller">
+<h2>Participation Time!</h2>
+
+<img data-src="media/aesthetics.png" class="half quarto-figure quarto-figure-center r-stretch"><p>In addition to x/y position and color, what other aesthetic <strong>mappings</strong> can you think of?</p>
+<p>(Hint: things that don’t change when the data changes, like the background color of a graph or the font or title of a graph, aren’t <strong>mappings</strong>).</p>
+<p>Type your answers in the chat!</p>
+<aside class="notes">
+<p>Okay, time to fire up the chat window again. Type into chat some examples of other aesthetic <strong>mappings</strong>. Keep in mind that if something is set in a fixed way and it’s the same regardless of the data, that’s not a mapping.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-grammar-of-ggplot-3" class="slide level2">
+<h2>The “grammar” of ggplot</h2>
+<div class="columns v-center-container">
+<div class="column smaller-text" style="width:25%;">
+<ul>
+<li>Step 1: Pick a tidy data frame to pass to <code>ggplot</code> as an argument</li>
+</ul>
+</div><div class="column smaller-text" style="width:70%;">
+<p><code>ggplot(data = cirrhosis_study) +</code></p>
+</div><div class="column smaller-text" style="width:25%;">
+<ul>
+<li>Step 2: Pick a “geom” function</li>
+</ul>
+</div><div class="column smaller-text" style="width:70%;">
+<p><code>geom_histogram(aes (x = Cholesterol))</code></p>
+</div><div class="column smaller-text" style="width:25%;">
+<ul>
+<li>Step 3: Write aesthetic mappings</li>
+</ul>
+</div><div class="column smaller-text" style="width:70%;">
+<p>(you can put these in either of the 2 lines above…)</p>
+</div></div>
+<aside class="notes">
+<p>OK, so we’ve gotten to the mapping bits. We know we have to put an aes function in, but where does it go? The answer is that it can go in a couple of places. We’ve said we want to do a histogram, which only needs a single variable defined, the X axis variable. Let’s say we want to map the Cholesterol column to that x axis. If you want, you can put the aes function that maps your Cholesterol to your x axis all the way at the top, in the ggplot function. The benefit to doing that is that every geom that you add on as a layer will inherit that and will know that Cholesterol maps to the x axis. Some people like doing it that way.</p>
+<p>But I prefer to put the aes, the aesthetic mapping, in the geom function. That’s because sometimes I will have several different geoms and I want to map different things in different geoms. It’s a little tricky to think about, so for now what I want you to do is put the mapping in the geom you’re working in, but I want you to not be too surprised if you see that some people put it at the top, in the ggplot part of the syntax. That’s okay, too, and it just gets inherited by all the geoms below it.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="your-turn" class="slide level2 smaller">
+<h2>Your Turn!</h2>
+<ul>
+<li>Go to https://posit.cloud and log in.</li>
+<li>Find your First Steps in R and RStudio project and open it</li>
+<li>In the file browser (lower right), navigate to Exercises</li>
+<li>Open session_3_exercise.qmd, and start reading and working in it!</li>
+<li>If you <strong>save</strong> this file, save it with your initials at the end (rename it).</li>
+<li>If you get stuck, there’s a solutions file in the “solutions” folder, or jump into chat!</li>
+<li>I’d love for everyone to work quietly for around 10 minutes, and then I’ll demo “Your Turn” 1-6.</li>
+<li>You can do as many as you like: 1-6 will get you through today’s goals, 7-14 are “bonus content”!</li>
+<li>I’ll stop us all for a couple of closing slides and for Q&amp;A as we get close to the end of the hour.</li>
+</ul>
+</section>
+<section id="summary-of-today" class="slide level2 smaller">
+<h2>Summary of Today</h2>
+<p>Today, you:</p>
+<ul>
+<li>Learned about the grammar of graphics</li>
+<li>Evaluated whether data was “tidy” or not</li>
+<li>Learned about mapping data to visual aesthetics</li>
+<li>Created some simple (and some not-so-simple) data visualizations</li>
+<li>Labeled your data visualizations</li>
+<li>Probably worked with some error messages and maybe some help files</li>
+</ul>
+<p>That’s a lot! Give yourselves a round of applause.</p>
+<aside class="notes">
+<p>OK, so that’s session 3. Today, we talked about ggplot2. And you did a lot of hands-on work, too! If you have a feeling word you want to drop into chat, I’d love to know how today left you feeling!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="qa-was-this-effective" class="slide level2 smaller">
+<h2>Q&amp;A / Was This Effective?</h2>
+<p>We like to measure our effectiveness (and analyze it in R!)</p>
+<p>Goals:</p>
+<ul>
+<li>Describe what an “aesthetic mapping” is in ggplot2</li>
+<li>Create a simple ggplot2 data visualization</li>
+<li>Add a label (like a title or an x-axis label) to a plot in ggplot2</li>
+</ul>
+<aside class="notes">
+<p>The Arcus education team is a group that likes to measure our effectiveness and make changes based on what we learn. So before we do questions and answers and our final slides, we like to make sure to give our learners a poll to see if we made a good use of your time. We’re going to ask if we were effective in reaching our goals today, and those goals are on the screen in order to help you answer that question. Once you answer that poll, feel free to type a question into chat or come off mute and ask to clarify anything I can explain a bit better.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="next-session" class="slide level2">
+<h2>Next Session</h2>
+<p>Selecting Data Using <code>dplyr</code></p>
+<ul>
+<li>Selecting columns</li>
+<li>Filtering rows</li>
+<li>Creating new columns</li>
+</ul>
+<aside class="notes">
+<p>In our next session, we’re going to talk about how to select, reshape, filter, and work with our data using the dplyr package, which is another useful package from the tidyverse suite of tools. I’m looking forward to seeing you there. Thanks so much for your hard work today. If you have questions between today and next week, feel free to email me at paytonk@chop.edu or arcus-education@chop.edu, and have a great rest of your day!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+<div class="quarto-auto-generated-content">
+<p><img src="media/chop_arcus_initiative_logo.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p>Arcus Education, Children’s Hospital of Philadelphia</p>
+</div>
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const onCopySuccess = function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
+      });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

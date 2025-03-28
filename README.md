@@ -53,7 +53,7 @@ We suggest the following for virtual webinars:
 Material in later sessions does build on work done in earlier sessions, but don't let missing a session keep you away from attending later sessions.  We try to overlap material to help keep everyone caught up!
 
 
-- **Session 1: Review and Setup**
+**Session 1: Review and Setup**
 
   * Quick review of R and RStudio
   * R Markdown and Quarto: methods for "literate statistical programming"
@@ -67,7 +67,7 @@ Goals:
 -  Create a new code chunk in a Quarto document
 -  Run a code chunk in a Quarto document
 
-- **Session 2: Projects and File Ingestion**
+**Session 2: Projects and File Ingestion**
 
   * File systems can be challenging to navigate
   * Projects in RStudio
@@ -80,7 +80,7 @@ Goals:
 - Ingest data from a .csv into a data frame and examine it
 - Render a quarto document to an output format (html)
 
-- **Session 3: Exploring Data Visually, Using ggplot2**
+**Session 3: Exploring Data Visually, Using ggplot2**
 
   * ggplot2 syntax
   * Mapping Aesthetics 
@@ -93,7 +93,7 @@ Goals:
 - Create a simple ggplot2 data visualization
 - Add a label (like a title or an x-axis label) to a plot in ggplot2
   
-- **Session 4: Selecting Data Using dplyr**
+**Session 4: Selecting Data Using dplyr**
 
   * Selecting columns
   * Filtering rows
@@ -105,7 +105,7 @@ Goals:
 - Use "select" and "filter" to subset data
 - Use "group by" and "summarize" to get group-level statistics
 
-- **Session 5: Putting it All Together: Communicating**
+*Session 5: Putting it All Together: Communicating**
 
   * Create a new document
   * Explore a question
@@ -117,8 +117,6 @@ Goals:
 - Use text and markdown to describe analysis tasks in an organized, attractive document
 - Find useful examples from previous code and apply them to current work
 - Work with error messages and help files successfully
-
-
 
 
 ## License

@@ -50,6 +50,10 @@ pre code{
   font-size: 0.7em;
 }
 
+.smaller-text {
+  font-size: 0.55em;
+}
+
 .tiny-text {
   font-size: 0.4em;
 }
@@ -85,3 +89,4 @@ pre code{
   color: navy !important;
   text-decoration: underline;
 }
+
