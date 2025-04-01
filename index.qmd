@@ -71,7 +71,7 @@ Goals:
 -  Create a new code chunk in a Quarto document
 -  Run a code chunk in a Quarto document
 
-Slides: https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_1.html
+Slides: https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_1.html 
 
 **Session 2: Projects and File Ingestion**
 
@@ -114,6 +114,8 @@ Goals:
 - Describe what a "factor" variable is in R and why it's important to use it 
 - Use "select" and "filter" to subset data
 - Use "group by" and "summarize" to get group-level statistics
+
+Slides: https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_4.html
 
 **Session 5: Putting it All Together: Communicating**
 
