@@ -37,11 +37,11 @@ Arcus is an initiative by the Research Institute aimed at promoting data discove
 
 Among the many teams in Arcus, I represent Arcus Education!
 
-![](media/arcus_website.png){.two-thirds .bordered}
+![](media/arcus_website.png){.two-thirds .bordered fig-alt="Arcus website which displays tools and services including cohort discovery, arcus archives, data catalog, education and training, scientific projects, and clinical data query."}
 :::
 
 ::: {.column .small-text width="40%"}
-![](media/arcus_research_data_lifecycle.png)
+![](media/arcus_research_data_lifecycle.png){fig-alt="A circular diagram showing five project phases, including Discover: explore available data, Plan: plan your research project, Collect: receive your data, Analyze: analyze data in an Arcus lab, and Share: contribute data to archives."}
 :::
 :::::
 
@@ -56,7 +56,7 @@ I've already talked a bit about Arcus in the first session of this Skills Series
 
 ::::: {.columns .v-center-container}
 ::: {.column .small-text width="50%"}
-![](media/arcus_education_page.png){.bordered}
+![](media/arcus_education_page.png){.bordered fig-alt = "Education website page that includes three sections titled Getting Started with Arcus, Learn Data Science Skills, and Curate Your Own Learning Experience."}
 :::
 
 ::: {.column .small-text width="50%"}
@@ -118,7 +118,7 @@ My goals for you today include the following.  I'd like for you to be able to ex
 
 ## ggplot2
 
-![](media/ggplot2_hex.png){.half fig-align="center"}
+![](media/ggplot2_hex.png){.half fig-align="center"}{fig-alt = "ggplot2 logo."}
 
 ::: notes
 We'll be using the `ggplot2` package for creating graphics. `ggplot2` is a package that forms part of the tidyverse, so it will get loaded when you load the tidyverse package.

@@ -41,11 +41,12 @@ Arcus is an initiative by the Research Institute aimed at promoting data discove
 
 Among the many teams in Arcus, I represent Arcus Education!
 
-![](media/arcus_website.png){.two-thirds .bordered}
+![](media/arcus_website.png){.two-thirds .bordered fig-alt="Arcus website which displays tools and services including cohort discovery, arcus archives, data catalog, education and training, scientific projects, and clinical data query."}
 :::
 
 ::: {.column .small-text width="40%"}
-![](media/arcus_research_data_lifecycle.png)
+![](media/arcus_research_data_lifecycle.png){fig-alt="A circular diagram showing five project phases, including Discover: explore available data, Plan: plan your research project, Collect: receive your data, Analyze: analyze data in an Arcus lab, and Share: contribute data to archives."}
+
 :::
 :::::
 
@@ -69,7 +70,7 @@ And finally, a little more about me: I work in Arcus Education. Our role is to s
 
 ::::: {.columns .v-center-container}
 ::: {.column .small-text width="50%"}
-![](media/arcus_education_page.png){.bordered}
+![](media/arcus_education_page.png){.bordered fig-alt = "Education website page that includes three sections titled Getting Started with Arcus, Learn Data Science Skills, and Curate Your Own Learning Experience."}
 :::
 
 ::: {.column .small-text width="50%"}
@@ -141,11 +142,11 @@ By the end of the session I want you to use source and visual mode in RStudio to
 
 ::::: {.columns .v-center-container}
 ::: {.column .small-text width="50%"}
-![](media/r_logo.png){.two-thirds}
+![](media/r_logo.png){.two-thirds fig-alt="R logo."}
 :::
 
 ::: {.column .small-text width="50%"}
-![](media/rstudio_logo.png){.half}
+![](media/rstudio_logo.png){.half fig-alt="RStudio logo"}
 :::
 :::::
 
@@ -183,7 +184,7 @@ One of the things you can do in RStudio really well is write code in a particula
 
 ::::: {.columns .v-center-container}
 ::: {.column width="50%"}
-![](media/visual_view_lsp.png){.bordered}
+![](media/visual_view_lsp.png){.bordered fig-alt = "Text and R code with the title Ingest and Clean Data:Arcus 101."}
 :::
 
 ::: {.column width="50%"}
@@ -262,10 +263,10 @@ And the reason I'm bringing this up will become evident in the next couple of sl
 
 ::: {.columns .v-center-container}
 ::: {.column .small-text width="40%"}
-![](media/posit_new_from_git_repo.png)
+![](media/posit_new_from_git_repo.png){fig-alt="Menu from the New Project button on Posit.cloud with an arrow indicating New Project from Git Repository"}
 :::
 ::: {.column .small-text width="40%"}
-![](media/new_project_with_github_url.png)
+![](media/new_project_with_github_url.png){fig-alt="Form titled New Project from Git Repository that includes a fill in the blank titled URL of your Git Repository."}
 :::
 :::
 
@@ -339,10 +340,10 @@ So, take just a minute to look at those bullet points, and then I'll show you so
 
 ::: {.columns .v-center-container}
 ::: {.column .small-text width="40%"}
-![](media/new_quarto_document.png)
+![](media/new_quarto_document.png){fig-alt="File Menu from Posit.cloud R environment, with Arrow indicating New File, Quarto Document."}
 :::
 ::: {.column .small-text width="40%"}
-![](media/create_quarto_document.png)
+![](media/create_quarto_document.png){fig-alt="New Quarto Document form which includes Title and Author.  Title is filled in with the word Setup and everything else is left as default."}
 :::
 :::
 
@@ -385,7 +386,7 @@ OK, let's go back to the slides for our next step.
 
 ::: {.columns .v-center-container}
 ::: {.column .small-text width="70%"}
-![](media/writing_first_markdown.png)
+![](media/writing_first_markdown.png){fig-alt="View of a short bit of Markdown that only includes a header line with two hash marks followed by 'Installing Packages' and then a line that reads 'We need to install some packages.'"}
 :::
 :::
 
@@ -421,10 +422,10 @@ If I want to see what this kind of formatting looks like when it is rendered int
 
 ::: {.columns .v-center-container}
 ::: {.column .small-text width="40%"}
-![](media/about_to_click_new_chunk.png)
+![](media/about_to_click_new_chunk.png){fig-alt="RStudio window with an arrow indicating the add new code chunk button at the top of the screen."}
 :::
 ::: {.column .small-text width="40%"}
-![](media/new_code_chunk.png)
+![](media/new_code_chunk.png){fig-alt='A new code chunk with one line of R code which reads install.packages(c("rmarkdown", "tidyverse")).'}
 :::
 :::
 
@@ -479,10 +480,10 @@ OK, let's go back to the slides!
 
 ::: {.columns .v-center-container}
 ::: {.column .small-text width="40%"}
-![](media/run_code_chunk.png)
+![](media/run_code_chunk.png){fig-alt="A code chunk with an arrow indicating the execute code chunk button."}
 :::
 ::: {.column .small-text width="40%"}
-![](media/install_in_progress.png)
+![](media/install_in_progress.png){fig-alt="A code chunk and the R console, with three indicators of the code being executed indicated with arrows."}
 :::
 :::
 
@@ -521,7 +522,7 @@ OK, so let's go back to the slides.
 * Name your file "setup" (you don't have to add ".qmd", but you can!)
 * Save it inside the "exercises" folder
 
-![](media/save_file.png)
+![](media/save_file.png){fig-alt="A Save File picker that shows the exercises folder."}
 
 ```{r echo=FALSE}
 countdown(minutes = 0, seconds = 30)

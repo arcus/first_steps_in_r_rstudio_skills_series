@@ -10,7 +10,7 @@
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <title>session_2</title>
+  <title>session_5</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -321,8 +321,6 @@
       margin-right: 0; 
     }
   </style>
-  <link href="site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="site_libs/countdown-0.4.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -331,7 +329,7 @@
 
 <section id="welcome" class="slide level2 smaller">
 <h2>Welcome</h2>
-<p>These slides available at: <a href="https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html" class="uri">https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html</a></p>
+<p>These slides available at: <a href="https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_5.html" class="uri">https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_5.html</a></p>
 <ul>
 <li>Use keyboard arrow keys to
 <ul>
@@ -342,8 +340,7 @@
 <li>Type “?” to see other keyboard shortcuts</li>
 </ul>
 <aside class="notes">
-<p>As we prepare to get started, I’d like to encourage you to open these slides on your own browser, so you will have them available to refer to later. There are also a number of links you may want to click on. I’ll copy paste that URL, where the slide deck is located, into chat, so everyone has it.</p>
-<p>This first slide is just to help you navigate this slide deck if you look at these slides on your own! And yes, there are ample speaker notes, so if you missed something I said, chances are it’s going to be in the speaker notes of the slide.</p>
+<p>As always, I’d like to encourage you to open these slides on your own browser, and this first slide helps with tips for you to use the slide deck.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -371,10 +368,8 @@
 <p><img data-src="media/arcus_research_data_lifecycle.png" alt="A circular diagram showing five project phases, including Discover: explore available data, Plan: plan your research project, Collect: receive your data, Analyze: analyze data in an Arcus lab, and Share: contribute data to archives."></p>
 </div></div>
 <aside class="notes">
-<p>Thanks again for joining us, and welcome to our session today! I’d like to begin by briefly introducing myself and introducing Arcus, for those of you who may not be familiar with us. My name is ______ [add pronouns here if you want], and I’ll be leading today’s session.</p>
-<p>I’ve already talked a bit about Arcus in the first session of this Skills Series, so I’ll just skip most of that this time and simply say that Arcus is an initiative by the Research Institute aimed at promoting data discovery and reuse and increasing research reproducibility.</p>
-<p>You can find out more by checking out these links.</p>
-<p>And finally, a little more about me: I work in Arcus Education. Our role is to support CHOP scientists by helping researchers acquire data science skills. That’s why we have Skills Series like this one!</p>
+<p>Thanks again for joining us, and welcome to our session today! My name is ______ [add pronouns here if you want], and I’ll be leading today’s session.</p>
+<p>I’ve already talked a bit about Arcus in the first session of this Skills Series, but I’m including the slide here so that you have those links available in case you want to learn more about Arcus.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -399,8 +394,7 @@
 <p>Email us! <a href="mailto:arcus-education@chop.edu" class="email">arcus-education@chop.edu</a></p>
 </div></div>
 <aside class="notes">
-<p>The Arcus Education team does lots of different kinds of education. Again, we talked about this in our first session, so I’m going to skip most of this.</p>
-<p>Please check out that education page that is linked here to find out more about some of our services. You can also email us at arcus dash education at chop dot edu.</p>
+<p>The Arcus Education team does lots of different kinds of education, and we’ve already discussed this previously in other workshop sessions. You can always email us at arcus dash education at chop dot edu to ask about how we can help you!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -426,8 +420,7 @@
 </ul>
 <aside class="notes">
 <p>Just a reminder about what you’re in today.</p>
-<p>In this series, we’re going to take five sessions to help you make your first steps in R and RStudio. If you’ve never coded in R or used the RStudio software, and you want some support to get started, this is a great workshop series for you.</p>
-<p>After you finish these five sessions, you’ll have a little experience with R and RStudio. The goal is to help you feel more confident and have enough experience to be able to keep learning specialized skills titrated to your needs. If we were to compare learning R to learning to drive, this series is the equivalent of having you drive around a parking lot, under supervision, in a controlled situation.</p>
+<p>This is a five-session series, and our goal is to help you get started taking your first steps. Today, we’re in session three, right smack dab in the middle of our work together.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -440,437 +433,12 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="session-2-itinerary" class="slide level2 smaller">
-<h2>Session 2 Itinerary</h2>
-<p>Projects and File Ingestion</p>
-<ul>
-<li>File systems can be challenging to navigate</li>
-<li>Projects in RStudio</li>
-<li>Installing and loading packages</li>
-<li>Tabular data ingestion from .csv files</li>
-<li>Functions in R</li>
-</ul>
+<section id="session-5-itinerary" class="slide level2 smaller">
+<h2>Session 5 Itinerary</h2>
 <p>Goals:</p>
-<ul>
-<li>Create project and install package (unless you did Session 1)</li>
-<li>Be able to explain when to use <code>install.packages()</code> and when to use <code>library()</code></li>
-<li>Ingest data from a .csv and look at it</li>
-</ul>
 <aside class="notes">
-<p>So let’s get started with this second session. In this session we’re going to hit the ground running. You need to already have a Posit.cloud account, so if you don’t have that, it is absolutely critical that you pay attention in the next slide.</p>
-<p>We’re going to have you go into your Posit account and start a new project. We’ll explain why projects are so useful, and go over installing and loading packages, ingesting data, and functions in R.</p>
-<p>Here are our goals. By the end of today I want you to be able to create a project and install a package (which may already be something you did last time). I want you to be able to explain when you’ll use install dot packages and when you’ll use library, and I want you to be able to ingest data from a .csv file and examine that data in RStudio.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="posit.cloud-for-learning" class="slide level2 smaller">
-<h2>Posit.Cloud (for learning)</h2>
-<p><a href="https://posit.cloud">https://posit.cloud</a> is a great place for learning or practice with public (NOT CHOP!) datasets.</p>
-<p>Please open your First Steps in R and RStudio Exercises project in Posit.cloud now.</p>
-<p>If you did not already set up a Posit.cloud account with the exercise files in the first session of this Series, please do the following, now:</p>
-<ul>
-<li>Make sure you have a free account at <a href="https://posit.cloud">https://posit.cloud</a></li>
-<li><a href="link.to.slide">Create a new project that uses our exercise files</a></li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_30ff07c4" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>Posit.cloud is an online, cloud based service provided by Posit, the company that makes the RStudio software. It’s easy reliable for learners. As teachers, we can concentrate on our learners really acquiring the skills around R and RStudio, without being bogged down by weird individual installation differences from computer to computer.</p>
-<p>Using Posit.cloud is pretty much necessary for your continued participation in this workshop, because we can’t help you troubleshoot details of your particular computer and its installation details. Even if you have R and RStudio installed on your local computer, I really hope you’ll try out Posit dot cloud, because things will be smoother for you and for us this way. If you set things up in the first session of the Series, please log in to Posit.cloud and open the project with the Skills Series exercise files. If you didn’t set things up yet, please do that now. I’ll copy and paste those two bullet points into chat so you have those. [Do it].</p>
-<p>Let’s take just a few minutes to make sure we’re all set up. I’ll give folks a few minutes to do that!</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="where-are-your-files" class="slide level2 smaller">
-<h2>Where are your files?</h2>
-<ul>
-<li>Knowing where your files are can be tricky</li>
-<li>RStudio / Posit.cloud “Projects” can help</li>
-<li>Projects are directories that hold analysis scripts, data, and project info close together</li>
-</ul>
-<aside class="notes">
-<p>OK, before we get started working with our exercise files, let’s talk about some common struggles. One of the dirty little secrets of learning data analysis is that one of the biggest challenges some people have, especially if they’ve never worked in the command line, is finding their own files. They know they downloaded it, or they double clicked on a .csv file attachment in Outlook and they’re not sure where that file lives.</p>
-<p>Working in Projects is a great way to help keep your data really close to your analysis scripts, so it’s a lot easier to find your data. Projects are directories that RStudio creates in which your data and your analysis, as well as some information about your project, are all stored together in a single folder. And you can have 2, or three, or a dozen different Projects, all kept separate from each other, to keep from mixing up your files.</p>
-<p>In Posit.cloud, Projects are the way you have to organize your work, so it’s really easy to use Projects there. On your own computer, you’re not forced to use Projects, but you should use them. If you’re working in your own computer, you have to have the discipline to not just make new R scripts right away, but rather, first make a new Project to hold related files together, and then within that project make your analysis scripts.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="advantages-to-using-projects" class="slide level2 smaller">
-<h2>Advantages to using Projects</h2>
-<ul>
-<li>Keeping track of your files gets easier</li>
-<li>Projects allow you to keep your various efforts separated</li>
-<li>Multiple sessions of RStudio open on your computer that don’t interfere with each other.</li>
-</ul>
-<aside class="notes">
-<p>Let’s sum up the major advantages of using Projects.</p>
-<p>If you’re like me, you might work on several different analysis projects at a time. And if you just have one RStudio window open, which means one R session, you can accidentally trip over yourself. Let’s say you have two different R scripts, each of which creates the object <code>my_data</code>, or <code>cleaned_data</code>, or a similar kind of generic name. Maybe you’re doing work for two different research projects. What happens when you go back and forth between these files? You end up clobbering yourself and saving the audiology data in the nephrology project or something like that.</p>
-<p>It’s much cleaner and safer to work using Projects, in which all the related analysis and data files for a given effort are stored in the same directory. RStudio can also dedicate a session per project if you want to have several projects open at a time. For example, on my computer, I might have two or three copies of RStudio open at a time, each one in a separate Project, and each one is completely isolated from the other. I can go back and forth and I can have a nephrology dataset I call “my_data” and an audiology dataset I call “my_data”, and RStudio will keep them totally separate, because they’re in different Projects.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="importing-data" class="slide level2 smaller">
-<h2>Importing Data</h2>
-<ul>
-<li>Importing / Ingesting data is the first step to analyzing it!</li>
-<li>You can use “base R” (the factory settings) to ingest data</li>
-<li>But we suggest using an add-on package called <code>tidyverse</code> instead.</li>
-</ul>
-<aside class="notes">
-<p>Great, so you have a Project in Posit.cloud. And among the files in that project, we’ve supplied you with some data, some real research data that’s publicly available, to get you started. The first step in the data analysis pipeline is to bring in, import, or ingest the data into your R session.</p>
-<p>One very important thing to note is that you will need to install R packages into your copy of this project. At first we really wanted to have all your packages pre-loaded, but now we see the wisdom of teaching you how to install and load packages right away. It may take a few more minutes of our time today, but this is a crucial skill that you definitely need to develop. We’ll make sure to slow down and ensure that you get the packages installed that you need in order to do this work!</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="csv" class="slide level2 smaller">
-<h2>CSV</h2>
-<div class="columns">
-<div class="column" style="width:35%;">
-<p>We’re supplying you with .csv data.</p>
-</div><div class="column" style="width:65%;">
-<p><img data-src="media/csv.png">{fig-alt = “A text file with many numeric and text values separated by commas, with no spaces between the fields, and each row being a new data entry.”}</p>
-</div></div>
-<aside class="notes">
-<p>We’re giving you some CSV data. CSV stands for <strong>comma-separated values</strong>.</p>
-<p>A .csv file is a plain text file, which means you can open it in a text editor and look at it. Now, this isn’t how we normally open CSVs. Usually we open them not in a text editor, but rather in Microsoft Excel or another spreadsheet program. In case you’ve never seen the plain text version of a CSV, here is an example of what raw csv data looks like when we open it in a text editor. See how it’s literally made up of values, separated by commas? That’s why it’s a comma separated values file!</p>
-<p>Here we have a .csv file with human subject IDs, information about the intervention they received, and some clinical information about them.</p>
-<p>This data structure is called <strong>rectangular</strong> or <strong>“tabular”</strong> because it falls into rows and columns, often called a table, where each row has the same number of columns, and each columns has the same number of rows.</p>
-<p>Also note that this particular .csv file has a <strong>header</strong> row that instead of data, has a name for each column. .csv files often have such a header row and unless we specify otherwise, when we import this data, R assumes the first line is a header row. Not all .csv files have headers, however, so be aware that you might run across these at some point.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="tidyverse" class="slide level2 smaller">
-<h2>Tidyverse</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
-<ul>
-<li>A consistent way to organize data</li>
-<li>Human readable, concise, consistent code</li>
-<li>Build pipelines from atomic data analysis steps</li>
-</ul>
-</div><div class="column" style="width:30%;">
-<p><img data-src="media/tidyverse_logo.png">{fig-alt = “Tidyverse logo.”}</p>
-</div></div>
-<aside class="notes">
-<p>To import our CSV data, we need some additional data analysis tools. In this course, we will be leveraging the Tidyverse.</p>
-<p>The Tidyverse is a set of tools that a lot of people use for working with rectangular, or tabular data, the kind of data that comes with rows and columns. Many people, myself included, think that using the tidyverse is the best way to work with tabular data.</p>
-<p>We won’t explain what tidy data is right now, but the idea of working in a tidy way with tidy data is obviously very central to this group of tools!</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="installing-a-package" class="slide level2 smaller">
-<h2>Installing a Package</h2>
-<ul>
-<li>Look in “Files” tab.<br>
-</li>
-<li>Go into the “solutions” folder</li>
-<li>Click on “setup.qmd”.<br>
-</li>
-<li>Run the only code chunk there (green triangle “play” button)</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer_c93e1916" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-<aside class="notes">
-<p>If you were in our first session, you probably already installed tidyverse. You’re welcome to do it again if you like!</p>
-<p>In the lower right pane of your project, you should see a “Files” tab. Go into the “solutions” folder there and click on “setup.qmd”. That will open up <strong>our</strong> version of the setup document. Yours will look a little different, and that’s okay.</p>
-<p>You will get a lot of output in your console window if you’re installing this for the first time, and that’s usually just fine. I’ll give you a minute to do this, then I’ll do the same thing.</p>
-<p>[Start timer]</p>
-<p>OK, let me go to my Posit.cloud account, open up my project here, and look in my file explorer. I’ll open up the solutions folder and click on setup.qmd. That will open the file.</p>
-<p>Then I’ll just glance over this bit of explanatory text, and then run this code chunk with the green “play” button.</p>
-<p>[Go back to slides]</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="installing-and-loading-packages" class="slide level2">
-<h2>Installing and Loading Packages</h2>
-<div class="columns">
-<div class="column small-text" style="width:50%;">
-<p><img data-src="media/package.png">{.half fig-alt =“The word tidyverse followed by the depiction of 3 help files, 3 data sets, and 4 functions.”}</p>
-</div><div class="column small-text" style="width:50%;">
-<p><code>install.packages("tidyverse")</code> downloads the package (do once)</p>
-<p><code>library(tidyverse)</code> loads the package (do once per script or session)</p>
-</div></div>
-<aside class="notes">
-<p>The <strong>tidyverse</strong> is package. A package is a collection of functions, sometimes some data, and often some really useful help documentation that we can use to extend the basic R language, also known as “base R”. Tidyverse is a package that in fact contains multiple other packages that work together to do a number of tasks related to importing, reshaping, visualizing, and analyzing data.</p>
-<p>You can download and <strong>install</strong> a package with the command <code>install.packages</code>. For example, to install the tidyverse package, you would use <code>install.packages("tidyverse")</code>. Each package you want to use needs to be installed only once on each computer or each Posit.cloud project for any given version of that package.</p>
-<p>Make sure you <strong>include the quotes</strong> around package names when you use <code>install.packages</code>. Learning when to use quotes is kind of a trial and error thing in R, but you should use it here.</p>
-<p>After you’ve installed the package, in order to use the functions that it provides, you also need to tell R to <strong>load</strong> the package into memory. This is done with the command <code>library</code>. And you want to use <code>library</code> every single time you start a new analysis that will use that functionality.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="read_csv" class="slide level2">
-<h2>read_csv()</h2>
-<p><code>data_frame &lt;- read_csv(file_name)</code></p>
-<p><img data-src="media/csv_import.png">{.half fig-align=“center” fig-alt = “A depiction of a CSV file being transformed into rows and columns of data.”}</p>
-<aside class="notes">
-<p>We can import CSV files using the <code>read_csv()</code> function.</p>
-<p>Let’s go over how you use the <code>read_csv</code> function to read a CSV file into a data frame object. A data frame is a type of object in R that holds tabular data: data with rows and columns.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="functions" class="slide level2 smaller">
-<h2>Functions</h2>
-<p><code>data_frame &lt;- read_csv(file_name)</code></p>
-<ul>
-<li><code>read_csv</code> is the <strong>function</strong> name</li>
-</ul>
-<aside class="notes">
-<p>This code construct is exceedingly common in R, and it’s a good moment to explain <strong>functions</strong>.</p>
-<p><code>read_csv()</code> is a <strong>function</strong>. Functions are defined in packages. We loaded the tidyverse package to be able to use the <code>read_csv</code> function.</p>
-<p>You may be familiar with functions from math class or perhaps also from formulas in Excel. A function takes an input, say an ‘x’ value, and returns an output, say a ‘y’ value. Functions in computer programming also take inputs and return outputs.</p>
-<p>For the <code>read_csv</code> function, the input is the file name of a CSV file; and the output is a data frame, a new object created in your R environment, which contains the contents of that .csv file.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="functions-1" class="slide level2 smaller">
-<h2>Functions</h2>
-<p><code>data_frame &lt;- read_csv(file_name)</code></p>
-<ul>
-<li><code>read_csv</code> is the <strong>function</strong> name</li>
-<li><code>file_name</code> is an <strong>argument</strong> passed to the function.</li>
-</ul>
-<aside class="notes">
-<p>In the snippet of code that reads in a csv to create a data frame, we have a <strong>function</strong> with an <strong>argument</strong> that creates an <strong>object</strong>.</p>
-<p>The input that goes into a function is called an <strong>argument</strong>. The argument to a function gets put in parentheses.</p>
-<p>A function can have zero, one, or many arguments. If there is more than one argument, we use commas to separate them.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="functions-2" class="slide level2 smaller">
-<h2>Functions</h2>
-<p><code>data_frame &lt;- read_csv(file_name)</code></p>
-<ul>
-<li><code>read_csv</code> is the <strong>function</strong> name</li>
-<li><code>file_name</code> is an <strong>argument</strong> passed to the function.</li>
-<li><code>data_frame</code> is a named <strong>object</strong> that will receive the <strong>output</strong> of the function.</li>
-</ul>
-<aside class="notes">
-<p>The output of the <code>read_csv</code> function is a data frame object. You want to store that data inside of a named object so you can use it in R later for other things. For example, after you read in your csv, you might want to summarize or visualize your data.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="functions-3" class="slide level2 smaller">
-<h2>Functions</h2>
-<p><code>data_frame &lt;- read_csv(file_name)</code></p>
-<ul>
-<li><code>read_csv</code> is the <strong>function</strong> name</li>
-<li><code>file_name</code> is an <strong>argument</strong> passed to the function.</li>
-<li><code>data_frame</code> is a named <strong>object</strong> that will receive the <strong>output</strong> of the function.</li>
-<li><code>&lt;-</code> is the <strong>assignment operator</strong> that makes what’s on the right be assigned to the named object on the right</li>
-</ul>
-<aside class="notes">
-<p>To put the output of the <code>read_csv</code> function into a named object, we use the <strong>assignment operator</strong>.</p>
-<p>The assignment operator is a less than symbol followed by a dash and resembles an arrow pointing left.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="read_csv-1" class="slide level2">
-<h2>read_csv()</h2>
-<p><img data-src="media/csv_import.png">{.half fig-align=“center” fig-alt = “A depiction of a CSV file being transformed into rows and columns of data.”}</p>
-<aside class="notes">
-<p>Let’s put these pieces together to load our covid data set.</p>
-<p>Consider this line of code. We could speak aloud the line of code above saying “covid underscore testing gets read underscore csv of covid underscore testing dot csv”, or we could gloss over the underscores and just say “covid testing” and “read csv”. When we talk with others about R, this is often what we do, so just be aware that you sometimes have to intuit underscores when someone is reading aloud or talking through a code issue.</p>
-<p>You might notice that one of our “covid testing” objects is put in quotes and the other one isn’t.</p>
-<p>To be honest, quotes in R can be super confusing. A couple of rules are:</p>
-<ul>
-<li>Names of objects in R’s environment don’t get quotes.</li>
-<li>Literal file names are always put in quotes.</li>
-<li>When you’re referring to a string value, like “abc123” or “jones”, you have to use quotes.</li>
-<li>Names of packages, when you’re installing especially, use quotes</li>
-<li>But in <code>library</code>, putting the package name in quotes is optional!</li>
-</ul>
-<p>Sometimes, either quoting or not quoting works. This is one of the things where you will get a good sense but not until after some trial and error. If a line of code you’re working on doesn’t seem to be working as you expect, sometimes adding or removing quotes can be a good place to start when trying to figure it out.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="hands-on" class="slide level2 smaller">
-<h2>Hands-on</h2>
-<ul>
-<li>Go into your First Steps in R and RStudio Exercises project in Posit.cloud</li>
-<li>Go into the File tab in the lower right pane</li>
-<li>Find the “Exercises” folder</li>
-<li>Click on “session_2.qmd”.</li>
-<li>Read through that file and complete the exercises!</li>
-<li>We’ll give you a few minutes to complete this.</li>
-</ul>
-</section>
-<section id="bonus-content-file-paths-the-where" class="slide level2 smaller">
-<h2>Bonus Content: File Paths – the “where”</h2>
-<ul>
-<li>A few tips:
-<ul>
-<li><code>/</code> means “go into a child directory” (<code>\</code> in Windows)</li>
-<li><code>/</code> as the first symbol means “start at the root”</li>
-<li><code>.</code> means “this directory”</li>
-<li><code>..</code> means “the parent directory of this directory”</li>
-<li><code>~</code> means “my home directory”</li>
-</ul></li>
-<li>Relative path – “directions from here”</li>
-<li>Absolute path – “directions from anywhere”</li>
-<li>Working directory – R’s “starting place”</li>
-</ul>
-<p><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/arcus/education_modules/main/directories_and_file_paths/directories_and_file_paths.md#1">Great module on Directories and File Paths</a></p>
-<aside class="notes">
-<p>This is bonus content, that I have sort if in my back pocket in case we have time to cover it.</p>
-<p>Option 1: I won’t go over this slide, but if understanding file paths is interesting to you, there’s a great link there for you to learn more.</p>
-<p>Option 2: Read below.</p>
-<p>If you have already worked in the command line, you might not have any problem finding files on your computer, but some of you might find it tricky.</p>
-<p>We’re going to offer a brief handful of tips for understanding file paths, and this is true for all files, not just related to R or data analysis.</p>
-<p>First off, Windows is a weird operating system and is unlike the rest of the world’s major operating systems, like Unix, Linux, and MacOS, in how it does file paths. Most file paths use forward slashes, not backward slashes. A slash means you’re going into a new subdirectory or subfolder.</p>
-<p>And a few other special symbols are useful to know. A single dot means “this directory”, two dots means “go into the directory that holds the one I’m in now”, and a tilde means “my home directory”, which will differ from user to user on a shared system like a server.</p>
-<p>In your analysis scripts, you’ll often have to decide if you want to use what’s called a “relative path” or an “absolute path” to tell R where a file is. There are advantages and disadvantages to both, but if we’re using Projects, we can usually use relative paths more easily.</p>
-<p>A relative path assumes that we’re starting in the same place and have common knowledge. So if I was at home, describing where my keyboard is, I’d say “go upstairs to the second floor, and then on the street side of the house, there’s my office. Then go inside and you’ll find the keyboard on my desk.” That makes sense if you’re also inside my house.</p>
-<p>But if you’re NOT in my house, you’re in your house, which doesn’t have a second floor, you would say, “hey, your directions to go to the second floor don’t make sense. Path not found.” A relative path doesn’t work when we’re not starting in the same place.</p>
-<p>And that brings us to the idea of a working directory. Any time you are working in R, it’s running with a starting point, its working directory. The great thing about RStudio is that it does a good job of guessing what you want the working directory to be, based on the file you’re working on. Everyone has the same starting point, so to speak.</p>
-<p>An absolute path is a path that includes enough detail so that the location is clear from anywhere in the computer. For example, in the physical world, an absolute path would be if I said, “go to 123 Main Street, Philadelphia, go inside, go to the second floor, go to the street side, open the door, go inside, and look on the desk. The keyboard is there.” Now, the benefit is that it’s very precise. But the downside is that it’s lengthy and annoying to construct sometimes, and if you move the whole folder of your project, you’ve changed addresses, essentially, and messed things up.</p>
-<p>If you want to learn more, we’ve created a module all about file paths that you might find useful, so check that out if you’re interested!</p>
+<p>Today, our topic is</p>
+<p>My goals for you today include the following.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -885,15 +453,15 @@
 </section>
 <section id="qa-was-this-effective" class="slide level2 smaller">
 <h2>Q&amp;A / Was This Effective?</h2>
-<p>In our team, we like to measure our effectiveness.</p>
+<p>We like to measure our effectiveness (and analyze it in R!)</p>
 <p>Goals:</p>
 <ul>
-<li>Be able to describe the difference between R and RStudio</li>
-<li>Have a Posit.cloud account ready to go</li>
-<li>Have some next steps in mind for your CHOP device</li>
+<li>Describe what an “aesthetic mapping” is in ggplot2</li>
+<li>Create a simple ggplot2 data visualization</li>
+<li>Add a label (like a title or an x-axis label) to a plot in ggplot2</li>
 </ul>
 <aside class="notes">
-<p>Now, this is not the final slide, but we’re a group that likes to measure our effectiveness and make changes based on what we learn. So before we do questions and answers, we like to make sure to give our learners a poll to see if we made a good use of your time. We’re going to ask if we were effective in reaching our goals today, and those goals are on the screen in order to help you answer that question. Once you answer that poll, feel free to type a question into chat or come off mute and ask to clarify anything I can explain a bit better. I’ll stop our session of Q&amp;A with about 5 minutes to spare because I do have just a couple of finishing slides I want to show.</p>
+<p>The Arcus education team is a group that likes to measure our effectiveness and make changes based on what we learn. So before we do questions and answers and our final slides, we like to make sure to give our learners a poll to see if we made a good use of your time. We’re going to ask if we were effective in reaching our goals today, and those goals are on the screen in order to help you answer that question. Once you answer that poll, feel free to type a question into chat or come off mute and ask to clarify anything I can explain a bit better.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

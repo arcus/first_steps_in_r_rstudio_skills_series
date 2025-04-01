@@ -36,12 +36,11 @@ Arcus is an initiative by the Research Institute aimed at promoting data discove
 
 Among the many teams in Arcus, I represent Arcus Education!
 
-![](media/arcus_website.png){.two-thirds .bordered}
+![](media/arcus_website.png){.two-thirds .bordered fig-alt="Arcus website which displays tools and services including cohort discovery, arcus archives, data catalog, education and training, scientific projects, and clinical data query."}
 :::
 
 ::: {.column .small-text width="40%"}
-![](media/arcus_research_data_lifecycle.png)
-:::
+![](media/arcus_research_data_lifecycle.png){fig-alt="A circular diagram showing five project phases, including Discover: explore available data, Plan: plan your research project, Collect: receive your data, Analyze: analyze data in an Arcus lab, and Share: contribute data to archives."}:::
 :::::
 
 ::: notes
@@ -55,7 +54,7 @@ I've already talked about this slide previously, and you have these links, so le
 
 ::::: {.columns .v-center-container}
 ::: {.column .small-text width="50%"}
-![](media/arcus_education_page.png){.bordered}
+![](media/arcus_education_page.png){.bordered fig-alt = "Education website page that includes three sections titled Getting Started with Arcus, Learn Data Science Skills, and Curate Your Own Learning Experience."}
 :::
 
 ::: {.column .small-text width="50%"}
