@@ -56,7 +56,7 @@ I've already talked a bit about Arcus in the first session of this Skills Series
 
 ::::: {.columns .v-center-container}
 ::: {.column .small-text width="50%"}
-![](media/arcus_education_page.png){.bordered fig-alt = "Education website page that includes three sections titled Getting Started with Arcus, Learn Data Science Skills, and Curate Your Own Learning Experience."}
+![](media/arcus_education_page.png){.bordered fig-alt="Education website page that includes three sections titled Getting Started with Arcus, Learn Data Science Skills, and Curate Your Own Learning Experience."}
 :::
 
 ::: {.column .small-text width="50%"}
@@ -95,17 +95,25 @@ This is a five-session series, and our goal is to help you get started taking yo
 
 ## Session 5 Itinerary {.smaller}
 
+Putting it All Together: Communicating
 
-
+  * Create a new document
+  * Explore a question
+  * Create a visualization
+  * Next steps for using R/RStudio
+  
 Goals:
 
-
+- Use text and markdown to describe analysis tasks in an organized, attractive document
+- Find useful examples from previous code and apply them to current work
+- Work with error messages and help files successfully
 
 ::: notes
-Today, our topic is 
+Today, we're really going to work independently and try to make today a "lab day", where you take what you've learned in the first four sessions to make some of your own decisions and create a document where YOU are in charge of the data exploration.
 
 My goals for you today include the following.  
 
+I'd like for you to create a new document that will communicate some data findings, and in that document, I want you to use text and markdown to describe your analysis tasks.  To be effective, you're going to need to go back to some of the code you've worked on before and borrow some code, and you'll need to deal with mistakes and setbacks, error messages and help messages.  You have a warm and helpful group of friends here that will help you in chat!
 :::
 
 

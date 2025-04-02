@@ -62,7 +62,7 @@ And finally, a little more about me: I work in Arcus Education.  Our role is to 
 
 ::::: {.columns .v-center-container}
 ::: {.column .small-text width="50%"}
-![](media/arcus_education_page.png){.bordered fig-alt = "Education website page that includes three sections titled Getting Started with Arcus, Learn Data Science Skills, and Curate Your Own Learning Experience."}
+![](media/arcus_education_page.png){.bordered fig-alt="Education website page that includes three sections titled Getting Started with Arcus, Learn Data Science Skills, and Curate Your Own Learning Experience."}
 :::
 
 ::: {.column .small-text width="50%"}
@@ -205,7 +205,7 @@ We're supplying you with .csv data.
 ::: 
 
 ::: {.column width="65%"}
-![](media/csv.png){fig-alt = "A text file with many numeric and text values separated by commas, with no spaces between the fields, and each row being a new data entry."}
+![](media/csv.png){fig-alt="A text file with many numeric and text values separated by commas, with no spaces between the fields, and each row being a new data entry."}
 ::: 
 ::: 
 
@@ -231,7 +231,7 @@ Also note that this particular .csv file has a **header** row that instead of da
 :::
 
 ::: {.column width="30%"}
-![](media/tidyverse_logo.png){fig-alt = "Tidyverse logo."}
+![](media/tidyverse_logo.png){fig-alt="Tidyverse logo."}
 :::
 :::::
 
@@ -299,7 +299,7 @@ After you've installed the package, in order to use the functions that it provid
 
 `data_frame <- read_csv(file_name)`
 
-![](media/csv_import.png){.half fig-align="center" fig-alt = "A depiction of a CSV file being transformed into rows and columns of data."}
+![](media/csv_import.png){.half fig-align="center" fig-alt="A depiction of a CSV file being transformed into rows and columns of data."}
 
 ::: notes
 We can import CSV files using the `read_csv()` function.
@@ -368,7 +368,7 @@ The assignment operator is a less than symbol followed by a dash and resembles a
 ## read_csv()
 
 
-![](media/csv_import.png){.half fig-align="center" fig-alt = "A depiction of a CSV file being transformed into rows and columns of data."}
+![](media/csv_import.png){.half fig-align="center" fig-alt="A depiction of a CSV file being transformed into rows and columns of data."}
 
 ::: notes
 Let's put these pieces together to load our covid data set.

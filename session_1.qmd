@@ -70,7 +70,7 @@ And finally, a little more about me: I work in Arcus Education. Our role is to s
 
 ::::: {.columns .v-center-container}
 ::: {.column .small-text width="50%"}
-![](media/arcus_education_page.png){.bordered fig-alt = "Education website page that includes three sections titled Getting Started with Arcus, Learn Data Science Skills, and Curate Your Own Learning Experience."}
+![](media/arcus_education_page.png){.bordered fig-alt="Education website page that includes three sections titled Getting Started with Arcus, Learn Data Science Skills, and Curate Your Own Learning Experience."}
 :::
 
 ::: {.column .small-text width="50%"}
@@ -184,7 +184,7 @@ One of the things you can do in RStudio really well is write code in a particula
 
 ::::: {.columns .v-center-container}
 ::: {.column width="50%"}
-![](media/visual_view_lsp.png){.bordered fig-alt = "Text and R code with the title Ingest and Clean Data:Arcus 101."}
+![](media/visual_view_lsp.png){.bordered fig-alt="Text and R code with the title Ingest and Clean Data:Arcus 101."}
 :::
 
 ::: {.column width="50%"}
