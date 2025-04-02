@@ -120,7 +120,6 @@ Review and Setup (see also: [Demystifying R and RStudio](https://github.com/arcu
 -   Posit.cloud: our environment for this course
 -   Git and GitHub: Out of scope but very useful!
 -   Your first Quarto Document
--   Getting R and RStudio at CHOP 
 
 Goals:
 
@@ -131,7 +130,7 @@ Goals:
 ::: notes
 So let's get started with this first session. In this session we're going to very rapidly review the basics about what R and RStudio are, along with some basics about literate statistical programming, Quarto, and Posit.cloud. Those were all the subjects of a previous Skills Series entitled "Demystifying R and RStudio", so if today feels too fast, you can always go back and review that material.
 
-We'll also quickly describe what Git and GitHub provide, and give you some tips for getting R and RStudio at CHOP.
+We'll also quickly describe what Git and GitHub provide.
 
 Our goals for today are three-fold.  
 
@@ -538,6 +537,9 @@ You do it, then I'll do it.
 OK, that's time.  I'll share my Posit.cloud window now, and I want you to notice that my file name here is red and has an asterisk, which is telling me there are unsaved changes.  So let's go into File, then Save.  I'm going to type "setup" in the file name, choose "exercises" for the file location, and then "Save".  
 
 When I do that, my file name is no longer red, it's black, and that is a good visual indicator that I'm caught up, that there are no unsaved changes.  
+
+While we're here, I want to go over getting help in R and RStudio.  There are a few places to look.  
+
 
 Let's go back to the slides.
 
