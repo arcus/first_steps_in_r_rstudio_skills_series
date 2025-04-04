@@ -493,15 +493,9 @@
 <aside class="notes">
 <p>Let’s begin by distinguishing between R and RStudio.</p>
 <p>The first logo you see here is for <strong>R</strong>. R is a statistical programming language that’s great for doing data analysis. There are several features that make R attractive for people who work with data.</p>
-<ul>
-<li>R was built specifically for statistical data analysis, so it’s got a friendly and focused user community and lots of great online resources for learning.</li>
-<li>R is <strong>open source</strong>, which means that it is “free” in two ways – in the meaning of having <strong>no cost</strong> and also in terms of using it freely, that is, without intellectual property concerns or licensing restrictions.</li>
-<li>R makes it possible to work with data and build scripts that do lots of things, from ingesting data to building data visualizations and lots of other things along the way.</li>
-</ul>
 <p>So that’s R, it’s a language with a lot of benefits.</p>
 <p>Then, there’s <strong>RStudio</strong>. RStudio was the original name of a company as well as the name of a piece of software the company makes. A couple of years ago, the company changed its name from RStudio to Posit, but they kept the old name on at least some of their software.</p>
 <p>You can think of RStudio (the software) as a fancy text editor for writing R code. The technical term for a fancy text editor for writing code is “Integrated Development Environment”, or I-D-E.</p>
-<p>You don’t <strong>have</strong> to use RStudio to write R, but it makes it a lot easier. We like to give the example of typing a manuscript in Microsoft Word. If you didn’t have Microsoft Word, you could write down your thoughts in the Notes app on your phone. But Microsoft Word has lots of add-ons, like spell-check and word count that make it much more pleasant to write a paper there, rather than in the notes app on your phone!</p>
 <p>One of the things you can do in RStudio really well is write code in a particular paradigm called literate statistical programming, and that’s what we’re going to talk about next.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -525,8 +519,7 @@
 </div></div>
 <aside class="notes">
 <p>Literate statistical programming is computer code (that’s what makes it programming) that analyzes data (that’s what makes it statistical), and does so interlaced with detailed human language that describes what’s happening in the code (that’s what makes it literate). Here’s an example.</p>
-<p>Here is a snippet of a script my team wrote, and you can see that it has some description of what the code is doing, to help humans. We put in a header, to separate a section that has to do more with bringing the data in and cleaning it. Then we write a paragraph describing what we’re going to do, followed by a chunk of code.</p>
-<p>After that code executes, we’ll have some data. So we have some additional description of what we want to do, this time in the form of a bulleted list. I’m not showing you all of the code that makes that bulleted list happen, because it’s kind of long, but the code chunk with the grey background below that bulleted list is code we wrote that does all the things in that bulleted list.</p>
+<p>Here is a snippet of a script my team wrote, and you can see that it has some description of what the code is doing, to help humans. We put things like a header, a paragraph, and a bulleted list, to make things very readable. And then we also wrote the code, which is what we compose for the computer.</p>
 <p>This is what literate statistical programming looks like, and working in R and RStudio is a great way to get started working this way. This kind of document, by the way, is called a Quarto document. It includes R language but also includes text that has special formatting called “markdown”. You may have also heard the term “R Markdown”, which is practically the same thing. It’s an older term that preceded the word “Quarto”.</p>
 <p>I want to get you creating Quarto documents as soon as possible, so let’s transition to talking about how to get you started working with R and RStudio right away!</p>
 <style type="text/css">
@@ -543,21 +536,27 @@
 </section>
 <section id="posit.cloud-for-learning-only" class="slide level2 smaller">
 <h2>Posit.Cloud (for learning only!)</h2>
-<p>You can use R and RStudio using online services like <a href="https://posit.cloud">https://posit.cloud</a>. Sign up for your free account, it’s what we’ll use for this series.</p>
+<p>You can use R and RStudio using online services like <a href="https://posit.cloud">https://posit.cloud</a>. Sign up for your ‘Cloud Free’ tier, it’s what we’ll use for this series.</p>
 <p>Posit.cloud is a great place for learning or practice with public datasets, BUT is not a safe or compliant place to put your regulated data.</p>
+<div class="columns v-center-container">
+<div class="column small-text" style="width:40%;">
+<p><img data-src="media/posit_free_plan.png" class="bordered" alt="Posit.cloud page showing the plans, with Cloud Free tier indicated."></p>
+</div><div class="column small-text" style="width:40%;">
+<p><img data-src="media/posit_free_signup.png" class="bordered" alt="Posit.cloud page that reads sign up for Cloud Free."></p>
+</div></div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_6e9734e5" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_98cf9d67" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>When we teach R and RStudio, it can be next to impossible to deal with everyone’s different kinds of installation issues while they’re trying to get set up and deal with IS, get issues ironed out with their computers and their access permissions, etc.</p>
-<p>That’s why we have our students use Posit.cloud to learn R and RStudio. Posit.cloud is an online, cloud based service provided by Posit, the company that makes the RStudio software. It’s really good and reliable and it has a very generous free tier! It means that as teachers we can concentrate on our learners really acquiring the skills around R and RStudio, without being bogged down by the fact that some people have Macs, some have PCs, some have admin rights, some don’t, and so on. Using Posit.cloud makes things a lot easier for teachers and learners. Even if you already have R and RStudio installed locally, I’m going to request that you use Posit.cloud for this Skills Series, because we do not have the time in a webinar with this many students to help you with your particular setup.</p>
-<p>HOWEVER, we want to make one thing very clear! Posit.cloud is absolutely NOT an appropriate place for regulated health care data. It’s for <strong>practicing</strong> and <strong>learning</strong> using <strong>public datasets</strong>. If you’re going to use R for CHOP data, you should start the process of getting R and RStudio installed on your CHOP device so that you can transfer those skills to real-life work right away. If you want to learn more about that, there are slides about that in the Demystifying R and RStudio Skills Series that will help you.</p>
-<p>For now, please, if you already have a Posit account, please log in to it. If you don’t have a Posit account, please go to https://posit.cloud and create a free account. When you have your Posit account created, please give us a thumbs up on the comment in the chat, so I can measure progress. I’ll give you two minutes to start and we’ll see where we stand. [Click the timer, and copy/paste the comment “I have a Posit.cloud account and I’m logged in there!” into chat].</p>
+<p>When we teach R and RStudio, it can be next to impossible to deal with everyone’s different kinds of installation issues while they’re trying to get set up and deal with IS, get issues ironed out with their access permissions, and so on.</p>
+<p>That’s why we have our students use Posit.cloud to learn R and RStudio. Posit.cloud is an online, cloud based service provided by Posit, the company that makes the RStudio software. It’s really reliable and it has a very generous free tier! It means that as teachers we can concentrate on our learners really acquiring skills without being bogged down by download and install problems. Using Posit.cloud makes things a lot easier for everyone. Even if you already have R and RStudio installed locally, please use Posit.cloud for this Skills Series, because we do not have the time in a webinar with this many students to help you with your particular setup.</p>
+<p>HOWEVER, we want to make one thing very clear! Posit.cloud is absolutely NOT an appropriate place for regulated health care data. It’s for <strong>practicing</strong> and <strong>learning</strong> using <strong>public datasets</strong>. If you’re going to use R for CHOP data, you should start the process of getting R and RStudio installed on your CHOP device so that you can transfer those skills to real-life work right away. If you want to learn more about that, there are slides about that in the Demystifying R and RStudio Skills Series that will help you figure out how to work with DTS to get that software installed.</p>
+<p>For now, please, if you already have a Posit.cloud account, please log in to it. If you don’t have a Posit account, please go to https://posit.cloud and create a free account, that’s the lowest tier. You want FREE, not basic. Free. When you have your Posit account created, please give us a thumbs up on the comment in the chat, so I can measure progress. I’ll give you two minutes to start and we’ll see where we stand. [Click the timer, and copy/paste the comment “I have a Posit.cloud account and I’m logged in there!” into chat].</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -570,22 +569,20 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="git-and-github-desktop-out-of-scope" class="slide level2 smaller">
-<h2>Git and GitHub Desktop: Out of scope</h2>
-<p>… but very useful version control software.</p>
-<p>Version control allows you to track, for text-based files:</p>
+<section id="git-and-github-desktop" class="slide level2 smaller">
+<h2>Git and GitHub Desktop:</h2>
+<p>Version control allows you to track</p>
 <ul>
-<li>What changed (the file name, the line numbers, the actual text)</li>
+<li>What changed (the file name, and the line numbers and specific changes if it’s a text file)</li>
 <li>When (date and time)</li>
 <li>By whom (username / ID)</li>
 <li>Why (the person changing will add a message)</li>
 </ul>
-<p>(And that means no more <code>analysis_final.R</code>, <code>analysis_final_with_changes.R</code>, <code>analysis_final_final_final_please_why.R</code>)</p>
+<p>(Out of scope today but useful!)</p>
 <aside class="notes">
-<p>Git and GitHub Desktop are complex and very useful software. We could do a skills series, or in fact several skills series, just on these! If anyone uses them for work and wants to let us know how often they use it or what they use it for, drop a message in chat. I’m curious to see how other people use version control at CHOP!</p>
-<p>Version control software allows you to record changes to text-based files, including what changed in the file or files, when the change was made, who made the change, and why. Much like the relationship between R and RStudio, Git is the original software and GitHub, including GitHub Desktop, was built to make using Git easier, and it’s helpful but not necessary.</p>
-<p>We won’t go into all the details about how to use these software packages, but we use them daily in my team including for managing the files for these workshops. When we start hands-on coding, you’ll be hearing me mention GitHub. You’ll get the exercise files from there to work with. If there’s one thing I hope you remember about Git and GitHub, it’s that they are very useful, and if you find them a real pain in the neck at first, hang in there, because they really truly are worth the effort to learn.</p>
-<p>And the reason I’m bringing this up will become evident in the next couple of slides, because you’re going to install the exercise files from a Git repository.</p>
+<p>Git and GitHub Desktop are complex and very useful software. We could do a skills series, or in fact several skills series, just on these! And the reason I’m bringing this up will become evident in the next couple of slides, because you’re going to install the exercise files for this workshop from a Git repository.</p>
+<p>Version control software allows you to record changes to text-based files, including what changed in the file or files, when the change was made, who made the change, and why.</p>
+<p>We won’t go into all the details about how to use these software packages, but I hope you remember that Git and GitHub are very useful, and although they can be a bit tricky, they are worth the effort to learn.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -603,20 +600,24 @@
 <ul>
 <li>Go to <a href="http://posit.cloud" class="uri">http://posit.cloud</a> (you already have a free account, right?)</li>
 <li>Create a new project from a Git repository</li>
-<li>URL to enter is <a href="https://github.com/arcus/first_steps_in_r_rstudio_exercises" class="uri">https://github.com/arcus/first_steps_in_r_rstudio_exercises</a> (Click OK)</li>
+<li>URL is <a href="https://github.com/arcus/first_steps_in_r_rstudio_exercises" class="uri">https://github.com/arcus/first_steps_in_r_rstudio_exercises</a> (Click OK)</li>
 <li>Look around your RStudio environment!</li>
 </ul>
 <div class="columns v-center-container">
-<div class="column small-text" style="width:40%;">
-<p><img data-src="media/posit_new_from_git_repo.png" alt="Menu from the New Project button on Posit.cloud with an arrow indicating New Project from Git Repository"></p>
-</div><div class="column small-text" style="width:40%;">
-<p><img data-src="media/new_project_with_github_url.png" alt="Form titled New Project from Git Repository that includes a fill in the blank titled URL of your Git Repository."></p>
+<div class="column small-text" style="width:10%;">
+
+</div><div class="column small-text" style="width:30%;">
+<p><img data-src="media/posit_new_from_git_repo.png" class="bordered" alt="Menu from the New Project button on Posit.cloud with an arrow indicating New Project from Git Repository"></p>
+</div><div class="column small-text" style="width:20%;">
+
+</div><div class="column small-text" style="width:30%;">
+<p><img data-src="media/new_project_with_github_url.png" class="bordered" alt="Form titled New Project from Git Repository that includes a fill in the blank titled URL of your Git Repository."></p>
 </div></div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_a764b743" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_cebb088d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
@@ -625,7 +626,7 @@
 <p>When you log in to Posit.cloud, you’re going to find the “New Project” button in the upper right. It’s big and dark blue and it stands out a lot. It’s not quite so visible when you use RStudio Desktop on your own computer, just as a heads-up – you have to find “New Project” in the menu system, it’s not a big button like it is in Posit.cloud.</p>
 <p>You’ll see there are a few options for a new Project. You want to choose “New Project from Git Repository.”</p>
 <p>What that means is that you’re going to copy some files from an existing location that my team uses to store the exercise files. This location is known as a repository. In the future, if we change anything to those files in the repository, you can update your copy, too, to stay up to date.</p>
-<p>It will ask you for the URL of the repository. That’s where you want to type the URL shown in the slide: https://github.com/arcus/first_steps_r_rstudio_exercises. I’ll copy and paste that into the chat so you have it.</p>
+<p>It will ask you for the URL of the repository. That’s where you want to type the URL shown in the slide: https://github.com/arcus/first_steps_in_r_rstudio_exercises. I’ll copy and paste that into the chat so you have it.</p>
 <p>Later on, you can create other kinds of Projects in your Posit.cloud account using the other options that show up when you click New Project, so that you get a feel for how the other project types work. But I’ll let you do that in your own time.</p>
 <p>For now, I want to give you a couple of minutes to do these steps. Please do this now! When you’re done creating that new project, give me a nice thumbs up in the chat. [Add “I’ve created my new project from the Git repository” comment to chat]</p>
 <p>So I’ll share my Posit.cloud window with you now [Do this] and I’ll do the same thing, in case anyone is stuck. I’m going to log in to my Posit.cloud account, and click the New Project button [NOTE: before the session, make sure you have space to make a new project!]. I’ll choose the “from a Git Repo” option.</p>
@@ -655,7 +656,7 @@
 <ul>
 <li>Create a new Quarto Document</li>
 <li>Add a bit of description describing what you’re planning to do</li>
-<li>Add a “Code Chunk” doing the thing (in our case, installing <code>tidyverse</code> and <code>rmarkdown</code>)</li>
+<li>Add an R language “Code Chunk” doing the thing (in our case, installing <code>tidyverse</code> and <code>rmarkdown</code>)</li>
 <li>Run that code chunk to make sure it works</li>
 <li>Save that Quarto document as <code>setup.qmd</code> in your Exercises folder.</li>
 </ul>
@@ -675,8 +676,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="step-1-create-a-new-quarto-document" class="slide level2 smaller">
-<h2>Step 1: Create a New Quarto Document</h2>
+<section id="step-1-new-document" class="slide level2 smaller">
+<h2>Step 1: New Document</h2>
 <ul>
 <li>Go to File, New File, Quarto Document.</li>
 <li>Give it the title “Setup” and click “Create”.</li>
@@ -684,14 +685,14 @@
 <li>You might get a “Visual mode” pop up box – give it a read.</li>
 </ul>
 <div class="columns v-center-container">
-<div class="column small-text" style="width:40%;">
-<p><img data-src="media/new_quarto_document.png" alt="File Menu from Posit.cloud R environment, with Arrow indicating New File, Quarto Document."></p>
-</div><div class="column small-text" style="width:40%;">
-<p><img data-src="media/create_quarto_document.png" alt="New Quarto Document form which includes Title and Author.  Title is filled in with the word Setup and everything else is left as default."></p>
+<div class="column small-text" style="width:42%;">
+<p><img data-src="media/new_quarto_document.png" class="bordered" alt="File Menu from Posit.cloud R environment, with Arrow indicating New File, Quarto Document."></p>
+</div><div class="column small-text" style="width:30%;">
+<p><img data-src="media/create_quarto_document.png" class="bordered" alt="New Quarto Document form which includes Title and Author.  Title is filled in with the word Setup and everything else is left as default."></p>
 </div></div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_fe459df8" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_87b5f040" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -699,7 +700,7 @@
 </div>
 <aside class="notes">
 <p>OK, so with each step, I’ll give you about a minute to do this, and then I’ll show you what it looks like and demo it live.</p>
-<p>First, please use the File, New File menu option to create a new Quarto document. You’ll be asked to provide a title. Make that title “Setup”. You can put your name in as Author if you want, but don’t change anything else. Then click the “Create” button at the bottom right. When your new file creates, please don’t click anything else, even if you see a yellow banner that is prompting you to install a program. I want you to wait, please.</p>
+<p>First, please use the File, New File menu option to create a new Quarto document. You’ll be asked to provide a title. Make that title “Setup”. You can put your name in as Author if you want, but don’t change anything else. Then click the “Create” button at the bottom right. When your new file creates, please don’t click anything else, even if you see a yellow banner that is prompting you to install a program. I want you to wait, please. And try both the source and visual view to look at that new file!</p>
 <p>I’ll give you a minute, and then I’ll share my screen and do the same thing as you.</p>
 <p>[Click countdown timer].</p>
 <p>OK, so let me switch my screen over to my own Posit.cloud account, where I’ve got the project open. I’m going to click on File, then New File, and then Quarto Document. I’ll add the word “Setup” to the Title, and click “Create”. Simple as that.</p>
@@ -721,8 +722,8 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="step-2-add-a-bit-of-description" class="slide level2 smaller">
-<h2>Step 2: Add a bit of description</h2>
+<section id="step-2-add-description" class="slide level2 smaller">
+<h2>Step 2: Add description</h2>
 <ul>
 <li>Remove the existing markdown and code</li>
 <li>Start a new header (“Installing Packages”) with two hash marks (#)</li>
@@ -731,11 +732,11 @@
 </ul>
 <div class="columns v-center-container">
 <div class="column small-text" style="width:70%;">
-<p><img data-src="media/writing_first_markdown.png" alt="View of a short bit of Markdown that only includes a header line with two hash marks followed by 'Installing Packages' and then a line that reads 'We need to install some packages.'"></p>
+<p><img data-src="media/writing_first_markdown.png" class="bordered" alt="View of a short bit of Markdown that only includes a header line with two hash marks followed by 'Installing Packages' and then a line that reads 'We need to install some packages.'"></p>
 </div></div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_4ba35c42" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_1370b95d" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -771,14 +772,14 @@
 <li>Inside that code chunk, type this, exactly: <code>install.packages(c("rmarkdown", "tidyverse"))</code></li>
 </ul>
 <div class="columns v-center-container">
-<div class="column small-text" style="width:40%;">
-<p><img data-src="media/about_to_click_new_chunk.png" alt="RStudio window with an arrow indicating the add new code chunk button at the top of the screen."></p>
-</div><div class="column small-text" style="width:40%;">
-<p><img data-src="media/new_code_chunk.png" alt="A new code chunk with one line of R code which reads install.packages(c(&quot;rmarkdown&quot;, &quot;tidyverse&quot;))."></p>
+<div class="column small-text" style="width:45%;">
+<p><img data-src="media/about_to_click_new_chunk.png" class="bordered" alt="RStudio window with an arrow indicating the add new code chunk button at the top of the screen."></p>
+</div><div class="column small-text" style="width:45%;">
+<p><img data-src="media/new_code_chunk.png" class="bordered" alt="A new code chunk with one line of R code which reads install.packages(c(&quot;rmarkdown&quot;, &quot;tidyverse&quot;))."></p>
 </div></div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_c59474e1" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_1894b913" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">01</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -788,24 +789,15 @@
 <p>As usual, I’ll give you a minute to do this. You’re going to add a code chunk. Now, you can certainly do this by typing in all the symbols for a code chunk manually, BUT it’s much easier if you find the “Add a Code Chunk” button, which is a green button with the letter C, and click that.</p>
 <p>Once you have an empty code chunk, I want you to copy the code there exactly as written, and I’ll explain it in a bit. Go ahead and try it! After a minute I’ll do it, too.</p>
 <p>[Click countdown timer].</p>
-<p>OK, so let me switch my screen over. I’m going to hit enter and move my cursor so that my code chunk is placed after my descriptive text, and after a bit of white space, too. I’ll click on the add a code chunk button, and an empty code chunk appears. Let’s look at the anatomy of this code chunk.</p>
+<p>OK, so let me switch my screen over. I’m going to hit enter and move my cursor so that my code chunk is placed after my descriptive text, and after a bit of white space, too. I’ll click on the add a code chunk button.</p>
+<p>Depending on your setup, when you click the “add chunk” button, you might be asked, “what language are you using? What kind of chunk do you want?” And that’s because you can use other languages in RStudio, not just R. But here, we’re just using R. And in this project, it’s going to default to just giving me an R language chunk.</p>
+<p>Let’s look at the anatomy of this empty code chunk.</p>
 <p>First, it starts with three backticks (this symbol is NOT the same as a single quote!). Then, there’s the designation of what programming language is going to appear in this code chunk. We’re using the R language, so we’re going to leave this be, with the letter “r” in curly braces.</p>
 <p>There’s a space to add code, and then the code chunk ends with three more back ticks.</p>
 <p>And you can see that visually, it’s grey, to give a little bit of help so we can distinguish between where the code is and where the description is.</p>
 <p>Now, I’m going to type in this code. First, I’ll start by typing install dot packages. As I type, predictive text might appear, and I can just hit enter to accept the suggestion.</p>
 <p>So I have install.packages and a set of parentheses. Now, inside those parentheses, I want to put in a list. In r, we commonly use what’s called a concatenation to designate a list. And that’s just the letter c, followed by a set of parentheses. So I’ll put c, open parenthesis, and look, the closed parenthesis appears for free. [ Note: you should have <code>install.packages(c())</code>].</p>
-<p>And inside that concatenation, I want to put a comma delimited list of package names, with quotes. There are two packages I know I need. From the banner above, I know I need “rmarkdown”. I also know that later in our work together we’re going to use a lot of functionality from the tidyverse set of packages, so I’ll add “tidyverse”. So all told, this is what I have:</p>
-<ul>
-<li>install dot packages,</li>
-<li>open parenthesis,</li>
-<li>the letter c for concatenation,</li>
-<li>open parenthesis,</li>
-<li>the namd rmarkdown in quotes,</li>
-<li>a comma,</li>
-<li>the word tidyverse in quotes,</li>
-<li>the closing parenthesis for my concatenation</li>
-<li>the closing parenthesis for my install.packages</li>
-</ul>
+<p>And inside that concatenation, I want to put a comma delimited list of package names, with quotes. There are two packages I know I need. From the banner above, I know I need “rmarkdown”. I also know that later in our work together we’re going to use a lot of functionality from the tidyverse set of packages, so I’ll add “tidyverse”.</p>
 <p>Take a look and make sure your code chunk looks like mine.</p>
 <p>OK, let’s go back to the slides! [go back to slides]</p>
 <style type="text/css">
@@ -820,35 +812,36 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="step-4-run-that-code-chunk" class="slide level2 smaller">
-<h2>Step 4: Run that Code Chunk</h2>
+<section id="step-4-run-code-chunk" class="slide level2 smaller">
+<h2>Step 4: Run Code Chunk</h2>
 <ul>
 <li>Use the green triangle (“Play” button) on the chunk to run the chunk</li>
 <li>Look in the “Console” for output. It will be verbose, and take a while.</li>
 <li>You’ll know it’s finished when the prompt <code>&gt;</code> appears in the Console and the Stop sign disappears!</li>
 </ul>
 <div class="columns v-center-container">
-<div class="column small-text" style="width:40%;">
-<p><img data-src="media/run_code_chunk.png" alt="A code chunk with an arrow indicating the execute code chunk button."></p>
+<div class="column small-text" style="width:60%;">
+<p><img data-src="media/run_code_chunk.png" class="bordered" alt="A code chunk with an arrow indicating the execute code chunk button."></p>
 </div><div class="column small-text" style="width:40%;">
-<p><img data-src="media/install_in_progress.png" alt="A code chunk and the R console, with three indicators of the code being executed indicated with arrows."></p>
+<p><img data-src="media/install_in_progress.png" class="bordered" alt="A code chunk and the R console, with three indicators of the code being executed indicated with arrows."></p>
 </div></div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_70e48205" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_752ca46f" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
 </div>
 </div>
 <aside class="notes">
-<p>Again, you’ll do this first, then I’ll demo. You’re going to run this code by clicking on the “play” button in the code chunk, and these libraries will install. It’ll take a while! And if you mistyped something, you might get an error message. If that happens, don’t panic. Read the error message and see if you can figure out what it’s trying to communicate. I’ll give you a minute to do this, then I’ll demonstrate this step.</p>
+<p>Again, you’ll do this first, then I’ll demo. You’re going to run this code by clicking on the “play” button in the code chunk, and these packages will install. It’ll take a while! And if you mistyped something, you might get an error message. If that happens, don’t panic. Read the error message and see if you can figure out what it’s trying to communicate. I’ll give you just a few seconds to find and click that button, then I’ll demonstrate this step.</p>
 <p>[Click countdown timer].</p>
-<p>OK, so let me switch my screen over. Let me move my mouse over to the top of my code chunk at the top right corner, and find that green “play” button. I’ll click there, and in the console, I can watch a lot happen.</p>
+<p>OK, so let me switch my screen over. Your code is probably still running, and that’s okay. Let me move my mouse over to the top of my code chunk at the top right corner, and find that green “play” button. I’ll click there, and in the console, I can watch a lot happen.</p>
 <p>[Do the thing]</p>
-<p>OK, so while this is going on I’ll explain that if there are any libraries that are dependencies, things that are required to be installed before the libraries we want to install can be successfully installed, those will come along for free. So you’re going to see not just rmarkdown and tidyverse get installed, but lots of other underlying packages, too. When the install is still running, you’ll see a stop sign in the Console, which you can click if you need the process to stop.</p>
+<p>OK, so while this is going on I’ll explain that if there are any packages that are dependencies, things that are required to be installed before the packages we want to install can be successfully installed, those will come along for free. So you’re going to see not just rmarkdown and tidyverse get installed, but lots of other underlying packages, too, which rmarkdown and tidyverse rely on and need. When the install is still running, you’ll see a stop sign in the Console, which you can click if you need the process to stop.</p>
 <p>Once things finish, there will be a prompt in the Console, ready for the next command.</p>
 <p>Now, this is a moment where sometimes people have error messages, so let’s pause here in case there are issues, before we go on.</p>
+<p>[Note – if ppl have issues there is a file in solutions called setup.qmd that they can run instead, so you don’t get bogged down in fixing it]</p>
 <p>…</p>
 <p>OK, so let’s go back to the slides.</p>
 <p>[Go back to slides]</p>
@@ -864,17 +857,17 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="step-5-save-that-quarto-document" class="slide level2 smaller">
-<h2>Step 5: Save that Quarto Document</h2>
+<section id="step-5-save-document" class="slide level2 smaller">
+<h2>Step 5: Save Document</h2>
 <ul>
 <li>Click on File, Save</li>
 <li>Name your file “setup” (you don’t have to add “.qmd”, but you can!)</li>
 <li>Save it inside the “exercises” folder</li>
 </ul>
 
-<img data-src="media/save_file.png" alt="A Save File picker that shows the exercises folder." class="r-stretch"><div class="cell">
+<img data-src="media/save_file.png" class="bordered r-stretch" alt="A Save File picker that shows the exercises folder."><div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_49e4bf78" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_728ac331" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">00</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
 </div>
@@ -886,7 +879,14 @@
 <p>[Click countdown timer].</p>
 <p>OK, that’s time. I’ll share my Posit.cloud window now, and I want you to notice that my file name here is red and has an asterisk, which is telling me there are unsaved changes. So let’s go into File, then Save. I’m going to type “setup” in the file name, choose “exercises” for the file location, and then “Save”.</p>
 <p>When I do that, my file name is no longer red, it’s black, and that is a good visual indicator that I’m caught up, that there are no unsaved changes.</p>
+<p>[Optionally, if there is time, talk about help. This will be covered in Session 2 but in case you need to fill time…</p>
 <p>While we’re here, I want to go over getting help in R and RStudio. There are a few places to look.</p>
+<ul>
+<li>issue ?install.packages in the console</li>
+<li>talk about help files and how reading the code at the top and the examples at the bottom can be a good place to start reading help files</li>
+<li>In the help tab, use the upper right search (not the lower left search-in-topic search) to search for “cor” to find cor.test</li>
+<li>Remind people about the cheat sheets in the Help menu]</li>
+</ul>
 <p>Let’s go back to the slides.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
