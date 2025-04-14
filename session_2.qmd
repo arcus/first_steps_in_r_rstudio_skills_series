@@ -115,16 +115,16 @@ Projects and File Ingestion
 
 Goals:
 
-- Create project and install package (unless you did Session 1)
 - Be able to explain when to use `install.packages()` and when to use `library()`
 - Ingest data from a .csv and look at it
+- Render a quarto document to an output format (html)
 
 ::: notes
 So let's get started with this second session. In this session we're going to hit the ground running.  You need to already have a Posit.cloud account, so if you don't have that, it is absolutely critical that you pay attention in the next slide.
 
 We're going to have you go into your Posit account and start a new project.  We'll explain why projects are so useful, and go over installing and loading packages, ingesting data, and functions in R.
 
-Here are our goals.  By the end of today I want you to be able to create a project and install a package (which may already be something you did last time).  I want you to be able to explain when you'll use install dot packages and when you'll use library, and I want you to be able to ingest data from a .csv file and examine that data in RStudio.
+Here are our goals.  I want you to be able to explain when you'll use install dot packages and when you'll use library, I want you to be able to ingest data from a .csv file and examine that data in RStudio, and I want you to be able to render a quarto document.
 :::
 
 ## Posit.Cloud (for learning) {.smaller}
@@ -536,9 +536,9 @@ In our team, we like to measure our effectiveness.
 
 Goals:
 
-- Create project and install package (unless you did Session 1)
 - Be able to explain when to use `install.packages()` and when to use `library()`
 - Ingest data from a .csv and look at it
+- Render a quarto document to an output format (html)
 
 
 ::: notes
