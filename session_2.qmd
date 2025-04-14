@@ -139,7 +139,7 @@ If you did not already set up a Posit.cloud account with the exercise files in t
 * [Create a new project that clones our exercise files.](https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_1.html#/creating-a-project-in-posit)
 
 ```{r echo=FALSE}
-countdown(minutes = 3, seconds = 0)
+countdown(minutes = 2, seconds = 0)
 ```
 
 ::: notes
@@ -150,6 +150,26 @@ Using Posit.cloud is a requirement for your continued participation in this work
 Let's take just a few minutes to make sure we're all set up.  I'll give folks a few minutes to do that!
 :::
 
+## Updating From Git {.smaller}
+
+- I might update the exercise files!
+- This means you should save anything you will make changes to with a **new name** (like `session_2_exercise_janedoe.qmd`)
+- Then if I update `session_2_exercise.qmd` you can get the new version and not mess up your "janedoe" version
+- Go to Git and choose "Pull Branches" to get any updates
+
+![](media/pull_branches.png){.bordered fig-alt="git menu with pull branches indicated"}
+
+::: notes
+
+OK, so let's talk about keeping your exercise files fresh.
+
+It's possible, as we go through this series, that I realize I want to make improvements or fixes to the exercise files, and if I do that, I want you to get the up to date changes.
+
+Because I might make changes, it's important that you not make your own changes to the same files with the same names, because our changes might be in conflict.  So when you work in the exercise files, you'll see the instruction to save the file with your initials at the end.  Please make sure to do that before you do anything else!
+
+And now I'll demo how to do this in my own Posit.cloud account.  I have my Posit.cloud account open, and in my case, I don't have any files open.  You might have something open from the last time you worked here, so when you click on the Git button, you might see some menu options that have to do with that particular file.  You can ignore those menu options.  What I want you to do is look for Pull branches.  Click there.
+
+:::
 
 ## Where are your files? {.smaller}
 
