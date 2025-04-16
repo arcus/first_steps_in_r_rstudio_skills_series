@@ -29,7 +29,7 @@ Welcome to First Steps in R and RStudio!
 
 This series is intended to be a gentle introduction to using R and RStudio for people who interact with data and want to work in the R statistical programming language. This course is geared towards beginners who are comfortable doing basic tasks with data that comes in rows and columns (for example, organizing data in Excel) but have no programming background.
 
-The workshop will cover how to get started using the R statistical programming language in your work. We'll talk about how to import data, transform data, and create data visualizations in R. To keep this workshop series short, our scope is limited, and we won't go into details that are specific to the conduct of research, like accessing the REDCap API, using modeling and machine learning, and applying statistical tests. For that, we are planning a future Skills Series we're going to call Next Steps in R for Research. For this workshop series, we assume you know what R and RStudio are and have some ideas about why they're useful. If you don't know what R or RStudio are, we suggest you view the slides and recordings from [Demystifying R and RStudio](https://github.com/arcus/demystifying_r_rstudio_skills_series), or attend the next time that two-session workshop series is offered.
+The workshop will cover how to get started using the R statistical programming language in your work. We'll talk about how to import data, transform data, and create data visualizations in R. To keep this workshop series short, our scope is limited, and we won't go into details that are specific to the conduct of research, like accessing the REDCap API, using modeling and machine learning, and applying statistical tests. For that, we are planning a future Skills Series we're going to call Next Steps in R for Research. For this workshop series, we assume you know what R and RStudio are and have some ideas about why they're useful. If you don't know what R or RStudio are, we suggest you view the slides and recordings from [Demystifying R and RStudio](https://arcus.github.io/demystifying_r_rstudio_skills_series), or attend the next time that two-session workshop series is offered.
 
 Besides the skills you'll acquire in writing R code and using the RStudio IDE, you'll also develop vocabulary useful for describing what you want to accomplish, and that will help you search for resources online or describe your problem to an LLM like CHOP GPT for help creating R code.
 
@@ -92,7 +92,7 @@ Watch the trimmed video: <http://youtu.be/5rsAU9e3rHg> or click below (and look 
 **Useful links to open while you watch this video:**
 
 -   Slides at <https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_1.html> (you'll want to have this open, there are useful links to click!)
--   Sign up for Cloud Free at <https://posit.cloud>(this is where you'll do the exercises)
+-   Sign up for Cloud Free at <https://posit.cloud> (this is where you'll do the exercises)
 -   URL for the exercise files (you'll use at Posit.cloud): <https://github.com/arcus/first_steps_in_r_rstudio_exercises>
 
 **Session 1 Content:**
@@ -122,7 +122,7 @@ Watch the trimmed video: <https://youtu.be/tHPbt6XNjck> or click below (and look
 **Useful links to open while you watch this video:**
 
 -   Slides at <https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html> (you'll want to have this open, there are useful links to click!)
--   Sign up for Cloud Free at <https://posit.cloud>(this is where you'll do the exercises)
+-   Sign up for Cloud Free at <https://posit.cloud> (this is where you'll do the exercises)
 -   URL for the exercise files (you'll use at Posit.cloud): <https://github.com/arcus/first_steps_in_r_rstudio_exercises>
 
 **Session 2 Content:**
