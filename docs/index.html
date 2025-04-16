@@ -67,16 +67,41 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
+<link rel="stylesheet" href="page-styles.css">
 </head>
 
-<body class="fullcontent">
+<body class="floating">
 
 <div id="quarto-search-results"></div>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="3">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#about-this-workshop-series" id="toc-about-this-workshop-series" class="nav-link active" data-scroll-target="#about-this-workshop-series">About This Workshop Series</a>
+  <ul class="collapse">
+  <li><a href="#pre-requisites-what-you-should-know" id="toc-pre-requisites-what-you-should-know" class="nav-link" data-scroll-target="#pre-requisites-what-you-should-know">Pre-requisites: What you should <strong>know</strong>:</a></li>
+  <li><a href="#pre-requisites-what-you-should-do" id="toc-pre-requisites-what-you-should-do" class="nav-link" data-scroll-target="#pre-requisites-what-you-should-do">Pre-requisites: What you should <strong>do</strong>:</a></li>
+  </ul></li>
+  <li><a href="#workshop-sessions" id="toc-workshop-sessions" class="nav-link" data-scroll-target="#workshop-sessions">Workshop Sessions</a>
+  <ul class="collapse">
+  <li><a href="#session-1-review-and-setup" id="toc-session-1-review-and-setup" class="nav-link" data-scroll-target="#session-1-review-and-setup">Session 1: Review and Setup</a></li>
+  <li><a href="#session-2-projects-and-file-ingestion" id="toc-session-2-projects-and-file-ingestion" class="nav-link" data-scroll-target="#session-2-projects-and-file-ingestion">Session 2: Projects and File Ingestion</a></li>
+  <li><a href="#session-3-exploring-data-visually-using-ggplot2" id="toc-session-3-exploring-data-visually-using-ggplot2" class="nav-link" data-scroll-target="#session-3-exploring-data-visually-using-ggplot2">Session 3: Exploring Data Visually, Using ggplot2</a></li>
+  <li><a href="#session-4-selecting-data-using-dplyr" id="toc-session-4-selecting-data-using-dplyr" class="nav-link" data-scroll-target="#session-4-selecting-data-using-dplyr">Session 4: Selecting Data Using dplyr</a></li>
+  <li><a href="#session-5-putting-it-all-together-communicating" id="toc-session-5-putting-it-all-together-communicating" class="nav-link" data-scroll-target="#session-5-putting-it-all-together-communicating">Session 5: Putting it All Together: Communicating</a></li>
+  </ul></li>
+  <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">License</a></li>
+  </ul>
+<div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="https://github.com/arcus/first_steps_in_r_rstudio_skills_series"><i class="bi bi-card-list"></i>Slides Repository</a></li><li><a href="https://github.com/arcus/first_steps_in_r_rstudio_exercises"><i class="bi bi-file-code"></i>Exercises Repository</a></li></ul></div></nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -99,15 +124,15 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Welcome to First Steps in R and RStudio!</p>
+<p><a href="#workshop-sessions">Skip ahead to watching the workshop recordings</a></p>
 <section id="about-this-workshop-series" class="level2">
 <h2 class="anchored" data-anchor-id="about-this-workshop-series">About This Workshop Series</h2>
-<p>Welcome to First Steps in R and RStudio!</p>
 <p>This series is intended to be a gentle introduction to using R and RStudio for people who interact with data and want to work in the R statistical programming language. This course is geared towards beginners who are comfortable doing basic tasks with data that comes in rows and columns (for example, organizing data in Excel) but have no programming background.</p>
 <p>The workshop will cover how to get started using the R statistical programming language in your work. We’ll talk about how to import data, transform data, and create data visualizations in R. To keep this workshop series short, our scope is limited, and we won’t go into details that are specific to the conduct of research, like accessing the REDCap API, using modeling and machine learning, and applying statistical tests. For that, we are planning a future Skills Series we’re going to call Next Steps in R for Research. For this workshop series, we assume you know what R and RStudio are and have some ideas about why they’re useful. If you don’t know what R or RStudio are, we suggest you view the slides and recordings from <a href="https://github.com/arcus/demystifying_r_rstudio_skills_series">Demystifying R and RStudio</a>, or attend the next time that two-session workshop series is offered.</p>
 <p>Besides the skills you’ll acquire in writing R code and using the RStudio IDE, you’ll also develop vocabulary useful for describing what you want to accomplish, and that will help you search for resources online or describe your problem to an LLM like CHOP GPT for help creating R code.</p>
-</section>
-<section id="pre-requisites-what-you-should-know" class="level2">
-<h2 class="anchored" data-anchor-id="pre-requisites-what-you-should-know">Pre-requisites: What you should <strong>know</strong>:</h2>
+<section id="pre-requisites-what-you-should-know" class="level3">
+<h3 class="anchored" data-anchor-id="pre-requisites-what-you-should-know">Pre-requisites: What you should <strong>know</strong>:</h3>
 <p>Before attending this series, you should be able to perform <strong>most or all the following skills</strong>. If you’re not sure you can, check out our Demystifying R and RStudio Skills Series. The slideshows, which have ample speaker notes, and/or the recordings of the talks (if available at the time you’re viewing this document) will be sufficient to help you acquire these skills. And don’t worry, we won’t quiz you!</p>
 <ul>
 <li>Be able to describe the difference between R and RStudio</li>
@@ -118,8 +143,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Name one way Quarto documents can be helpful</li>
 </ul>
 </section>
-<section id="pre-requisites-what-you-should-do" class="level2">
-<h2 class="anchored" data-anchor-id="pre-requisites-what-you-should-do">Pre-requisites: What you should <strong>do</strong>:</h2>
+<section id="pre-requisites-what-you-should-do" class="level3">
+<h3 class="anchored" data-anchor-id="pre-requisites-what-you-should-do">Pre-requisites: What you should <strong>do</strong>:</h3>
 <p><strong>Before attending a workshop session</strong>, we suggest that you do the following. It will make your experience of the workshop series smoother. If you don’t get a chance to do this before attending a workshop, you will have time to do it during the session, but we won’t necessarily be able to stop our presentation to help you if you get stuck.</p>
 <ul>
 <li>Create a free <a href="https://posit.cloud">Posit.cloud</a> account. We will use this as our <strong>training environment</strong> and you will have continued access to your code and materials after the workshop, through your account at Posit.cloud. <strong>Don’t</strong> use this for any patient or other CHOP data, though!</li>
@@ -141,10 +166,28 @@ ul.task-list li input[type="checkbox"] {
 <li>If available to you, use two monitors (or another two-screen setup such as a laptop and a tablet or two laptops). This Skills Series is hands-on, so you will want to have extra space for working on code while also looking at slides or the chat window.</li>
 </ul>
 </section>
+</section>
 <section id="workshop-sessions" class="level2">
 <h2 class="anchored" data-anchor-id="workshop-sessions">Workshop Sessions</h2>
-<p>Material in later sessions does build on work done in earlier sessions, but don’t let missing a session keep you away from attending later sessions. We try to overlap material to help keep everyone caught up!</p>
-<p><strong>Session 1: Review and Setup</strong></p>
+<p>Material in later sessions does build on work done in earlier sessions, so do watch them in order.</p>
+<p><strong>Recordings:</strong></p>
+<ul>
+<li><a href="#session-1-review-and-setup">Session 1: Review and Setup</a></li>
+<li><a href="#session-2-projects-and-file-ingestion">Session 2: Projects and File Ingestion</a></li>
+</ul>
+<p>Sessions 3-5 not available yet, keep an eye on this space!</p>
+<section id="session-1-review-and-setup" class="level3">
+<h3 class="anchored" data-anchor-id="session-1-review-and-setup">Session 1: Review and Setup</h3>
+<p>Watch the trimmed video: <a href="http://youtu.be/5rsAU9e3rHg" class="uri">http://youtu.be/5rsAU9e3rHg</a> or click below (and look below the video for useful links that will allow you to do the hands-on participation!)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5rsAU9e3rHg?si=HLUDY_jkYUDmP_Mj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+<p><strong>Useful links to open while you watch this video:</strong></p>
+<ul>
+<li>Slides at <a href="https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_1.html" class="uri">https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_1.html</a> (you’ll want to have this open, there are useful links to click!)</li>
+<li>Sign up for Cloud Free at <a href="https://posit.cloud" class="uri">https://posit.cloud</a>(this is where you’ll do the exercises)</li>
+<li>URL for the exercise files (you’ll use at Posit.cloud): <a href="https://github.com/arcus/first_steps_in_r_rstudio_exercises" class="uri">https://github.com/arcus/first_steps_in_r_rstudio_exercises</a></li>
+</ul>
+<p><strong>Session 1 Content:</strong></p>
 <ul>
 <li>Quick review of R and RStudio</li>
 <li>R Markdown and Quarto: methods for “literate statistical programming”</li>
@@ -152,28 +195,44 @@ ul.task-list li input[type="checkbox"] {
 <li>Git and GitHub: Out of scope but very useful!</li>
 <li>Getting R and RStudio at CHOP</li>
 </ul>
-<p>Goals:</p>
+<p><strong>Session 1 Goals:</strong></p>
 <ul>
 <li>Use Source and Visual views in RStudio to learn about markdown</li>
 <li>Create a new code chunk in a Quarto document</li>
 <li>Run a code chunk in a Quarto document</li>
 </ul>
-<p>Slides: <a href="https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_1.html" class="uri">https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_1.html</a></p>
-<p><strong>Session 2: Projects and File Ingestion</strong></p>
+<hr>
+</section>
+<section id="session-2-projects-and-file-ingestion" class="level3">
+<h3 class="anchored" data-anchor-id="session-2-projects-and-file-ingestion">Session 2: Projects and File Ingestion</h3>
+<p>Watch the trimmed video: <a href="https://youtu.be/tHPbt6XNjck" class="uri">https://youtu.be/tHPbt6XNjck</a> or click below (and look below the video for useful links that will allow you to do the hands-on participation!)</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tHPbt6XNjck?si=CS75RxXhMOM1D9Zd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
+</iframe>
+
+<p><strong>Useful links to open while you watch this video:</strong></p>
+<ul>
+<li>Slides at <a href="https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html" class="uri">https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html</a> (you’ll want to have this open, there are useful links to click!)</li>
+<li>Sign up for Cloud Free at <a href="https://posit.cloud" class="uri">https://posit.cloud</a>(this is where you’ll do the exercises)</li>
+<li>URL for the exercise files (you’ll use at Posit.cloud): <a href="https://github.com/arcus/first_steps_in_r_rstudio_exercises" class="uri">https://github.com/arcus/first_steps_in_r_rstudio_exercises</a></li>
+</ul>
+<p><strong>Session 2 Content:</strong></p>
 <ul>
 <li>File systems can be challenging to navigate</li>
 <li>Projects in RStudio</li>
 <li>Installing and loading packages</li>
 <li>Tabular data ingestion from .csv files</li>
 </ul>
-<p>Goals:</p>
+<p><strong>Session 2 Goals:</strong></p>
 <ul>
 <li>Be able to explain when to use <code>install.packages()</code> and when to use <code>library()</code></li>
 <li>Ingest data from a .csv into a data frame and examine it</li>
 <li>Render a quarto document to an output format (html)</li>
 </ul>
 <p>Slides: <a href="https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html" class="uri">https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_2.html</a></p>
-<p><strong>Session 3: Exploring Data Visually, Using ggplot2</strong></p>
+<hr>
+</section>
+<section id="session-3-exploring-data-visually-using-ggplot2" class="level3">
+<h3 class="anchored" data-anchor-id="session-3-exploring-data-visually-using-ggplot2">Session 3: Exploring Data Visually, Using ggplot2</h3>
 <ul>
 <li>ggplot2 syntax</li>
 <li>Mapping Aesthetics</li>
@@ -187,7 +246,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Add a label (like a title or an x-axis label) to a plot in ggplot2</li>
 </ul>
 <p>Slides: <a href="https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_3.html" class="uri">https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_3.html</a></p>
-<p><strong>Session 4: Selecting Data Using dplyr</strong></p>
+<hr>
+</section>
+<section id="session-4-selecting-data-using-dplyr" class="level3">
+<h3 class="anchored" data-anchor-id="session-4-selecting-data-using-dplyr">Session 4: Selecting Data Using dplyr</h3>
 <ul>
 <li>Selecting columns</li>
 <li>Filtering rows</li>
@@ -200,7 +262,10 @@ ul.task-list li input[type="checkbox"] {
 <li>Use “group by” and “summarize” to get group-level statistics</li>
 </ul>
 <p>Slides: <a href="https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_4.html" class="uri">https://arcus.github.io/first_steps_in_r_rstudio_skills_series/session_4.html</a></p>
-<p><strong>Session 5: Putting it All Together: Communicating</strong></p>
+<hr>
+</section>
+<section id="session-5-putting-it-all-together-communicating" class="level3">
+<h3 class="anchored" data-anchor-id="session-5-putting-it-all-together-communicating">Session 5: Putting it All Together: Communicating</h3>
 <ul>
 <li>Create a new document</li>
 <li>Explore a question</li>
@@ -213,6 +278,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Find useful examples from previous code and apply them to current work</li>
 <li>Work with error messages and help files successfully</li>
 </ul>
+</section>
 </section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">License</h2>

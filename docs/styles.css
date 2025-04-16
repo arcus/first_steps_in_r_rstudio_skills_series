@@ -90,3 +90,14 @@ pre code{
   text-decoration: underline;
 }
 
+#quarto-sidebar {
+  background-color:cornsilk;
+}
+
+#TOC::before{
+  content:url('media/arcus_skills_series_logo.png'); 
+}
+
+#toc-title, .quarto-code-links {
+  margin-top: 3em;
+}
